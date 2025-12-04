@@ -8096,7 +8096,7 @@
         transition-property: color;
       }
       .m .sie-mobile-nav_12-text {
-        color: rgba(47, 47, 47, 1);
+        color: rgba(0, 0, 0, 1);
         text-transform: uppercase;
         line-height: 1;
         letter-spacing: 0.12em;
@@ -8107,6 +8107,26 @@
         font-style: normal;
         transition-duration: 0.5s;
         transition-property: color;
+      }
+      /* Global text color override – all text black on both desktop and mobile */
+      .d .se-t,
+      .d .st-d-title,
+      .d .st-d-heading,
+      .d .st-d-subheading,
+      .d .st-d-paragraph,
+      .d .st-d-label,
+      .m .se-t,
+      .m .st-m-title,
+      .m .st-m-heading,
+      .m .st-m-subheading,
+      .m .st-m-paragraph,
+      .m .st-m-label {
+        color: rgba(0, 0, 0, 1) !important;
+      }
+      /* Text drawn inside SVGs (np. okrągły napis w sekcji O mnie) też na czarno */
+      svg text,
+      svg textPath {
+        fill: #000000 !important;
       }
     </style>
   </head>
