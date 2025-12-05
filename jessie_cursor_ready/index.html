@@ -2501,15 +2501,16 @@
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 100;
+        z-index: 1000 !important;
         width: 30px;
         height: 24px;
         flex-direction: column;
         justify-content: space-between;
         padding: 0;
+        pointer-events: auto !important;
       }
       .m .sie-header-menu-toggle {
-        display: flex;
+        display: flex !important;
       }
       .sie-header-menu-toggle span {
         display: block;
