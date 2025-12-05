@@ -2377,14 +2377,24 @@
         gap: 50px;
       }
       .m .sie-header-nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        padding: 10px 0;
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: rgba(254, 247, 250, 1);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .m .sie-header-nav.active {
+        display: flex;
       }
       @media (max-width: 480px) {
         .m .sie-header-nav {
-          gap: 10px;
-          font-size: 10px;
+          top: 80px;
         }
       }
       @media (min-width: 481px) and (max-width: 768px) {
@@ -2419,14 +2429,19 @@
         padding: 10px 20px;
       }
       .m .sie-header-link {
-        font-size: 11px;
-        padding: 6px 12px;
+        font-size: 14px;
+        padding: 15px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+      }
+      .m .sie-header-link:last-child {
+        border-bottom: none;
       }
       @media (max-width: 480px) {
         .m .sie-header-link {
-          font-size: 9px;
-          padding: 4px 8px;
-          letter-spacing: 0.05em;
+          font-size: 13px;
+          padding: 12px 20px;
         }
       }
       .sie-header-link::before {
@@ -2452,8 +2467,9 @@
       }
       .sie-header-logo {
         position: absolute;
-        left: 36px;
-        top: 2px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 510px;
         height: 96px;
         display: block;
@@ -2463,10 +2479,11 @@
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
       .m .sie-header-logo {
-        left: 20px;
-        top: 5px;
-        width: 220px;
-        height: 60px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 200px;
+        height: 55px;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2477,21 +2494,64 @@
         height: 100%;
       }
       .sie-header-logo:hover {
-        transform: scale(1.05);
+        transform: translate(-50%, -50%) scale(1.05);
         opacity: 0.9;
+      }
+      .m .sie-header-logo:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.9;
+      }
+      .sie-header-menu-toggle {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+        width: 30px;
+        height: 24px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+      }
+      .m .sie-header-menu-toggle {
+        display: flex;
+      }
+      .sie-header-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      .sie-header-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      .sie-header-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .sie-header-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
       }
       @media (max-width: 768px) {
         .sie-header-logo {
-          left: 10px !important;
-          width: 180px !important;
-          height: 50px !important;
+          width: 200px !important;
+          height: 55px !important;
         }
       }
       @media (max-width: 480px) {
         .sie-header-logo {
-          left: 10px !important;
-          width: 150px !important;
-          height: 40px !important;
+          width: 170px !important;
+          height: 48px !important;
+        }
+        .sie-header-menu-toggle {
+          right: 15px;
+          width: 28px;
+          height: 22px;
         }
       }
       .d .sie-header_0 {
@@ -8333,6 +8393,11 @@
                   alt="Black Rose"
                   title="Black Rose" /></noscript
             ></a>
+            <button class="sie-header-menu-toggle" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
             <nav class="sie-header-nav">
               <a href="/" class="sie-header-link">STRONA GŁÓWNA</a>
               <a href="/services" class="sie-header-link">USŁUGI</a>
@@ -9567,5 +9632,27 @@
     </div>
 
     <!-- vlmbteebqxucsyhlldee3q/20251125211238Swy8j8z/lAmRq-UY3 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.sie-header-menu-toggle');
+        const nav = document.querySelector('.sie-header-nav');
+        
+        if (menuToggle && nav) {
+          menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+          });
+          
+          // Zamknij menu po kliknięciu w link
+          const navLinks = nav.querySelectorAll('.sie-header-link');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              menuToggle.classList.remove('active');
+              nav.classList.remove('active');
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
