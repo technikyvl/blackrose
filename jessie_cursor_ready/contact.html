@@ -9755,7 +9755,9 @@
         const nav = document.querySelector('.sie-header-nav');
         
         if (menuToggle && nav) {
-          menuToggle.addEventListener('click', function() {
+          menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
           });
@@ -9767,6 +9769,14 @@
               menuToggle.classList.remove('active');
               nav.classList.remove('active');
             });
+          });
+          
+          // Zamknij menu po kliknięciu poza nim
+          document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+              menuToggle.classList.remove('active');
+              nav.classList.remove('active');
+            }
           });
         }
       });
