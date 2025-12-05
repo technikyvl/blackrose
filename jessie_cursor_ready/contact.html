@@ -8471,9 +8471,22 @@
         color: #000;
         text-decoration: none;
         transition: all 0.3s ease;
+        pointer-events: auto !important;
+        z-index: 100 !important;
+        position: relative !important;
+        cursor: pointer !important;
+        display: inline-block !important;
       }
       .sib-contact a:hover {
         opacity: 0.8;
+      }
+      /* Specific styles for Booksy button in contact section */
+      .sib-contact div[style*="margin-bottom: 40px"] a {
+        pointer-events: auto !important;
+        z-index: 100 !important;
+        position: relative !important;
+        cursor: pointer !important;
+        display: inline-block !important;
       }
     </style>
   </head>
@@ -9247,7 +9260,7 @@
                     href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style="display: inline-block; padding: 15px 40px; background-color: rgba(254, 231, 239, 1); color: #000; text-decoration: none; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease;"
+                    style="display: inline-block !important; padding: 15px 40px; background-color: rgba(254, 231, 239, 1); color: #000; text-decoration: none; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease; pointer-events: auto !important; z-index: 100 !important; position: relative !important; cursor: pointer !important;"
                     onmouseover="this.style.backgroundColor='rgba(254, 231, 239, 0.8)'; this.style.transform='translateY(-2px)';"
                     onmouseout="this.style.backgroundColor='rgba(254, 231, 239, 1)'; this.style.transform='translateY(0)';"
                   >
