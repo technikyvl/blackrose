@@ -2459,7 +2459,6 @@
       .sie-header-logo {
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
         top: 50%;
         transform: translate(-50%, -50%);
         width: 510px;
@@ -2486,7 +2485,11 @@
         height: 100%;
       }
       .sie-header-logo:hover {
-        transform: scale(1.05);
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.9;
+      }
+      .m .sie-header-logo:hover {
+        transform: translate(-50%, -50%) scale(1.05);
         opacity: 0.9;
       }
       .sie-header-menu-toggle {
@@ -9467,5 +9470,27 @@
     </div>
 
     <!-- vlmbteebqxucsyhlldee3q/20251125211238Swy8j8z/lAmRq-UY3 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.sie-header-menu-toggle');
+        const nav = document.querySelector('.sie-header-nav');
+        
+        if (menuToggle && nav) {
+          menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+          });
+          
+          // Zamknij menu po kliknięciu w link
+          const navLinks = nav.querySelectorAll('.sie-header-link');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              menuToggle.classList.remove('active');
+              nav.classList.remove('active');
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
