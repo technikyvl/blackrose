@@ -8346,20 +8346,61 @@
       /* Hide hero, about-me and our-services sections on kontakt page */
       .sib-hero,
       .sib-about-me,
-      .sib-our-services,
-      .sib-call-to-action {
+      .sib-hero,
+      .sib-our-services {
         display: none !important;
+        height: 0 !important;
+        overflow: hidden;
       }
       /* Create contact section */
       .sib-contact {
         min-height: 500px;
         padding: 80px 0;
+        background-color: rgba(254, 247, 250, 1);
       }
       .d .sib-contact {
         min-height: 600px;
       }
       .m .sib-contact {
         min-height: 700px;
+        padding: 60px 20px;
+      }
+      .sib-contact h1 {
+        font-family: 'Merchant Thin', serif;
+        font-size: 48px;
+        margin-bottom: 50px;
+        color: #000;
+      }
+      .m .sib-contact h1 {
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+      .sib-contact h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #000;
+      }
+      .m .sib-contact h2 {
+        font-size: 20px;
+      }
+      .sib-contact p {
+        font-family: 'Assistant', sans-serif;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #000;
+      }
+      .m .sib-contact p {
+        font-size: 16px;
+      }
+      .sib-contact a {
+        color: #000;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .sib-contact a:hover {
+        opacity: 0.8;
       }
     </style>
   </head>
@@ -9088,17 +9129,17 @@
           </div>
         </div>
       </div>
-      <div id="reviews" data-bid="reviews" class="sb sib-reviews">
+      <div id="reviews" data-bid="reviews" class="sb sib-reviews" style="display: none !important; height: 0 !important; overflow: hidden;">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px"></div>
         </div>
       </div>
-      <div id="shop-preview" data-bid="shop-preview" class="sb sib-shop-preview">
+      <div id="shop-preview" data-bid="shop-preview" class="sb sib-shop-preview" style="display: none !important; height: 0 !important; overflow: hidden;">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px"></div>
         </div>
       </div>
-      <div id="specials-packages" data-bid="specials-packages" class="sb sib-specials-packages">
+      <div id="specials-packages" data-bid="specials-packages" class="sb sib-specials-packages" style="display: none !important; height: 0 !important; overflow: hidden;">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px"></div>
         </div>
@@ -9106,24 +9147,51 @@
       <div id="contact" data-bid="contact" class="sb sib-contact">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px">
-            <div style="text-align: center; padding: 60px 20px;">
-              <h1 style="font-family: 'Merchant Thin'; font-size: 48px; margin-bottom: 40px; color: #000;">Kontakt</h1>
-              <div style="max-width: 600px; margin: 0 auto;">
-                <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; margin-bottom: 30px; color: #000;">
-                  <strong>Adres:</strong><br />
-                  ks. Barabasza 6<br />
-                  43-502, Czechowice-Dziedzice
-                </p>
-                <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; margin-bottom: 30px; color: #000;">
-                  <strong>Godziny otwarcia:</strong><br />
-                  Wtorek-Piątek: 10:00 - 20:00<br />
-                  Sobota: 10:00 - 17:00<br />
-                  Niedziela i Poniedziałek: Zamknięte
-                </p>
-                <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000;">
-                  <strong>Rezerwacja:</strong><br />
-                  <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" style="color: #000; text-decoration: underline;">Zarezerwuj online przez Booksy</a>
-                </p>
+            <div style="text-align: center; padding: 80px 20px;">
+              <h1 style="font-family: 'Merchant Thin'; font-size: 48px; margin-bottom: 50px; color: #000;">Kontakt</h1>
+              <div style="max-width: 700px; margin: 0 auto;">
+                <div style="margin-bottom: 40px;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Adres</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000;">
+                    ks. Barabasza 6<br />
+                    43-502, Czechowice-Dziedzice
+                  </p>
+                </div>
+                <div style="margin-bottom: 40px;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Godziny otwarcia</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000;">
+                    Wtorek-Piątek: 10:00 - 20:00<br />
+                    Sobota: 10:00 - 17:00<br />
+                    Niedziela i Poniedziałek: Zamknięte
+                  </p>
+                </div>
+                <div style="margin-bottom: 40px;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Rezerwacja</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: #000;">
+                    Zarezerwuj wizytę online przez Booksy
+                  </p>
+                  <a 
+                    href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style="display: inline-block; padding: 15px 40px; background-color: rgba(254, 231, 239, 1); color: #000; text-decoration: none; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='rgba(254, 231, 239, 0.8)'; this.style.transform='translateY(-2px)';"
+                    onmouseout="this.style.backgroundColor='rgba(254, 231, 239, 1)'; this.style.transform='translateY(0)';"
+                  >
+                    ZAREZERWUJ ONLINE
+                  </a>
+                </div>
+                <div>
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Śledź nas</h2>
+                  <a 
+                    href="https://www.instagram.com/black.rose.czechowice/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style="color: #000; text-decoration: none; font-family: 'Assistant'; font-size: 18px;"
+                  >
+                    Instagram: @black.rose.czechowice
+                  </a>
+                </div>
               </div>
             </div>
           </div>
