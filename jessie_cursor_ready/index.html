@@ -3421,6 +3421,31 @@
       .d .sib-our-services .ss-bg {
         background-color: rgba(254, 247, 250, 0.2);
       }
+      /* Wyłącz animacje i transformacje dla elementów sekcji usług */
+      .sib-our-services [data-tran],
+      .sib-our-services .str-id,
+      .sib-our-services .str-im,
+      .sib-our-services .se {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
+      .sib-our-services [data-tran] *,
+      .sib-our-services .str-id *,
+      .sib-our-services .str-im *,
+      .sib-our-services .se * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
       .d .sie-our-services_0:hover {
         opacity: 1;
       }
