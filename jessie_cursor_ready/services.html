@@ -2022,6 +2022,77 @@
         -webkit-transform: none !important;
         will-change: auto !important;
       }
+      /* Zapobieganie nachodzeniu elementów - ustawienie odpowiednich z-index i pozycji */
+      .sb .se {
+        box-sizing: border-box !important;
+      }
+      /* Sekcja Hero - wyrównanie elementów */
+      .sib-hero .se {
+        position: absolute !important;
+      }
+      .sib-hero .sie-hero_2,
+      .sib-hero .sie-hero_4 {
+        z-index: 5 !important;
+      }
+      .sib-hero .sie-hero_3 {
+        z-index: 4 !important;
+      }
+      /* Sekcja Our Services - wyrównanie elementów */
+      .sib-our-services .se {
+        position: absolute !important;
+      }
+      .sib-our-services .sie-our-services_0,
+      .sib-our-services .sie-our-services_3,
+      .sib-our-services .sie-our-services_6 {
+        z-index: 4 !important;
+      }
+      .sib-our-services .sie-our-services_1,
+      .sib-our-services .sie-our-services_4,
+      .sib-our-services .sie-our-services_7 {
+        z-index: 5 !important;
+      }
+      .sib-our-services .sie-our-services_2,
+      .sib-our-services .sie-our-services_5,
+      .sib-our-services .sie-our-services_8 {
+        z-index: 3 !important;
+      }
+      /* Sekcja About Me - wyrównanie elementów */
+      .sib-about-me .se {
+        position: absolute !important;
+      }
+      .sib-about-me .sie-about-me_3 {
+        z-index: 5 !important;
+      }
+      .sib-about-me .sie-about-me_4 {
+        z-index: 4 !important;
+      }
+      .sib-about-me .sie-about-me_5 {
+        z-index: 5 !important;
+      }
+      /* Sekcja Call to Action - wyrównanie elementów */
+      .sib-call-to-action .se {
+        position: absolute !important;
+      }
+      .sib-call-to-action .sie-call-to-action_0,
+      .sib-call-to-action .sie-call-to-action_2 {
+        z-index: 5 !important;
+      }
+      .sib-call-to-action .sie-call-to-action_1 {
+        z-index: 4 !important;
+      }
+      /* Zapewnienie odpowiednich odstępów między elementami tekstowymi */
+      .se-t {
+        display: block !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      /* Zapobieganie nachodzeniu przycisków */
+      .se-bd,
+      .se-bm {
+        position: relative !important;
+        z-index: 10 !important;
+      }
       .d .se:has(.st-primary) {
         border-radius: 10px;
         box-shadow: none;
