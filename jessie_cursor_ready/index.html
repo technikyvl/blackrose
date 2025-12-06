@@ -6388,6 +6388,131 @@
         overflow: hidden;
         z-index: 1;
       }
+      /* Custom Footer Styles */
+      .custom-footer {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background: radial-gradient(35% 128px at 50% 0%, rgba(254, 247, 250, 0.3), transparent);
+        padding: 48px 24px;
+        margin-top: 80px;
+      }
+      .custom-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 33.333%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 9999px;
+        filter: blur(1px);
+      }
+      .custom-footer-content {
+        display: grid;
+        width: 100%;
+        gap: 32px;
+      }
+      @media (min-width: 1280px) {
+        .custom-footer-content {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px;
+        }
+      }
+      .custom-footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .custom-footer-logo {
+        width: 32px;
+        height: 32px;
+        background: rgba(254, 231, 239, 1);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Merchant Thin', serif;
+        font-size: 18px;
+        color: #000;
+      }
+      .custom-footer-copyright {
+        font-family: 'Assistant', sans-serif;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-top: 32px;
+      }
+      @media (min-width: 768px) {
+        .custom-footer-copyright {
+          margin-top: 0;
+        }
+      }
+      .custom-footer-links {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      @media (min-width: 768px) {
+        .custom-footer-links {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 1280px) {
+        .custom-footer-links {
+          grid-column: span 2;
+          margin-top: 0;
+        }
+      }
+      .custom-footer-section {
+        margin-bottom: 40px;
+      }
+      @media (min-width: 768px) {
+        .custom-footer-section {
+          margin-bottom: 0;
+        }
+      }
+      .custom-footer-section h3 {
+        font-family: 'Syne', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .custom-footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .custom-footer-section li {
+        margin-bottom: 8px;
+      }
+      .custom-footer-section a {
+        font-family: 'Assistant', sans-serif;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      .custom-footer-section a:hover {
+        color: #000;
+      }
+      .custom-footer-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+      }
       .m .sib-footer {
         height: 1145px;
       }
@@ -9653,6 +9778,101 @@
               nav.classList.remove('active');
             }
           });
+        }
+      });
+    </script>
+    
+    <!-- Custom Footer -->
+    <footer class="custom-footer">
+      <div class="custom-footer-content">
+        <div class="custom-footer-brand">
+          <div class="custom-footer-logo">BR</div>
+          <p class="custom-footer-copyright">
+            © 2024 Black Rose. Wszelkie prawa zastrzeżone.
+          </p>
+        </div>
+        <div class="custom-footer-links">
+          <div class="custom-footer-section">
+            <h3>Usługi</h3>
+            <ul>
+              <li><a href="/services">Depilacja Woskiem</a></li>
+              <li><a href="/services">Pedicure</a></li>
+              <li><a href="/services">Manicure</a></li>
+              <li><a href="/services">Wszystkie Usługi</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Salon</h3>
+            <ul>
+              <li><a href="/about">O Nas</a></li>
+              <li><a href="/contact">Kontakt</a></li>
+              <li><a href="/contact">Godziny Otwarcia</a></li>
+              <li><a href="/contact">Lokalizacja</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Informacje</h3>
+            <ul>
+              <li><a href="/contact">Rezerwacja</a></li>
+              <li><a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank">Booksy</a></li>
+              <li><a href="/contact">FAQ</a></li>
+              <li><a href="/contact">Regulamin</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Śledź Nas</h3>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/black.rose.czechowice/" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                  Booksy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      // Simple fade-in animation for footer
+      document.addEventListener('DOMContentLoaded', function() {
+        const footer = document.querySelector('.custom-footer');
+        if (footer) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, { threshold: 0.1 });
+          
+          footer.style.opacity = '0';
+          footer.style.transform = 'translateY(20px)';
+          footer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          observer.observe(footer);
         }
       });
     </script>
