@@ -1997,6 +1997,31 @@
       html.d {
         background-color: rgba(254, 247, 250, 1);
       }
+      /* Wyłącz animacje i transformacje dla wszystkich elementów we wszystkich sekcjach */
+      [data-tran],
+      .str-id,
+      .str-im,
+      .se {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
+      [data-tran] *,
+      .str-id *,
+      .str-im *,
+      .se * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
       .d .se:has(.st-primary) {
         border-radius: 10px;
         box-shadow: none;
