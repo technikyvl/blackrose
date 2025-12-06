@@ -8428,44 +8428,76 @@
       /* Create contact section */
       .sib-contact {
         min-height: 500px;
-        padding: 80px 0;
+        padding: 80px 20px;
         background-color: rgba(254, 247, 250, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .d .sib-contact {
         min-height: 600px;
+        padding: 100px 20px;
       }
       .m .sib-contact {
-        min-height: 700px;
+        min-height: auto;
         padding: 60px 20px;
+      }
+      .sib-contact .sc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .sib-contact > .ss-s > .sc > div {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
       }
       .sib-contact h1 {
         font-family: 'Merchant Thin', serif !important;
         font-size: 48px !important;
         margin-bottom: 50px !important;
+        margin-top: 0 !important;
         color: #000 !important;
         text-align: center !important;
         line-height: 1.2 !important;
         font-weight: 400 !important;
         text-transform: none !important;
         letter-spacing: normal !important;
+        padding: 0 !important;
       }
       .m .sib-contact h1 {
         font-size: 36px !important;
         margin-bottom: 40px !important;
+      }
+      @media (max-width: 480px) {
+        .sib-contact h1 {
+          font-size: 32px !important;
+          margin-bottom: 30px !important;
+        }
       }
       .sib-contact h2 {
         font-family: 'Syne', sans-serif !important;
         font-size: 24px !important;
         font-weight: 600 !important;
         margin-bottom: 20px !important;
+        margin-top: 0 !important;
         color: #000 !important;
         text-align: left !important;
-        line-height: 1.2 !important;
+        line-height: 1.4 !important;
         text-transform: none !important;
         letter-spacing: normal !important;
+        padding: 0 !important;
       }
       .m .sib-contact h2 {
         font-size: 20px !important;
+        margin-bottom: 15px !important;
+      }
+      @media (max-width: 480px) {
+        .sib-contact h2 {
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
       }
       .sib-contact p {
         font-family: 'Assistant', sans-serif !important;
@@ -8476,9 +8508,18 @@
         font-weight: 400 !important;
         text-transform: none !important;
         letter-spacing: normal !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
       }
       .m .sib-contact p {
         font-size: 16px !important;
+        line-height: 1.6 !important;
+      }
+      @media (max-width: 480px) {
+        .sib-contact p {
+          font-size: 15px !important;
+          line-height: 1.5 !important;
+        }
       }
       .sib-contact a {
         color: #000;
@@ -8492,6 +8533,7 @@
       }
       .sib-contact a:hover {
         opacity: 0.8;
+        transform: translateY(-2px);
       }
       /* Specific styles for Booksy button in contact section */
       .sib-contact div[style*="margin-bottom: 40px"] a {
@@ -8500,6 +8542,26 @@
         position: relative !important;
         cursor: pointer !important;
         display: inline-block !important;
+        margin-top: 10px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .sib-contact div[style*="margin-bottom: 40px"] a:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+      @media (max-width: 768px) {
+        .sib-contact div[style*="margin-bottom: 40px"] a {
+          padding: 12px 30px !important;
+          font-size: 14px !important;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .sib-contact div[style*="margin-bottom: 40px"] a {
+          padding: 12px 25px !important;
+          font-size: 13px !important;
+        }
       }
       /* Override global text styles for contact section */
       .sib-contact * {
@@ -8514,16 +8576,113 @@
       .sib-contact span,
       .sib-contact div {
         color: #000 !important;
-        font-family: inherit !important;
       }
-      .sib-contact h1 {
-        font-family: 'Merchant Thin', serif !important;
+      /* Contact section container improvements */
+      .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
+        width: 100% !important;
+        max-width: 700px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
       }
-      .sib-contact h2 {
-        font-family: 'Syne', sans-serif !important;
+      .sib-contact > .ss-s > .sc > div[style*="max-width: 700px"] {
+        width: 100% !important;
+        max-width: 700px !important;
+        margin: 0 auto !important;
       }
-      .sib-contact p {
-        font-family: 'Assistant', sans-serif !important;
+      .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
+        margin-bottom: 40px !important;
+        width: 100% !important;
+      }
+      @media (max-width: 768px) {
+        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
+          padding: 0 15px !important;
+        }
+        .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
+          margin-bottom: 35px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
+          padding: 0 10px !important;
+        }
+        .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
+          margin-bottom: 30px !important;
+        }
+      }
+      /* Additional responsive improvements */
+      @media (max-width: 768px) {
+        .sib-contact .sc {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
+          padding: 60px 15px !important;
+        }
+        .sib-contact h1 {
+          font-size: 36px !important;
+          margin-bottom: 40px !important;
+        }
+        .sib-contact h2 {
+          font-size: 20px !important;
+        }
+        .sib-contact p {
+          font-size: 16px !important;
+        }
+        .sib-contact div[style*="max-width: 700px"] {
+          max-width: 100% !important;
+          padding: 0 10px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
+          padding: 40px 10px !important;
+        }
+        .sib-contact h1 {
+          font-size: 32px !important;
+          margin-bottom: 30px !important;
+        }
+        .sib-contact h2 {
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        .sib-contact p {
+          font-size: 15px !important;
+        }
+        .sib-contact div[style*="margin-bottom: 40px"] {
+          margin-bottom: 30px !important;
+        }
+        .sib-contact div[style*="max-width: 700px"] {
+          padding: 0 5px !important;
+        }
+      }
+      /* Ensure proper text alignment and spacing */
+      .sib-contact div[style*="max-width: 700px"] {
+        text-align: left !important;
+      }
+      .sib-contact div[style*="max-width: 700px"] h2 {
+        text-align: left !important;
+      }
+      .sib-contact div[style*="max-width: 700px"] p {
+        text-align: left !important;
+      }
+      /* Button improvements */
+      .sib-contact a[href*="booksy"] {
+        border-radius: 50px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+      }
+      @media (max-width: 768px) {
+        .sib-contact a[href*="booksy"] {
+          width: 100% !important;
+          text-align: center !important;
+          padding: 12px 30px !important;
+          font-size: 14px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .sib-contact a[href*="booksy"] {
+          padding: 12px 25px !important;
+          font-size: 13px !important;
+        }
       }
     </style>
   </head>
@@ -9269,48 +9428,50 @@
       </div>
       <div id="contact" data-bid="contact" class="sb sib-contact">
         <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <div style="text-align: center; padding: 80px 20px;">
-              <h1 style="font-family: 'Merchant Thin'; font-size: 48px; margin-bottom: 50px; color: #000;">Kontakt</h1>
-              <div style="max-width: 700px; margin: 0 auto;">
-                <div style="margin-bottom: 40px;">
-                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Adres</h2>
-                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000;">
+          <div class="sc" style="width: 1200px; max-width: 100%;">
+            <div style="text-align: center; padding: 80px 20px; width: 100%; box-sizing: border-box;">
+              <h1 style="font-family: 'Merchant Thin'; font-size: 48px; margin-bottom: 50px; margin-top: 0; color: #000; text-align: center;">Kontakt</h1>
+              <div style="max-width: 700px; margin: 0 auto; width: 100%; text-align: left;">
+                <div style="margin-bottom: 40px; width: 100%;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; margin-top: 0; color: #000; text-align: left;">Adres</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000; margin: 0; text-align: left;">
                     ks. Barabasza 6<br />
                     43-502, Czechowice-Dziedzice
                   </p>
                 </div>
-                <div style="margin-bottom: 40px;">
-                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Godziny otwarcia</h2>
-                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000;">
+                <div style="margin-bottom: 40px; width: 100%;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; margin-top: 0; color: #000; text-align: left;">Godziny otwarcia</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; color: #000; margin: 0; text-align: left;">
                     Wtorek-Piątek: 10:00 - 20:00<br />
                     Sobota: 10:00 - 17:00<br />
                     Niedziela i Poniedziałek: Zamknięte
                   </p>
                 </div>
-                <div style="margin-bottom: 40px;">
-                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Rezerwacja</h2>
-                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: #000;">
+                <div style="margin-bottom: 40px; width: 100%;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; margin-top: 0; color: #000; text-align: left;">Rezerwacja</h2>
+                  <p style="font-family: 'Assistant'; font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: #000; margin-top: 0; text-align: left;">
                     Zarezerwuj wizytę online przez Booksy
                   </p>
                   <a 
                     href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style="display: inline-block !important; padding: 15px 40px; background-color: rgba(254, 231, 239, 1); color: #000; text-decoration: none; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease; pointer-events: auto !important; z-index: 100 !important; position: relative !important; cursor: pointer !important;"
-                    onmouseover="this.style.backgroundColor='rgba(254, 231, 239, 0.8)'; this.style.transform='translateY(-2px)';"
-                    onmouseout="this.style.backgroundColor='rgba(254, 231, 239, 1)'; this.style.transform='translateY(0)';"
+                    style="display: inline-block !important; padding: 15px 40px; background-color: rgba(254, 231, 239, 1); color: #000; text-decoration: none; border-radius: 50px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s ease; pointer-events: auto !important; z-index: 100 !important; position: relative !important; cursor: pointer !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); margin-top: 10px;"
+                    onmouseover="this.style.backgroundColor='rgba(254, 231, 239, 0.8)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)';"
+                    onmouseout="this.style.backgroundColor='rgba(254, 231, 239, 1)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)';"
                   >
                     ZAREZERWUJ ONLINE
                   </a>
                 </div>
-                <div>
-                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: #000;">Śledź nas</h2>
+                <div style="margin-bottom: 0; width: 100%;">
+                  <h2 style="font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; margin-top: 0; color: #000; text-align: left;">Śledź nas</h2>
                   <a 
                     href="https://www.instagram.com/black.rose.czechowice/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style="color: #000; text-decoration: none; font-family: 'Assistant'; font-size: 18px;"
+                    style="color: #000; text-decoration: none; font-family: 'Assistant'; font-size: 18px; transition: all 0.3s ease; display: inline-block;"
+                    onmouseover="this.style.opacity='0.8'; this.style.textDecoration='underline';"
+                    onmouseout="this.style.opacity='1'; this.style.textDecoration='none';"
                   >
                     Instagram: @black.rose.czechowice
                   </a>
