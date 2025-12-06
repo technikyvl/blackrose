@@ -8439,33 +8439,46 @@
         padding: 60px 20px;
       }
       .sib-contact h1 {
-        font-family: 'Merchant Thin', serif;
-        font-size: 48px;
-        margin-bottom: 50px;
-        color: #000;
+        font-family: 'Merchant Thin', serif !important;
+        font-size: 48px !important;
+        margin-bottom: 50px !important;
+        color: #000 !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        font-weight: 400 !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
       }
       .m .sib-contact h1 {
-        font-size: 36px;
-        margin-bottom: 40px;
+        font-size: 36px !important;
+        margin-bottom: 40px !important;
       }
       .sib-contact h2 {
-        font-family: 'Syne', sans-serif;
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: #000;
+        font-family: 'Syne', sans-serif !important;
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        margin-bottom: 20px !important;
+        color: #000 !important;
+        text-align: left !important;
+        line-height: 1.2 !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
       }
       .m .sib-contact h2 {
-        font-size: 20px;
+        font-size: 20px !important;
       }
       .sib-contact p {
-        font-family: 'Assistant', sans-serif;
-        font-size: 18px;
-        line-height: 1.8;
-        color: #000;
+        font-family: 'Assistant', sans-serif !important;
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+        color: #000 !important;
+        text-align: left !important;
+        font-weight: 400 !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
       }
       .m .sib-contact p {
-        font-size: 16px;
+        font-size: 16px !important;
       }
       .sib-contact a {
         color: #000;
@@ -8487,6 +8500,30 @@
         position: relative !important;
         cursor: pointer !important;
         display: inline-block !important;
+      }
+      /* Override global text styles for contact section */
+      .sib-contact * {
+        text-transform: none !important;
+        letter-spacing: normal !important;
+      }
+      .sib-contact h1,
+      .sib-contact h2,
+      .sib-contact h3,
+      .sib-contact p,
+      .sib-contact a,
+      .sib-contact span,
+      .sib-contact div {
+        color: #000 !important;
+        font-family: inherit !important;
+      }
+      .sib-contact h1 {
+        font-family: 'Merchant Thin', serif !important;
+      }
+      .sib-contact h2 {
+        font-family: 'Syne', sans-serif !important;
+      }
+      .sib-contact p {
+        font-family: 'Assistant', sans-serif !important;
       }
     </style>
   </head>
