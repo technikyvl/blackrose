@@ -10186,5 +10186,100 @@
         }
       });
     </script>
+    
+    <!-- Custom Footer -->
+    <footer class="custom-footer">
+      <div class="custom-footer-content">
+        <div class="custom-footer-brand">
+          <div class="custom-footer-logo">BR</div>
+          <p class="custom-footer-copyright">
+            © 2024 Black Rose. Wszelkie prawa zastrzeżone.
+          </p>
+        </div>
+        <div class="custom-footer-links">
+          <div class="custom-footer-section">
+            <h3>Usługi</h3>
+            <ul>
+              <li><a href="/services">Depilacja Woskiem</a></li>
+              <li><a href="/services">Pedicure</a></li>
+              <li><a href="/services">Manicure</a></li>
+              <li><a href="/services">Wszystkie Usługi</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Salon</h3>
+            <ul>
+              <li><a href="/about">O Nas</a></li>
+              <li><a href="/contact">Kontakt</a></li>
+              <li><a href="/contact">Godziny Otwarcia</a></li>
+              <li><a href="/contact">Lokalizacja</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Informacje</h3>
+            <ul>
+              <li><a href="/contact">Rezerwacja</a></li>
+              <li><a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank">Booksy</a></li>
+              <li><a href="/contact">FAQ</a></li>
+              <li><a href="/contact">Regulamin</a></li>
+            </ul>
+          </div>
+          <div class="custom-footer-section">
+            <h3>Śledź Nas</h3>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/black.rose.czechowice/" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">
+                  <svg class="custom-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                  Booksy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      // Simple fade-in animation for footer
+      document.addEventListener('DOMContentLoaded', function() {
+        const footer = document.querySelector('.custom-footer');
+        if (footer) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, { threshold: 0.1 });
+          
+          footer.style.opacity = '0';
+          footer.style.transform = 'translateY(20px)';
+          footer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          observer.observe(footer);
+        }
+      });
+    </script>
   </body>
 </html>
