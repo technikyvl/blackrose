@@ -2013,6 +2013,36 @@
         -webkit-transform: none !important;
         will-change: auto !important;
       }
+      /* Wyjątek dla przycisków - przywróć prawidłowe wyświetlanie */
+      .se-button,
+      .se:has(.se-button),
+      .se:has(.st-primary),
+      .se:has(.st-secondary),
+      a.se-button,
+      a[class*="hero_"],
+      a[class*="our-services_"],
+      a[class*="call-to-action_"],
+      a[class*="about-me_"],
+      a[class*="contact_"] {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 10 !important;
+        cursor: pointer !important;
+      }
+      /* Zachowaj transform dla przycisków, które go potrzebują do pozycjonowania */
+      .m .sie-our-services_0,
+      .m .sie-our-services_3,
+      .m .sie-our-services_6 {
+        transform: translateX(calc(-50% + 133px)) !important;
+      }
+      .m .sie-our-services_2,
+      .m .sie-our-services_5,
+      .m .sie-our-services_8 {
+        transform: translateX(-50%) !important;
+      }
       /* Zapobieganie nachodzeniu elementów - ustawienie odpowiednich z-index i pozycji */
       .sb .se {
         box-sizing: border-box !important;
@@ -2024,6 +2054,7 @@
       .sib-hero .sie-hero_2,
       .sib-hero .sie-hero_4 {
         z-index: 5 !important;
+        display: none !important;
       }
       .sib-hero .sie-hero_3 {
         z-index: 4 !important;
