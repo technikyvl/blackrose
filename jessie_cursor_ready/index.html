@@ -2870,10 +2870,13 @@
         transition: none !important;
         margin: 0 !important;
         padding: 0 !important;
+        border: none !important;
+        outline: none !important;
         text-decoration: none !important;
         isolation: isolate !important;
         overflow: visible !important;
         box-sizing: border-box !important;
+        gap: 0 !important;
       }
       /* Upewnij się, że link logo działa - ale tylko obraz jest klikalny */
       .sie-header-logo,
@@ -2900,10 +2903,19 @@
         max-width: 510px !important;
         display: block !important;
         flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        outline: none !important;
+        box-sizing: border-box !important;
       }
+      /* Wyłącz pointer-events dla wszystkich elementów wewnątrz obrazu oprócz samego obrazu */
       .sie-header-logo .se-img * {
-        pointer-events: auto !important;
-        cursor: pointer;
+        pointer-events: none !important;
+      }
+      /* Upewnij się, że tylko obraz jest klikalny */
+      .sie-header-logo > *:not(.se-img) {
+        pointer-events: none !important;
       }
       .m .sie-header-logo {
         left: 15px !important;
@@ -2919,17 +2931,24 @@
         z-index: 10000 !important;
         margin: 0 !important;
         padding: 0 !important;
+        border: none !important;
+        outline: none !important;
         transition: none !important;
         pointer-events: none !important;
         isolation: isolate !important;
         overflow: visible !important;
         box-sizing: border-box !important;
+        gap: 0 !important;
       }
       .m .sie-header-logo .se-img {
         width: auto !important;
         height: 60px !important;
         max-width: 200px !important;
         max-height: 60px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        outline: none !important;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2941,14 +2960,20 @@
         max-width: 510px !important;
         max-height: 96px !important;
         display: block !important;
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        outline: none !important;
         pointer-events: auto !important;
         z-index: inherit;
         box-sizing: border-box !important;
         object-fit: contain !important;
         cursor: pointer;
         flex-shrink: 0 !important;
+      }
+      /* Wyłącz pointer-events dla wszystkich elementów wewnątrz obrazu */
+      .sie-header-logo .se-img * {
+        pointer-events: none !important;
       }
       /* Upewnij się, że kontener header nie blokuje logo */
       .sib-header .sc,
