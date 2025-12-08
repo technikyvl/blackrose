@@ -2830,6 +2830,20 @@
         color: rgba(47, 47, 47, 1);
         transform: translateY(-2px);
       }
+      /* Upewnij się, że hover na linkach NIE wpływa na logo - bardzo specyficzne reguły */
+      .sie-header-nav:hover ~ a.sie-header-logo:not(:hover),
+      .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
+      .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover) {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+      /* Resetowanie logo gdy hover jest na linkach */
+      .sie-header-nav:has(.sie-header-link:hover) ~ a.sie-header-logo:not(:hover) {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
       .sie-header-link:hover::before {
         width: 80%;
       }
@@ -2841,6 +2855,7 @@
         left: 36px;
         top: 50% !important;
         transform: translateY(-50%) !important;
+        transform-origin: 50% 50% !important;
         width: 510px;
         height: 96px;
         display: flex !important;
@@ -2871,6 +2886,7 @@
         left: 20px;
         top: 50% !important;
         transform: translateY(-50%) !important;
+        transform-origin: 50% 50% !important;
         width: 200px;
         height: 60px;
         display: flex !important;
@@ -2906,24 +2922,38 @@
       .sib-header .sie-header-menu-toggle {
         pointer-events: auto !important;
       }
+      /* Logo reaguje TYLKO na własny hover - wyśrodkowana animacja */
+      a.sie-header-logo:hover,
       .sie-header-logo:hover {
-        transform: translateY(-50%) scale(1.08) !important;
+        transform: translateY(-50%) translateX(0) scale(1.08) !important;
+        transform-origin: 50% 50% !important;
         opacity: 0.85 !important;
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
+      .m a.sie-header-logo:hover,
       .m .sie-header-logo:hover {
-        transform: translateY(-50%) scale(1.08) !important;
+        transform: translateY(-50%) translateX(0) scale(1.08) !important;
+        transform-origin: 50% 50% !important;
         opacity: 0.85 !important;
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
-      /* Animacja dla obrazu logo */
+      /* Zapobieganie reakcji logo na hover linków - ważniejsze niż hover linków */
+      .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
+      .sie-header-nav:hover a.sie-header-logo:not(:hover) {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+      /* Animacja dla obrazu logo - wyśrodkowana */
       .sie-header-logo .se-img {
         transition: transform 0.3s ease, filter 0.3s ease !important;
+        transform-origin: 50% 50% !important;
       }
       .sie-header-logo:hover .se-img {
         transform: scale(1.05) !important;
+        transform-origin: 50% 50% !important;
         filter: brightness(1.15) contrast(1.05) !important;
       }
       .sie-header-menu-toggle {

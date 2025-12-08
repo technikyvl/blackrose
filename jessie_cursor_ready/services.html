@@ -2731,6 +2731,13 @@
         color: rgba(47, 47, 47, 1);
         transform: translateY(-2px);
       }
+      /* Upewnij się, że hover na linkach NIE wpływa na logo */
+      .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover) {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
       .sie-header-link:hover::before {
         width: 80%;
       }
