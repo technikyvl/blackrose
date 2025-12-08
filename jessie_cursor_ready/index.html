@@ -2736,7 +2736,8 @@
         height: 100%;
         position: relative;
         pointer-events: auto !important;
-        z-index: 10;
+        z-index: 100;
+        isolation: isolate;
       }
       /* Logo na tej samej wysokości co linki nawigacyjne */
       .sie-header-logo {
@@ -2788,12 +2789,13 @@
         letter-spacing: 0.1em;
         transition: all 0.3s ease;
         pointer-events: auto !important;
-        z-index: 10;
+        z-index: 100;
         position: relative;
         cursor: pointer;
         padding: 8px 16px;
         border-radius: 4px;
         display: inline-block;
+        isolation: isolate;
       }
       .d .sie-header-link {
         font-size: 15px;
@@ -2830,19 +2832,26 @@
         color: rgba(47, 47, 47, 1);
         transform: translateY(-2px);
       }
-      /* Upewnij się, że hover na linkach NIE wpływa na logo - bardzo specyficzne reguły */
+      /* Logo jest całkowicie niezależne - NIE reaguje na hover innych elementów */
       .sie-header-nav:hover ~ a.sie-header-logo:not(:hover),
       .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
-      .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover) {
+      .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
+      .sie-header-nav:has(.sie-header-link:hover) ~ a.sie-header-logo:not(:hover),
+      .sie-header-link:hover + a.sie-header-logo:not(:hover),
+      .sie-header-link:hover ~ a.sie-header-logo:not(:hover) {
         transform: translateY(-50%) !important;
         opacity: 1 !important;
         filter: none !important;
+        scale: 1 !important;
       }
-      /* Resetowanie logo gdy hover jest na linkach */
-      .sie-header-nav:has(.sie-header-link:hover) ~ a.sie-header-logo:not(:hover) {
+      /* Wymuszenie, że logo nie reaguje na hover linków - najwyższy priorytet */
+      .sib-header:has(.sie-header-link:hover) .sie-header-logo:not(:hover),
+      .sc:has(.sie-header-link:hover) .sie-header-logo:not(:hover) {
         transform: translateY(-50%) !important;
         opacity: 1 !important;
         filter: none !important;
+        scale: 1 !important;
       }
       .sie-header-link:hover::before {
         width: 80%;
@@ -2852,7 +2861,7 @@
       }
       .sie-header-logo {
         position: absolute;
-        left: 36px;
+        left: 20px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
@@ -2862,12 +2871,13 @@
         align-items: center !important;
         justify-content: flex-start !important;
         pointer-events: auto !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         margin: 0 !important;
         padding: 0 !important;
         text-decoration: none !important;
+        isolation: isolate !important;
       }
       /* Upewnij się, że link logo działa */
       .sie-header-logo,
@@ -2883,7 +2893,7 @@
         pointer-events: auto !important;
       }
       .m .sie-header-logo {
-        left: 20px;
+        left: 15px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
@@ -2892,11 +2902,12 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
         margin: 0 !important;
         padding: 0 !important;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         pointer-events: auto !important;
+        isolation: isolate !important;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2939,12 +2950,14 @@
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
-      /* Zapobieganie reakcji logo na hover linków - ważniejsze niż hover linków */
+      /* Logo NIE reaguje na hover linków - najwyższy priorytet */
       .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
-      .sie-header-nav:hover a.sie-header-logo:not(:hover) {
+      .sie-header-nav:hover a.sie-header-logo:not(:hover),
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover) {
         transform: translateY(-50%) !important;
         opacity: 1 !important;
         filter: none !important;
+        scale: 1 !important;
       }
       /* Animacja dla obrazu logo - wyśrodkowana */
       .sie-header-logo .se-img {
@@ -2996,7 +3009,7 @@
       /* Responsywność logo - tablet */
       @media (min-width: 769px) and (max-width: 1024px) {
         .sie-header-logo {
-          left: 30px !important;
+          left: 20px !important;
           width: 400px !important;
           height: 75px !important;
         }
@@ -3004,14 +3017,14 @@
       /* Responsywność logo - mały tablet */
       @media (min-width: 481px) and (max-width: 768px) {
         .sie-header-logo {
-          left: 20px !important;
+          left: 15px !important;
           width: 250px !important;
           height: 65px !important;
         }
       }
       @media (max-width: 768px) {
         .sie-header-logo {
-          left: 20px !important;
+          left: 15px !important;
           top: 50% !important;
           transform: translateY(-50%) !important;
           width: 200px !important;
@@ -3020,7 +3033,7 @@
       }
       @media (max-width: 480px) {
         .sie-header-logo {
-          left: 15px !important;
+          left: 10px !important;
           top: 50% !important;
           transform: translateY(-50%) !important;
           width: 160px !important;
@@ -3030,7 +3043,7 @@
       /* Bardzo małe ekrany */
       @media (max-width: 360px) {
         .sie-header-logo {
-          left: 10px !important;
+          left: 8px !important;
           width: 140px !important;
           height: 42px !important;
         }

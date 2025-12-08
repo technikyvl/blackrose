@@ -2731,12 +2731,24 @@
         color: rgba(47, 47, 47, 1);
         transform: translateY(-2px);
       }
-      /* Upewnij się, że hover na linkach NIE wpływa na logo */
+      /* Logo jest całkowicie niezależne - NIE reaguje na hover innych elementów */
       .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
-      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover) {
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
+      .sie-header-nav:hover ~ a.sie-header-logo:not(:hover),
+      .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
+      .sie-header-nav:has(.sie-header-link:hover) ~ a.sie-header-logo:not(:hover) {
         transform: translateY(-50%) !important;
         opacity: 1 !important;
         filter: none !important;
+        scale: 1 !important;
+      }
+      /* Wymuszenie, że logo nie reaguje na hover linków - najwyższy priorytet */
+      .sib-header:has(.sie-header-link:hover) .sie-header-logo:not(:hover),
+      .sc:has(.sie-header-link:hover) .sie-header-logo:not(:hover) {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
       }
       .sie-header-link:hover::before {
         width: 80%;
@@ -2746,7 +2758,7 @@
       }
       .sie-header-logo {
         position: absolute;
-        left: 36px;
+        left: 20px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
@@ -2756,12 +2768,13 @@
         align-items: center !important;
         justify-content: flex-start !important;
         pointer-events: auto !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         margin: 0 !important;
         padding: 0 !important;
         text-decoration: none !important;
+        isolation: isolate !important;
       }
       /* Upewnij się, że link logo działa */
       .sie-header-logo,
@@ -2785,7 +2798,7 @@
         color: inherit !important;
       }
       .m .sie-header-logo {
-        left: 20px;
+        left: 15px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
@@ -2794,11 +2807,12 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
         margin: 0 !important;
         padding: 0 !important;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         pointer-events: auto !important;
+        isolation: isolate !important;
       }
       /* Responsywność logo - tablet */
       @media (min-width: 769px) and (max-width: 1024px) {
