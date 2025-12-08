@@ -2838,7 +2838,7 @@
         pointer-events: auto !important;
         z-index: 10;
         cursor: pointer;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         margin: 0 !important;
         padding: 0 !important;
       }
@@ -2854,6 +2854,7 @@
         z-index: 5;
         margin: 0 !important;
         padding: 0 !important;
+        transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2867,12 +2868,24 @@
         padding: 0;
       }
       .sie-header-logo:hover {
-        transform: translateY(-50%) scale(1.05);
-        opacity: 0.9;
+        transform: translateY(-50%) scale(1.08) !important;
+        opacity: 0.85 !important;
+        filter: brightness(1.1) !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
       .m .sie-header-logo:hover {
-        transform: translateY(-50%) scale(1.05);
-        opacity: 0.9;
+        transform: translateY(-50%) scale(1.08) !important;
+        opacity: 0.85 !important;
+        filter: brightness(1.1) !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
+      }
+      /* Animacja dla obrazu logo */
+      .sie-header-logo .se-img {
+        transition: transform 0.3s ease, filter 0.3s ease !important;
+      }
+      .sie-header-logo:hover .se-img {
+        transform: scale(1.05) !important;
+        filter: brightness(1.15) contrast(1.05) !important;
       }
       .sie-header-menu-toggle {
         display: none;
