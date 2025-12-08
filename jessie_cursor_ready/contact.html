@@ -2737,12 +2737,25 @@
         align-items: center !important;
         justify-content: flex-start !important;
         pointer-events: auto !important;
-        z-index: 10;
+        z-index: 1000 !important;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         margin: 0 !important;
         padding: 0 !important;
         text-decoration: none !important;
+      }
+      /* Upewnij się, że link logo działa */
+      .sie-header-logo,
+      .sie-header-logo:link,
+      .sie-header-logo:visited,
+      .sie-header-logo:active {
+        text-decoration: none !important;
+        color: inherit !important;
+        pointer-events: auto !important;
+      }
+      /* Upewnij się, że wszystkie elementy wewnątrz logo są klikalne */
+      .sie-header-logo * {
+        pointer-events: auto !important;
       }
       /* Upewnij się, że link logo działa */
       .sie-header-logo,
@@ -2761,10 +2774,11 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        z-index: 5;
+        z-index: 1000 !important;
         margin: 0 !important;
         padding: 0 !important;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
+        pointer-events: auto !important;
       }
       /* Responsywność logo - tablet */
       @media (min-width: 769px) and (max-width: 1024px) {
@@ -2792,6 +2806,8 @@
         display: block;
         margin: 0;
         padding: 0;
+        pointer-events: auto !important;
+        z-index: inherit;
       }
       /* Logo na tej samej wysokości co linki nawigacyjne */
       .sie-header-logo {
