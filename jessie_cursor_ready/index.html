@@ -3191,69 +3191,6 @@
           z-index: 1000 !important;
         }
       }
-      /* Pasek nawigacji dodawany na górę każdej sekcji */
-      .global-nav {
-        position: sticky;
-        top: 0;
-        z-index: 2000;
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        padding: 12px 24px;
-        background: rgba(254, 247, 250, 0.94);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        backdrop-filter: blur(6px);
-      }
-      .global-nav__logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-      }
-      .global-nav__logo img {
-        height: 48px;
-        width: auto;
-        display: block;
-      }
-      .global-nav__links {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 18px;
-      }
-      .global-nav__links a {
-        text-decoration: none;
-        font-family: "Syne", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(0, 0, 0, 0.9);
-        padding: 8px 12px;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-      }
-      .global-nav__links a:hover {
-        background: rgba(0, 0, 0, 0.04);
-        color: rgba(0, 0, 0, 1);
-      }
-      @media (max-width: 768px) {
-        .global-nav {
-          flex-wrap: wrap;
-          gap: 12px;
-          padding: 10px 14px;
-        }
-        .global-nav__logo img {
-          height: 40px;
-        }
-        .global-nav__links {
-          gap: 12px;
-        }
-        .global-nav__links a {
-          padding: 8px 10px;
-          font-size: 13px;
-        }
-      }
       .d .sie-header_0 {
         left: 0px;
         top: 119px;
@@ -10473,44 +10410,6 @@
         </div>
       </div>
     </footer>
-    
-    <script>
-      // Dodaje pasek nawigacji na górę każdej głównej sekcji
-      document.addEventListener('DOMContentLoaded', function() {
-        const navHtml = `
-          <div class="global-nav">
-            <a class="global-nav__logo" href="/">
-              <img src="/projekt bez nazwy-2.png" alt="Black Rose" />
-            </a>
-            <div class="global-nav__links">
-              <a href="/">Strona główna</a>
-              <a href="/services">Usługi</a>
-              <a href="/about">O nas</a>
-              <a href="/contact">Kontakt</a>
-            </div>
-          </div>`;
-
-        const sectionIds = [
-          'announcement-bar',
-          'hero',
-          'our-services',
-          'about-me',
-          'reviews',
-          'shop-preview',
-          'specials-packages',
-          'call-to-action',
-          'footer',
-          'copyright'
-        ];
-
-        sectionIds.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.insertAdjacentHTML('afterbegin', navHtml);
-          }
-        });
-      });
-    </script>
     
     <script>
       // Simple fade-in animation for footer
