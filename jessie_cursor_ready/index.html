@@ -2828,13 +2828,21 @@
         transition: all 0.3s ease;
         transform: translateX(-50%);
       }
-      .sie-header-link:hover {
-        color: rgba(47, 47, 47, 1);
-        transform: translateY(-2px);
+      .sie-header-link:hover,
+      .sie-header-link[href="/"]:hover,
+      .sie-header-link[href="/services"]:hover,
+      .sie-header-link[href="/about"]:hover,
+      .sie-header-link[href="/contact"]:hover {
+        color: rgba(47, 47, 47, 1) !important;
+        transform: translateY(-2px) !important;
       }
       /* Stare reguły usunięte - zastąpione bardziej specyficznymi poniżej */
-      .sie-header-link:hover::before {
-        width: 80%;
+      .sie-header-link:hover::before,
+      .sie-header-link[href="/"]:hover::before,
+      .sie-header-link[href="/services"]:hover::before,
+      .sie-header-link[href="/about"]:hover::before,
+      .sie-header-link[href="/contact"]:hover::before {
+        width: 80% !important;
       }
       .sie-header-link:active {
         transform: translateY(0);
@@ -2850,7 +2858,7 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
         z-index: 10000 !important;
         cursor: pointer;
         transition: none !important;
@@ -2861,21 +2869,27 @@
         overflow: hidden !important;
         box-sizing: border-box !important;
       }
-      /* Upewnij się, że link logo działa */
+      /* Upewnij się, że link logo działa - ale tylko obraz jest klikalny */
       .sie-header-logo,
       .sie-header-logo:link,
       .sie-header-logo:visited,
       .sie-header-logo:active {
         text-decoration: none !important;
         color: inherit !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
       }
-      /* Upewnij się, że wszystkie elementy wewnątrz logo są klikalne, ale ogranicz obszar */
+      /* Ograniczenie obszaru klikalnego tylko do obrazu logo */
       .sie-header-logo * {
-        pointer-events: auto !important;
+        pointer-events: none !important;
         max-width: 100% !important;
         max-height: 100% !important;
         box-sizing: border-box !important;
+      }
+      /* Tylko obraz logo jest klikalny */
+      .sie-header-logo .se-img,
+      .sie-header-logo .se-img * {
+        pointer-events: auto !important;
+        cursor: pointer;
       }
       .m .sie-header-logo {
         left: 15px !important;
@@ -2912,6 +2926,7 @@
         z-index: inherit;
         box-sizing: border-box !important;
         object-fit: contain !important;
+        cursor: pointer;
       }
       /* Upewnij się, że kontener header nie blokuje logo */
       .sib-header .sc,
