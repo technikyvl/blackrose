@@ -2904,6 +2904,8 @@
         width: auto !important;
         height: 96px !important;
         max-width: 510px !important;
+        min-width: 50px !important;
+        min-height: 20px !important;
         display: block !important;
         flex-shrink: 0 !important;
         margin: 0 !important;
@@ -2911,6 +2913,10 @@
         border: none !important;
         outline: none !important;
         box-sizing: border-box !important;
+        z-index: 10001 !important;
+        position: relative !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
       /* Wyłącz pointer-events dla wszystkich elementów wewnątrz obrazu oprócz samego obrazu */
       .sie-header-logo .se-img * {
