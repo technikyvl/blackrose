@@ -2848,7 +2848,28 @@
         align-self: center !important;
         vertical-align: middle !important;
       }
+      /* Logo NIE reaguje na hover linków - ABSOLUTNY PRIORYTET */
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo,
+      .sib-header:has(.sie-header-link:hover) .sie-header-logo,
+      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:hover,
+      .sib-header:has(.sie-header-link:hover) .sie-header-logo:hover,
+      .sc:has(.sie-header-link:hover) a.sie-header-logo,
+      .sc:has(.sie-header-link:hover) .sie-header-logo,
+      .sc:has(.sie-header-link:hover) a.sie-header-logo:hover,
+      .sc:has(.sie-header-link:hover) .sie-header-logo:hover,
+      body.header-link-hover a.sie-header-logo,
+      body.header-link-hover .sie-header-logo,
+      body.header-link-hover a.sie-header-logo:hover,
+      body.header-link-hover .sie-header-logo:hover {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
+        transition: none !important;
+      }
       /* Logo reaguje TYLKO na własny hover - wyśrodkowana animacja */
+      body:not(.header-link-hover) a.sie-header-logo:hover,
+      body:not(.header-link-hover) .sie-header-logo:hover,
       a.sie-header-logo:hover,
       .sie-header-logo:hover {
         transform: translateY(-50%) translateX(0) scale(1.08) !important;
@@ -2857,6 +2878,8 @@
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
+      .m body:not(.header-link-hover) a.sie-header-logo:hover,
+      .m body:not(.header-link-hover) .sie-header-logo:hover,
       .m a.sie-header-logo:hover,
       .m .sie-header-logo:hover {
         transform: translateY(-50%) translateX(0) scale(1.08) !important;
@@ -2864,6 +2887,17 @@
         opacity: 0.85 !important;
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
+      }
+      /* Blokowanie logo gdy body ma klasę header-link-hover - mobile */
+      .m body.header-link-hover a.sie-header-logo,
+      .m body.header-link-hover .sie-header-logo,
+      .m body.header-link-hover a.sie-header-logo:hover,
+      .m body.header-link-hover .sie-header-logo:hover {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
+        transition: none !important;
       }
       /* Animacja dla obrazu logo - wyśrodkowana */
       .sie-header-logo .se-img {
@@ -10376,6 +10410,22 @@
           footer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
           observer.observe(footer);
         }
+      });
+      
+      // Blokowanie reakcji logo na hover linków
+      document.addEventListener('DOMContentLoaded', function() {
+        const headerLinks = document.querySelectorAll('.sie-header-link');
+        const body = document.body;
+        
+        headerLinks.forEach(link => {
+          link.addEventListener('mouseenter', function() {
+            body.classList.add('header-link-hover');
+          });
+          
+          link.addEventListener('mouseleave', function() {
+            body.classList.remove('header-link-hover');
+          });
+        });
       });
     </script>
     

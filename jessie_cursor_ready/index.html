@@ -2975,6 +2975,8 @@
         scale: 1 !important;
         transition: none !important;
       }
+      .m body:not(.header-link-hover) a.sie-header-logo:hover,
+      .m body:not(.header-link-hover) .sie-header-logo:hover,
       .m a.sie-header-logo:hover,
       .m .sie-header-logo:hover {
         transform: translateY(-50%) translateX(0) scale(1.08) !important;
@@ -2982,6 +2984,17 @@
         opacity: 0.85 !important;
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
+      }
+      /* Blokowanie logo gdy body ma klasę header-link-hover - mobile */
+      .m body.header-link-hover a.sie-header-logo,
+      .m body.header-link-hover .sie-header-logo,
+      .m body.header-link-hover a.sie-header-logo:hover,
+      .m body.header-link-hover .sie-header-logo:hover {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
+        transition: none !important;
       }
       /* Animacja dla obrazu logo - wyśrodkowana */
       .sie-header-logo .se-img {
