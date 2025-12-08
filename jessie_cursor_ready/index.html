@@ -2832,27 +2832,7 @@
         color: rgba(47, 47, 47, 1);
         transform: translateY(-2px);
       }
-      /* Logo jest całkowicie niezależne - NIE reaguje na hover innych elementów */
-      .sie-header-nav:hover ~ a.sie-header-logo:not(:hover),
-      .sie-header-link:hover ~ a.sie-header-logo:not(:hover),
-      .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
-      .sib-header:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
-      .sie-header-nav:has(.sie-header-link:hover) ~ a.sie-header-logo:not(:hover),
-      .sie-header-link:hover + a.sie-header-logo:not(:hover),
-      .sie-header-link:hover ~ a.sie-header-logo:not(:hover) {
-        transform: translateY(-50%) !important;
-        opacity: 1 !important;
-        filter: none !important;
-        scale: 1 !important;
-      }
-      /* Wymuszenie, że logo nie reaguje na hover linków - najwyższy priorytet */
-      .sib-header:has(.sie-header-link:hover) .sie-header-logo:not(:hover),
-      .sc:has(.sie-header-link:hover) .sie-header-logo:not(:hover) {
-        transform: translateY(-50%) !important;
-        opacity: 1 !important;
-        filter: none !important;
-        scale: 1 !important;
-      }
+      /* Stare reguły usunięte - zastąpione bardziej specyficznymi poniżej */
       .sie-header-link:hover::before {
         width: 80%;
       }
@@ -2934,6 +2914,7 @@
         pointer-events: auto !important;
       }
       /* Logo NIE reaguje na hover linków - ABSOLUTNY PRIORYTET - MUSI BYĆ PRZED hover logo */
+      /* Używamy :has() dla nowoczesnych przeglądarek */
       .sib-header:has(.sie-header-link:hover) a.sie-header-logo,
       .sib-header:has(.sie-header-link:hover) .sie-header-logo,
       .sib-header:has(.sie-header-link:hover) a.sie-header-logo:hover,
@@ -2956,7 +2937,25 @@
         scale: 1 !important;
         transition: none !important;
       }
+      /* Dodatkowa reguła dla każdego linku osobno - najwyższa specyficzność */
+      .sie-header-link[href="/"]:hover ~ a.sie-header-logo,
+      .sie-header-link[href="/"]:hover ~ a.sie-header-logo:hover,
+      .sie-header-link[href="/services"]:hover ~ a.sie-header-logo,
+      .sie-header-link[href="/services"]:hover ~ a.sie-header-logo:hover,
+      .sie-header-link[href="/about"]:hover ~ a.sie-header-logo,
+      .sie-header-link[href="/about"]:hover ~ a.sie-header-logo:hover,
+      .sie-header-link[href="/contact"]:hover ~ a.sie-header-logo,
+      .sie-header-link[href="/contact"]:hover ~ a.sie-header-logo:hover {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
+        transition: none !important;
+      }
       /* Logo reaguje TYLKO na własny hover - gdy żaden link NIE ma hover */
+      /* Dodatkowa reguła z klasą body dla pewności */
+      body:not(.header-link-hover) a.sie-header-logo:hover,
+      body:not(.header-link-hover) .sie-header-logo:hover,
       a.sie-header-logo:hover,
       .sie-header-logo:hover {
         transform: translateY(-50%) translateX(0) scale(1.08) !important;
@@ -2964,6 +2963,17 @@
         opacity: 0.85 !important;
         filter: brightness(1.1) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
+      }
+      /* Blokowanie logo gdy body ma klasę header-link-hover */
+      body.header-link-hover a.sie-header-logo,
+      body.header-link-hover .sie-header-logo,
+      body.header-link-hover a.sie-header-logo:hover,
+      body.header-link-hover .sie-header-logo:hover {
+        transform: translateY(-50%) !important;
+        opacity: 1 !important;
+        filter: none !important;
+        scale: 1 !important;
+        transition: none !important;
       }
       .m a.sie-header-logo:hover,
       .m .sie-header-logo:hover {
