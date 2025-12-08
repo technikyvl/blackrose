@@ -2605,6 +2605,22 @@
         height: 60px;
         z-index: 5;
       }
+      /* Responsywność logo - tablet */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .sie-header-logo {
+          left: 30px !important;
+          width: 400px !important;
+          height: 75px !important;
+        }
+      }
+      /* Responsywność logo - mały tablet */
+      @media (min-width: 481px) and (max-width: 768px) {
+        .sie-header-logo {
+          left: 20px !important;
+          width: 250px !important;
+          height: 65px !important;
+        }
+      }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
         background-repeat: no-repeat;
@@ -2672,8 +2688,16 @@
           left: 15px !important;
           top: 50% !important;
           transform: translateY(-50%) !important;
-          width: 180px !important;
-          height: 54px !important;
+          width: 160px !important;
+          height: 48px !important;
+        }
+      }
+      /* Bardzo małe ekrany */
+      @media (max-width: 360px) {
+        .sie-header-logo {
+          left: 10px !important;
+          width: 140px !important;
+          height: 42px !important;
         }
       }
         .sie-header-menu-toggle {
