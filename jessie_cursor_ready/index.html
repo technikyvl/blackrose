@@ -2854,7 +2854,7 @@
         transform: translateY(0);
       }
       .sie-header-logo {
-        position: absolute;
+        position: absolute !important;
         left: 20px !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
@@ -2877,6 +2877,8 @@
         overflow: visible !important;
         box-sizing: border-box !important;
         gap: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
       /* Upewnij się, że link logo działa - ale tylko obraz jest klikalny */
       .sie-header-logo,
@@ -2959,17 +2961,22 @@
         height: 96px !important;
         max-width: 510px !important;
         max-height: 96px !important;
+        min-width: 50px !important;
+        min-height: 20px !important;
         display: block !important;
         margin: 0 !important;
         padding: 0 !important;
         border: none !important;
         outline: none !important;
         pointer-events: auto !important;
-        z-index: inherit;
+        z-index: 10001 !important;
+        position: relative !important;
         box-sizing: border-box !important;
         object-fit: contain !important;
         cursor: pointer;
         flex-shrink: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         /* Ograniczenie obszaru klikalnego tylko do widocznej części obrazu */
         clip-path: inset(0);
       }
