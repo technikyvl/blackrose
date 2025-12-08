@@ -2609,7 +2609,12 @@
         z-index: 100 !important;
         display: flex;
         align-items: center;
-        position: relative;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(254, 247, 250, 1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         overflow: visible !important;
       }
       /* Upewnij się, że kontener header nie blokuje logo */
@@ -9390,6 +9395,10 @@
               <span></span>
             </button>
             <nav class="sie-header-nav">
+              <a href="/" class="sie-header-link">STRONA GŁÓWNA</a>
+              <a href="/services" class="sie-header-link">USŁUGI</a>
+              <a href="/about" class="sie-header-link">O NAS</a>
+              <a href="/contact" class="sie-header-link">KONTAKT</a>
             </nav>
           </div>
         </div>
