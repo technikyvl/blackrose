@@ -2700,10 +2700,11 @@
         transition-property: color;
       }
       .sib-header {
-        z-index: 3;
+        z-index: 100 !important;
         display: flex;
         align-items: center;
         position: relative;
+        overflow: visible !important;
       }
       /* Upewnij się, że kontener header nie blokuje logo */
       .sib-header .sc,
