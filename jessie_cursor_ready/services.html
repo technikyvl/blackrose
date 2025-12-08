@@ -2727,9 +2727,26 @@
         transition: all 0.3s ease;
         transform: translateX(-50%);
       }
-      .sie-header-link:hover {
-        color: rgba(47, 47, 47, 1);
-        transform: translateY(-2px);
+      .sie-header-link:hover,
+      .sie-header-link[href="/"]:hover,
+      .sie-header-link[href="/services"]:hover,
+      .sie-header-link[href="/about"]:hover,
+      .sie-header-link[href="/contact"]:hover {
+        color: rgba(47, 47, 47, 1) !important;
+        transform: translateY(-2px) !important;
+      }
+      .sie-header-link:hover::before,
+      .sie-header-link[href="/"]:hover::before,
+      .sie-header-link[href="/services"]:hover::before,
+      .sie-header-link[href="/about"]:hover::before,
+      .sie-header-link[href="/contact"]:hover::before {
+        width: 80% !important;
+      }
+      /* Upewnij się, że wszystkie linki nawigacyjne mają prawidłowe style hover */
+      .sie-header-nav .sie-header-link {
+        pointer-events: auto !important;
+        z-index: 101 !important;
+        position: relative;
       }
       /* Logo jest całkowicie niezależne - NIE reaguje na hover innych elementów */
       .sc:has(.sie-header-link:hover) a.sie-header-logo:not(:hover),
@@ -2816,7 +2833,7 @@
         margin: 0 !important;
         padding: 0 !important;
         transition: none !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
         isolation: isolate !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
@@ -2853,6 +2870,7 @@
         z-index: inherit;
         box-sizing: border-box !important;
         object-fit: contain !important;
+        cursor: pointer;
       }
       /* Logo na tej samej wysokości co linki nawigacyjne */
       .sie-header-logo {

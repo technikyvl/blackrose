@@ -2739,6 +2739,12 @@
         z-index: 100;
         isolation: isolate;
       }
+      /* Upewnij się, że wszystkie linki nawigacyjne mają prawidłowe style hover */
+      .sie-header-nav .sie-header-link {
+        pointer-events: auto !important;
+        z-index: 101 !important;
+        position: relative;
+      }
       /* Logo na tej samej wysokości co linki nawigacyjne */
       .sie-header-logo {
         align-self: center !important;
