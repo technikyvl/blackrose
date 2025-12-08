@@ -2996,14 +2996,21 @@
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
       }
       /* Animacja dla obrazu logo - wyśrodkowana */
-      .sie-header-logo .se-img {
+      body:not(.header-link-hover) .sie-header-logo .se-img {
         transition: transform 0.3s ease, filter 0.3s ease !important;
         transform-origin: 50% 50% !important;
       }
-      .sie-header-logo:hover .se-img {
+      body:not(.header-link-hover) .sie-header-logo:hover .se-img {
         transform: scale(1.05) !important;
         transform-origin: 50% 50% !important;
         filter: brightness(1.15) contrast(1.05) !important;
+      }
+      /* Blokowanie animacji obrazu logo gdy link ma hover */
+      body.header-link-hover .sie-header-logo .se-img,
+      body.header-link-hover .sie-header-logo:hover .se-img {
+        transform: scale(1) !important;
+        filter: none !important;
+        transition: none !important;
       }
       .sie-header-menu-toggle {
         display: none;
@@ -10378,22 +10385,47 @@
         }
       });
       
-      // Blokowanie reakcji logo na hover linków
+      // Blokowanie reakcji logo na hover linków - bardziej agresywne podejście
       document.addEventListener('DOMContentLoaded', function() {
         const headerLinks = document.querySelectorAll('.sie-header-link');
         const body = document.body;
+        const logo = document.querySelector('.sie-header-logo');
         
         headerLinks.forEach(link => {
-          link.addEventListener('mouseenter', function() {
+          link.addEventListener('mouseenter', function(e) {
             body.classList.add('header-link-hover');
+            // Dodatkowe zabezpieczenie - bezpośrednie wyłączenie animacji logo
+            if (logo) {
+              logo.style.pointerEvents = 'none';
+              logo.style.transition = 'none';
+            }
           });
           
-          link.addEventListener('mouseleave', function() {
+          link.addEventListener('mouseleave', function(e) {
             body.classList.remove('header-link-hover');
+            // Przywrócenie logo
+            if (logo) {
+              logo.style.pointerEvents = '';
+              logo.style.transition = '';
+            }
           });
         });
+        
+        // Dodatkowe zabezpieczenie - sprawdzanie czy logo jest w hover gdy link jest w hover
+        if (logo) {
+          logo.addEventListener('mouseenter', function() {
+            const hasLinkHover = Array.from(headerLinks).some(link => link.matches(':hover'));
+            if (hasLinkHover) {
+              this.style.transform = 'translateY(-50%)';
+              this.style.opacity = '1';
+              this.style.filter = 'none';
+              this.style.scale = '1';
+            }
+          });
+        }
       });
     </script>
     
   </body>
 </html>
+
