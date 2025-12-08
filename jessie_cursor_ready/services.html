@@ -10474,6 +10474,22 @@
           observer.observe(footer);
         }
       });
+      
+      // Blokowanie reakcji logo na hover linków
+      document.addEventListener('DOMContentLoaded', function() {
+        const headerLinks = document.querySelectorAll('.sie-header-link');
+        const body = document.body;
+        
+        headerLinks.forEach(link => {
+          link.addEventListener('mouseenter', function() {
+            body.classList.add('header-link-hover');
+          });
+          
+          link.addEventListener('mouseleave', function() {
+            body.classList.remove('header-link-hover');
+          });
+        });
+      });
     </script>
     
   </body>
