@@ -2054,6 +2054,20 @@
           max-width: 100% !important;
           height: auto !important;
         }
+        /* Poprawki dla obrazów w sekcjach */
+        .m .sie-hero_1 .se-img,
+        .m .sie-our-services_2 .se-img,
+        .m .sie-our-services_5 .se-img,
+        .m .sie-our-services_8 .se-img {
+          width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+        /* Poprawki dla kontenerów */
+        .m .sc[style*="width"] {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
       }
       @media (max-width: 480px) {
         .sc {
@@ -2114,6 +2128,97 @@
         .m .sie-our-services_3,
         .m .sie-our-services_6 {
           max-width: calc(100% - 40px) !important;
+        }
+        /* Poprawki rozmiarów czcionek dla nagłówków */
+        .m .st-m-title,
+        .m .st-d-title {
+          font-size: clamp(24px, 5vw, 36px) !important;
+          line-height: 1.2 !important;
+        }
+        .m .st-m-heading,
+        .m .st-d-heading {
+          font-size: clamp(20px, 4vw, 28px) !important;
+          line-height: 1.3 !important;
+        }
+        .m .st-m-subheading,
+        .m .st-d-subheading {
+          font-size: clamp(16px, 3.5vw, 22px) !important;
+          line-height: 1.4 !important;
+        }
+        .m .st-m-paragraph,
+        .m .st-d-paragraph {
+          font-size: clamp(14px, 3vw, 18px) !important;
+          line-height: 1.6 !important;
+        }
+        /* Poprawki dla sekcji Hero na mobile */
+        .m .sib-hero {
+          position: relative !important;
+        }
+        .m .sie-hero_1 {
+          width: 100% !important;
+          max-width: 100% !important;
+          left: 0 !important;
+          height: auto !important;
+          min-height: 250px !important;
+        }
+        .m .sie-hero_5,
+        .m .sie-hero_7,
+        .m .sie-hero_8 {
+          width: calc(100% - 40px) !important;
+          left: 20px !important;
+          right: 20px !important;
+          max-width: 100% !important;
+        }
+        .m .sie-hero_2 {
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+          width: calc(100% - 40px) !important;
+          max-width: 300px !important;
+        }
+        /* Poprawki dla sekcji Our Services na mobile */
+        .m .sie-our-services_1-text,
+        .m .sie-our-services_4-text,
+        .m .sie-our-services_7-text {
+          font-size: clamp(20px, 4.5vw, 28px) !important;
+          width: calc(100% - 40px) !important;
+          padding: 0 20px !important;
+          box-sizing: border-box !important;
+        }
+        /* Poprawki odstępów między sekcjami */
+        .m .sb {
+          margin-bottom: 20px !important;
+        }
+        .m .sib-hero,
+        .m .sib-our-services,
+        .m .sib-about-me {
+          margin-bottom: 30px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        /* Dodatkowe poprawki dla bardzo małych ekranów */
+        .m .sie-hero_5-text,
+        .m .sie-hero_7-text,
+        .m .sie-hero_8-text {
+          font-size: 12px !important;
+          line-height: 1.5 !important;
+        }
+        .m .sie-hero_2 {
+          width: calc(100% - 30px) !important;
+          max-width: 280px !important;
+          height: 55px !important;
+        }
+        .m .sie-our-services_1-text,
+        .m .sie-our-services_4-text,
+        .m .sie-our-services_7-text {
+          font-size: 22px !important;
+          padding: 0 15px !important;
+        }
+        /* Lepsze odstępy */
+        .m .sib-hero,
+        .m .sib-our-services,
+        .m .sib-about-me {
+          padding: 25px 0 !important;
+          margin-bottom: 25px !important;
         }
       }
       /* Wyłącz animacje i transformacje dla wszystkich elementów we wszystkich sekcjach */

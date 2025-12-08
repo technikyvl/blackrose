@@ -2075,6 +2075,59 @@
           object-fit: contain !important;
         }
       }
+      /* Dodatkowe szczegółowe poprawki dla mobile */
+      @media (max-width: 768px) {
+        /* Poprawki rozmiarów czcionek dla nagłówków */
+        .m .st-m-title,
+        .m .st-d-title {
+          font-size: clamp(24px, 5vw, 36px) !important;
+          line-height: 1.2 !important;
+        }
+        .m .st-m-heading,
+        .m .st-d-heading {
+          font-size: clamp(20px, 4vw, 28px) !important;
+          line-height: 1.3 !important;
+        }
+        .m .st-m-subheading,
+        .m .st-d-subheading {
+          font-size: clamp(16px, 3.5vw, 22px) !important;
+          line-height: 1.4 !important;
+        }
+        .m .st-m-paragraph,
+        .m .st-d-paragraph {
+          font-size: clamp(14px, 3vw, 18px) !important;
+          line-height: 1.6 !important;
+        }
+        /* Poprawki dla obrazów w sekcjach */
+        .m .se-img {
+          width: 100% !important;
+          height: auto !important;
+          object-fit: cover !important;
+        }
+        /* Poprawki dla kontenerów */
+        .m .sc[style*="width"] {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        /* Poprawki odstępów między sekcjami */
+        .m .sb {
+          margin-bottom: 20px !important;
+        }
+        .m .sib-hero,
+        .m .sib-our-services,
+        .m .sib-about-me {
+          margin-bottom: 30px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        /* Lepsze odstępy */
+        .m .sib-hero,
+        .m .sib-our-services,
+        .m .sib-about-me {
+          padding: 25px 0 !important;
+          margin-bottom: 25px !important;
+        }
+      }
       /* Wyłącz animacje i transformacje dla wszystkich elementów we wszystkich sekcjach */
       [data-tran],
       .str-id,
