@@ -2779,20 +2779,20 @@
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
-        width: 510px;
-        height: 96px;
+        width: fit-content !important;
+        max-width: 510px !important;
+        height: 96px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
         z-index: 10000 !important;
-        cursor: pointer;
         transition: none !important;
         margin: 0 !important;
         padding: 0 !important;
         text-decoration: none !important;
         isolation: isolate !important;
-        overflow: hidden !important;
+        overflow: visible !important;
         box-sizing: border-box !important;
       }
       /* Upewnij się, że link logo działa - ale tylko obraz jest klikalny */
@@ -2811,8 +2811,16 @@
         max-height: 100% !important;
         box-sizing: border-box !important;
       }
-      /* Tylko obraz logo jest klikalny */
-      .sie-header-logo .se-img,
+      /* Tylko obraz logo jest klikalny - ograniczony do rzeczywistego rozmiaru obrazu */
+      .sie-header-logo .se-img {
+        pointer-events: auto !important;
+        cursor: pointer;
+        width: auto !important;
+        height: 96px !important;
+        max-width: 510px !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+      }
       .sie-header-logo .se-img * {
         pointer-events: auto !important;
         cursor: pointer;
@@ -2830,8 +2838,9 @@
         top: 50% !important;
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
-        width: 200px;
-        height: 60px;
+        width: fit-content !important;
+        max-width: 200px !important;
+        height: 60px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -2839,25 +2848,43 @@
         margin: 0 !important;
         padding: 0 !important;
         transition: none !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
         isolation: isolate !important;
-        overflow: hidden !important;
+        overflow: visible !important;
         box-sizing: border-box !important;
+      }
+      .m .sie-header-logo .se-img {
+        width: auto !important;
+        height: 60px !important;
+        max-width: 200px !important;
+        max-height: 60px !important;
       }
       /* Responsywność logo - tablet */
       @media (min-width: 769px) and (max-width: 1024px) {
         .sie-header-logo {
           left: 20px !important;
-          width: 400px !important;
+          width: fit-content !important;
+          max-width: 400px !important;
           height: 75px !important;
+        }
+        .sie-header-logo .se-img {
+          height: 75px !important;
+          max-width: 400px !important;
+          max-height: 75px !important;
         }
       }
       /* Responsywność logo - mały tablet */
       @media (min-width: 481px) and (max-width: 768px) {
         .sie-header-logo {
           left: 15px !important;
-          width: 250px !important;
+          width: fit-content !important;
+          max-width: 250px !important;
           height: 65px !important;
+        }
+        .sie-header-logo .se-img {
+          height: 65px !important;
+          max-width: 250px !important;
+          max-height: 65px !important;
         }
       }
       .sie-header-logo .se-img {
