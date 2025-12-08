@@ -2705,6 +2705,17 @@
         align-items: center;
         position: relative;
       }
+      /* Upewnij się, że kontener header nie blokuje logo */
+      .sib-header .sc,
+      .sib-header .ss-s,
+      .sib-header .ss-bg {
+        pointer-events: none !important;
+      }
+      .sib-header .sie-header-logo,
+      .sib-header .sie-header-nav,
+      .sib-header .sie-header-menu-toggle {
+        pointer-events: auto !important;
+      }
       .m .sib-header {
         height: 80px;
       }
@@ -2836,7 +2847,7 @@
         align-items: center !important;
         justify-content: flex-start !important;
         pointer-events: auto !important;
-        z-index: 10;
+        z-index: 1000 !important;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
         margin: 0 !important;
@@ -2850,6 +2861,11 @@
       .sie-header-logo:active {
         text-decoration: none !important;
         color: inherit !important;
+        pointer-events: auto !important;
+      }
+      /* Upewnij się, że wszystkie elementy wewnątrz logo są klikalne */
+      .sie-header-logo * {
+        pointer-events: auto !important;
       }
       .m .sie-header-logo {
         left: 20px;
@@ -2860,10 +2876,11 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        z-index: 5;
+        z-index: 1000 !important;
         margin: 0 !important;
         padding: 0 !important;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
+        pointer-events: auto !important;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2875,6 +2892,19 @@
         display: block;
         margin: 0;
         padding: 0;
+        pointer-events: auto !important;
+        z-index: inherit;
+      }
+      /* Upewnij się, że kontener header nie blokuje logo */
+      .sib-header .sc,
+      .sib-header .ss-s,
+      .sib-header .ss-bg {
+        pointer-events: none !important;
+      }
+      .sib-header .sie-header-logo,
+      .sib-header .sie-header-nav,
+      .sib-header .sie-header-menu-toggle {
+        pointer-events: auto !important;
       }
       .sie-header-logo:hover {
         transform: translateY(-50%) scale(1.08) !important;
