@@ -2853,7 +2853,7 @@
         pointer-events: auto !important;
         z-index: 10000 !important;
         cursor: pointer;
-        transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
+        transition: none !important;
         margin: 0 !important;
         padding: 0 !important;
         text-decoration: none !important;
@@ -2890,7 +2890,7 @@
         z-index: 10000 !important;
         margin: 0 !important;
         padding: 0 !important;
-        transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
+        transition: none !important;
         pointer-events: auto !important;
         isolation: isolate !important;
         overflow: hidden !important;
@@ -2976,47 +2976,26 @@
         scale: 1 !important;
         transition: none !important;
       }
-      /* Logo reaguje TYLKO na własny hover - gdy żaden link NIE ma hover */
+      /* Animacje logo całkowicie wyłączone */
+      a.sie-header-logo:hover,
+      .sie-header-logo:hover,
       body:not(.header-link-hover) a.sie-header-logo:hover,
-      body:not(.header-link-hover) .sie-header-logo:hover {
-        transform: translateY(-50%) translateX(0) scale(1.08) !important;
-        transform-origin: 50% 50% !important;
-        opacity: 0.85 !important;
-        filter: brightness(1.1) !important;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
-      }
-      /* Blokowanie logo gdy body ma klasę header-link-hover - mobile */
-      .m body.header-link-hover a.sie-header-logo,
-      .m body.header-link-hover .sie-header-logo,
-      .m body.header-link-hover a.sie-header-logo:hover,
-      .m body.header-link-hover .sie-header-logo:hover,
-      .m body.header-link-hover a.sie-header-logo *,
-      .m body.header-link-hover .sie-header-logo * {
+      body:not(.header-link-hover) .sie-header-logo:hover,
+      .m a.sie-header-logo:hover,
+      .m .sie-header-logo:hover,
+      .m body:not(.header-link-hover) a.sie-header-logo:hover,
+      .m body:not(.header-link-hover) .sie-header-logo:hover {
         transform: translateY(-50%) !important;
         opacity: 1 !important;
         filter: none !important;
         scale: 1 !important;
         transition: none !important;
       }
-      .m body:not(.header-link-hover) a.sie-header-logo:hover,
-      .m body:not(.header-link-hover) .sie-header-logo:hover {
-        transform: translateY(-50%) translateX(0) scale(1.08) !important;
-        transform-origin: 50% 50% !important;
-        opacity: 0.85 !important;
-        filter: brightness(1.1) !important;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, filter 0.3s ease !important;
-      }
-      /* Animacja dla obrazu logo - wyśrodkowana */
-      body:not(.header-link-hover) .sie-header-logo .se-img {
-        transition: transform 0.3s ease, filter 0.3s ease !important;
-        transform-origin: 50% 50% !important;
-      }
-      body:not(.header-link-hover) .sie-header-logo:hover .se-img {
-        transform: scale(1.05) !important;
-        transform-origin: 50% 50% !important;
-        filter: brightness(1.15) contrast(1.05) !important;
-      }
-      /* Blokowanie animacji obrazu logo gdy link ma hover */
+      /* Animacje obrazu logo całkowicie wyłączone */
+      .sie-header-logo .se-img,
+      .sie-header-logo:hover .se-img,
+      body:not(.header-link-hover) .sie-header-logo .se-img,
+      body:not(.header-link-hover) .sie-header-logo:hover .se-img,
       body.header-link-hover .sie-header-logo .se-img,
       body.header-link-hover .sie-header-logo:hover .se-img {
         transform: scale(1) !important;
