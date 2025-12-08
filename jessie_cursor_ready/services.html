@@ -2611,6 +2611,17 @@
         align-items: center;
         position: relative;
       }
+      /* Upewnij się, że kontener header nie blokuje logo */
+      .sib-header .sc,
+      .sib-header .ss-s,
+      .sib-header .ss-bg {
+        pointer-events: none !important;
+      }
+      .sib-header .sie-header-logo,
+      .sib-header .sie-header-nav,
+      .sib-header .sie-header-menu-toggle {
+        pointer-events: auto !important;
+      }
       .m .sib-header {
         height: 80px;
       }
@@ -2774,10 +2785,11 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        z-index: 5;
+        z-index: 1000 !important;
         margin: 0 !important;
         padding: 0 !important;
         transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease !important;
+        pointer-events: auto !important;
       }
       /* Responsywność logo - tablet */
       @media (min-width: 769px) and (max-width: 1024px) {
@@ -2805,6 +2817,8 @@
         display: block;
         margin: 0;
         padding: 0;
+        pointer-events: auto !important;
+        z-index: inherit;
       }
       /* Logo na tej samej wysokości co linki nawigacyjne */
       .sie-header-logo {
