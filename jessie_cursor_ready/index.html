@@ -2818,41 +2818,10 @@
         transform: translateY(0);
       }
       .sie-header-logo {
-        position: absolute;
-        left: 36px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 510px;
-        height: 96px;
-        display: block;
-        pointer-events: auto !important;
-        z-index: 10;
-        cursor: pointer;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: none !important;
       }
       .m .sie-header-logo {
-        left: 20px;
-        transform: translateY(-50%);
-        top: 50%;
-        width: 200px;
-        height: 60px;
-        z-index: 5;
-      }
-      /* Responsywność logo - tablet */
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .sie-header-logo {
-          left: 30px !important;
-          width: 400px !important;
-          height: 75px !important;
-        }
-      }
-      /* Responsywność logo - mały tablet */
-      @media (min-width: 481px) and (max-width: 768px) {
-        .sie-header-logo {
-          left: 20px !important;
-          width: 250px !important;
-          height: 65px !important;
-        }
+        display: none !important;
       }
       .sie-header-logo .se-img {
         background-image: url("Projekt%20bez%20nazwy.png") !important;
@@ -2909,28 +2878,18 @@
       }
       @media (max-width: 768px) {
         .sie-header-logo {
-          left: 20px !important;
-          top: 50% !important;
-          transform: translateY(-50%) !important;
-          width: 200px !important;
-          height: 60px !important;
+          display: none !important;
         }
       }
       @media (max-width: 480px) {
         .sie-header-logo {
-          left: 15px !important;
-          top: 50% !important;
-          transform: translateY(-50%) !important;
-          width: 160px !important;
-          height: 48px !important;
+          display: none !important;
         }
       }
       /* Bardzo małe ekrany */
       @media (max-width: 360px) {
         .sie-header-logo {
-          left: 10px !important;
-          width: 140px !important;
-          height: 42px !important;
+          display: none !important;
         }
       }
         .sie-header-menu-toggle {
