@@ -2870,9 +2870,12 @@
         color: inherit !important;
         pointer-events: auto !important;
       }
-      /* Upewnij się, że wszystkie elementy wewnątrz logo są klikalne */
+      /* Upewnij się, że wszystkie elementy wewnątrz logo są klikalne, ale ogranicz obszar */
       .sie-header-logo * {
         pointer-events: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        box-sizing: border-box !important;
       }
       .m .sie-header-logo {
         left: 15px !important;
