@@ -2583,6 +2583,33 @@
       .m .sie-announcement-bar_0-text:hover {
         color: rgba(47, 47, 47, 1);
       }
+      /* Mobile nav fallback via media query (ensures hamburger works on phones) */
+      @media (max-width: 768px) {
+        .sie-header-nav {
+          display: none !important;
+          position: fixed;
+          top: 80px;
+          left: 0;
+          right: 0;
+          background-color: rgba(254, 247, 250, 1);
+          flex-direction: column;
+          gap: 0;
+          padding: 20px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          z-index: 999 !important;
+          pointer-events: auto !important;
+        }
+        .sie-header-nav.active {
+          display: flex !important;
+        }
+        .sie-header-link {
+          width: 100%;
+          text-align: center;
+        }
+        .sie-header-menu-toggle {
+          display: flex !important;
+        }
+      }
       /* Hide announcement bar completely */
       .sib-announcement-bar,
       #announcement-bar {
