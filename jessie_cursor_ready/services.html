@@ -2651,7 +2651,8 @@
         height: 100%;
         position: relative;
         pointer-events: auto !important;
-        z-index: 10;
+        z-index: 100;
+        isolation: isolate;
       }
       /* Ukrycie logo z paska nawigacji (desktop i mobile) */
       .sie-header-logo,
@@ -2660,6 +2661,17 @@
         width: 0 !important;
         height: 0 !important;
         overflow: hidden !important;
+      }
+      /* Upewnij się, że wszystkie linki nawigacyjne mają prawidłowe style hover */
+      .sie-header-nav .sie-header-link {
+        pointer-events: auto !important;
+        z-index: 101 !important;
+        position: relative;
+      }
+      /* Logo na tej samej wysokości co linki nawigacyjne */
+      .sie-header-logo {
+        align-self: center !important;
+        vertical-align: middle !important;
       }
       .d .sie-header-nav {
         gap: 50px;
