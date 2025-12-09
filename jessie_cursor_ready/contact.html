@@ -23,6 +23,70 @@
         font-family: Merchant Thin;
         src: url("//static.showit.co/file/Y0Z4RoPeRCaexmANHI-a0Q/92644/merchant-thin.woff");
       }
+      /* Prosty placeholder po wycięciu sekcji O nas */
+      .about-empty {
+        min-height: 24px;
+      }
+      /* Widoczna stopka – zawsze nad innymi regułami */
+      .sib-footer {
+        background: #fef7fa !important;
+        padding: 32px 0 !important;
+        position: relative !important;
+        z-index: 12000 !important;
+        display: block !important;
+      }
+      .sib-footer .ss-bg {
+        background: transparent !important;
+        pointer-events: auto !important;
+      }
+      .br-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 0 12px !important;
+        color: #1a1a1a !important;
+        font-family: "Assistant", sans-serif !important;
+      }
+      .br-footer-brand {
+        font-family: "Syne", sans-serif !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        font-size: 16px !important;
+      }
+      .br-footer-text {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+      .br-footer-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+      }
+      .br-footer-links a {
+        color: #000 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.05em !important;
+      }
+      .br-footer-links a:hover {
+        text-decoration: underline !important;
+      }
+      @media (max-width: 768px) {
+        .sib-footer {
+          padding: 24px 0 !important;
+        }
+        .br-footer {
+          gap: 10px !important;
+        }
+        .br-footer-brand {
+          font-size: 15px !important;
+        }
+        .br-footer-text,
+        .br-footer-links a {
+          font-size: 13px !important;
+        }
+      }
     </style>
     <script id="init_data" type="application/json">
       {
@@ -2276,14 +2340,18 @@
         line-height: 1.8;
         transition-duration: 0.5s;
       }
-      /* removed empty hover proxy rule */
+      .d .se:has(.st-primary:hover),
+      .d .se:has(.trigger-child-hovers:hover .st-primary) {
+      }
       .d .st-primary.se-button:hover,
       .d .trigger-child-hovers:hover .st-primary.se-button {
         background-color: rgba(47, 47, 47, 1);
         background-image: none;
         transition-property: background-color, background-image;
       }
-      /* removed empty span hover proxy rule */
+      .d .st-primary.se-button:hover span,
+      .d .trigger-child-hovers:hover .st-primary.se-button span {
+      }
       .m .se:has(.st-primary) {
         border-radius: 10px;
         box-shadow: none;
@@ -2336,7 +2404,9 @@
         line-height: 1.8;
         transition-duration: 0.5s;
       }
-      /* removed empty secondary hover proxy rule */
+      .d .se:has(.st-secondary:hover),
+      .d .se:has(.trigger-child-hovers:hover .st-secondary) {
+      }
       .d .st-secondary.se-button:hover,
       .d .trigger-child-hovers:hover .st-secondary.se-button {
         border-color: rgba(47, 47, 47, 0.7);
@@ -2537,12 +2607,11 @@
           gap: 0;
           padding: 20px 0;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 2600 !important;
+          z-index: 999 !important;
           pointer-events: auto !important;
         }
         .sie-header-nav.active {
           display: flex !important;
-        z-index: 2600 !important;
         }
         .sie-header-link {
           width: 100%;
@@ -2602,66 +2671,6 @@
       .sib-header .sie-header-nav,
       .sib-header .sie-header-menu-toggle {
         pointer-events: auto !important;
-      }
-      /* Widoczna stopka – zawsze nad innymi regułami */
-      .sib-footer {
-        background: #fef7fa !important;
-        padding: 32px 0 !important;
-        position: relative !important;
-        z-index: 12000 !important;
-        display: block !important;
-      }
-      .sib-footer .ss-bg {
-        background: transparent !important;
-        pointer-events: auto !important;
-      }
-      .br-footer {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        padding: 0 12px !important;
-        color: #1a1a1a !important;
-        font-family: "Assistant", sans-serif !important;
-      }
-      .br-footer-brand {
-        font-family: "Syne", sans-serif !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.08em !important;
-        text-transform: uppercase !important;
-        font-size: 16px !important;
-      }
-      .br-footer-text {
-        font-size: 14px !important;
-        line-height: 1.5 !important;
-      }
-      .br-footer-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 12px !important;
-      }
-      .br-footer-links a {
-        color: #000 !important;
-        text-decoration: none !important;
-        font-weight: 600 !important;
-        letter-spacing: 0.05em !important;
-      }
-      .br-footer-links a:hover {
-        text-decoration: underline !important;
-      }
-      @media (max-width: 768px) {
-        .sib-footer {
-          padding: 24px 0 !important;
-        }
-        .br-footer {
-          gap: 10px !important;
-        }
-        .br-footer-brand {
-          font-size: 15px !important;
-        }
-        .br-footer-text,
-        .br-footer-links a {
-          font-size: 13px !important;
-        }
       }
       .m .sib-header {
         height: 80px;
@@ -2746,11 +2755,12 @@
         gap: 0;
         padding: 20px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999 !important;
+        z-index: 2600 !important;
         pointer-events: auto !important;
       }
       .m .sie-header-nav.active {
         display: flex !important;
+        z-index: 2600 !important;
       }
       @media (max-width: 480px) {
         .m .sie-header-nav {
@@ -2871,8 +2881,8 @@
         transform: translateY(-50%) !important;
         transform-origin: 50% 50% !important;
         width: fit-content !important;
-        max-width: 720px !important;
-        height: 140px !important;
+        max-width: 2160px !important;
+        height: 420px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
@@ -2907,11 +2917,28 @@
         max-height: 100% !important;
         box-sizing: border-box !important;
       }
-      /* Tylko obraz logo jest klikalny */
-      .sie-header-logo .se-img,
-      .sie-header-logo .se-img * {
+      /* Tylko obraz logo jest klikalny - ograniczony do rzeczywistego rozmiaru obrazu */
+      .sie-header-logo .se-img {
         pointer-events: auto !important;
         cursor: pointer;
+        width: auto !important;
+        height: 96px !important;
+        max-width: 510px !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      /* Wyłącz pointer-events dla wszystkich elementów wewnątrz obrazu oprócz samego obrazu */
+      .sie-header-logo .se-img * {
+        pointer-events: none !important;
+      }
+      /* Upewnij się, że tylko obraz jest klikalny */
+      .sie-header-logo > *:not(.se-img) {
+        pointer-events: none !important;
       }
       /* Upewnij się, że link logo działa */
       .sie-header-logo,
@@ -2980,58 +3007,6 @@
           height: 80px !important;
           max-width: 260px !important;
           max-height: 80px !important;
-        }
-      }
-      /* Responsywność logo - telefony */
-      @media (max-width: 480px) {
-        .sie-header-logo {
-          left: 12px !important;
-          width: fit-content !important;
-          max-width: 220px !important;
-          height: 70px !important;
-        }
-        .sie-header-logo .se-img {
-          height: 80px !important;
-          max-width: 280px !important;
-          max-height: 80px !important;
-        }
-      }
-      /* Mobile rescue overrides */
-      @media (max-width: 768px) {
-        .m .sib-header {
-          height: 90px !important;
-        }
-        .m .sie-header-nav {
-          top: 90px !important;
-          padding: 16px 0 !important;
-        }
-        .sie-header-logo {
-          left: 12px !important;
-          max-width: 260px !important;
-          height: 80px !important;
-        }
-        .sie-header-logo .se-img {
-          height: 80px !important;
-          max-width: 260px !important;
-          max-height: 80px !important;
-        }
-      }
-      @media (max-width: 480px) {
-        .m .sib-header {
-          height: 82px !important;
-        }
-        .m .sie-header-nav {
-          top: 82px !important;
-        }
-        .sie-header-logo {
-          left: 10px !important;
-          max-width: 220px !important;
-          height: 72px !important;
-        }
-        .sie-header-logo .se-img {
-          height: 72px !important;
-          max-width: 220px !important;
-          max-height: 72px !important;
         }
       }
       .sie-header-logo .se-img {
@@ -3196,7 +3171,6 @@
           height: 42px !important;
         }
       }
-      @media (max-width: 480px) {
         .sie-header-menu-toggle {
           right: 15px !important;
           width: 28px;
@@ -4170,6 +4144,31 @@
       .d .sib-our-services .ss-bg {
         background-color: rgba(254, 247, 250, 0.2);
       }
+      /* Wyłącz animacje i transformacje dla elementów sekcji usług */
+      .sib-our-services [data-tran],
+      .sib-our-services .str-id,
+      .sib-our-services .str-im,
+      .sib-our-services .se {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
+      .sib-our-services [data-tran] *,
+      .sib-our-services .str-id *,
+      .sib-our-services .str-im *,
+      .sib-our-services .se * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        -webkit-animation: none !important;
+        -webkit-transition: none !important;
+        -webkit-transform: none !important;
+        will-change: auto !important;
+      }
       .d .sie-our-services_0:hover {
         opacity: 1;
         transition-duration: 0.5s;
@@ -4672,7 +4671,10 @@
         width: 266px;
         height: 46px;
       }
-      /* removed empty our-services hover rules */
+      .d .sie-our-services_11 .se-simple:hover {
+      }
+      .m .sie-our-services_11 .se-simple:hover {
+      }
       .d .sie-our-services_11 .se-simple {
         background-color: rgba(254, 231, 239, 1);
       }
@@ -4755,7 +4757,10 @@
         width: 300px;
         height: 623px;
       }
-      /* removed empty reviews hover rules */
+      .d .sie-reviews_0 .se-simple:hover {
+      }
+      .m .sie-reviews_0 .se-simple:hover {
+      }
       .d .sie-reviews_0 .se-simple {
         background-color: rgba(243, 232, 232, 0.5);
       }
@@ -4976,7 +4981,10 @@
         background-position: 50% 50%;
         border-radius: inherit;
       }
-      /* removed empty review-one wrappers */
+      .m .sib-reviews .sis-reviews_review-one {
+      }
+      .d .sib-reviews .sis-reviews_review-one {
+      }
       .d .sie-reviews_review-one_0 {
         left: 582px;
         top: 492px;
@@ -5066,7 +5074,10 @@
         font-size: 35px;
         text-align: center;
       }
-      /* removed empty duplicate-as-needed wrappers */
+      .m .sib-reviews .sis-reviews_duplicate-as-needed {
+      }
+      .d .sib-reviews .sis-reviews_duplicate-as-needed {
+      }
       .d .sie-reviews_duplicate-as-needed_0 {
         left: 582px;
         top: 492px;
@@ -5354,7 +5365,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      /* removed empty shop-preview_4 hover rules */
+      .d .sie-shop-preview_4 .se-simple:hover {
+      }
+      .m .sie-shop-preview_4 .se-simple:hover {
+      }
       .d .sie-shop-preview_4 .se-simple {
         background-color: rgba(47, 47, 47, 1);
       }
@@ -5446,7 +5460,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      /* removed empty shop-preview_7 hover rules */
+      .d .sie-shop-preview_7 .se-simple:hover {
+      }
+      .m .sie-shop-preview_7 .se-simple:hover {
+      }
       .d .sie-shop-preview_7 .se-simple {
         background-color: rgba(47, 47, 47, 1);
       }
@@ -5538,7 +5555,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      /* removed empty shop-preview_10 hover rules */
+      .d .sie-shop-preview_10 .se-simple:hover {
+      }
+      .m .sie-shop-preview_10 .se-simple:hover {
+      }
       .d .sie-shop-preview_10 .se-simple {
         background-color: rgba(47, 47, 47, 1);
       }
@@ -6287,7 +6307,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      /* removed empty specials-packages_5 hover rules */
+      .d .sie-specials-packages_5 .se-simple:hover {
+      }
+      .m .sie-specials-packages_5 .se-simple:hover {
+      }
       .d .sie-specials-packages_5 .se-simple {
         background-color: rgba(47, 47, 47, 1);
       }
@@ -6402,7 +6425,10 @@
         width: 210px;
         height: 48px;
       }
-      /* removed empty specials-packages_9 hover rules */
+      .d .sie-specials-packages_9 .se-simple:hover {
+      }
+      .m .sie-specials-packages_9 .se-simple:hover {
+      }
       .d .sie-specials-packages_9 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 1px;
@@ -6496,7 +6522,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      /* removed empty specials-packages_12 hover rules */
+      .d .sie-specials-packages_12 .se-simple:hover {
+      }
+      .m .sie-specials-packages_12 .se-simple:hover {
+      }
       .d .sie-specials-packages_12 .se-simple {
         background-color: rgba(47, 47, 47, 1);
       }
@@ -6611,7 +6640,10 @@
         width: 210px;
         height: 48px;
       }
-      /* removed empty specials-packages_16 hover rules */
+      .d .sie-specials-packages_16 .se-simple:hover {
+      }
+      .m .sie-specials-packages_16 .se-simple:hover {
+      }
       .d .sie-specials-packages_16 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 1px;
@@ -7586,7 +7618,10 @@
       .m .sie-footer_7 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      /* removed empty footer_7 svg hover rules */
+      .d .sie-footer_7 svg:hover {
+      }
+      .m .sie-footer_7 svg:hover {
+      }
       .d .sie-footer_8:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
@@ -7619,7 +7654,10 @@
       .m .sie-footer_8 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      /* removed empty footer_8 svg hover rules */
+      .d .sie-footer_8 svg:hover {
+      }
+      .m .sie-footer_8 svg:hover {
+      }
       .d .sie-footer_9:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
@@ -7652,7 +7690,10 @@
       .m .sie-footer_9 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      /* removed empty footer_9 svg hover rules */
+      .d .sie-footer_9 svg:hover {
+      }
+      .m .sie-footer_9 svg:hover {
+      }
       .d .sie-footer_10 {
         left: 333px;
         top: 164px;
@@ -8543,7 +8584,10 @@
         width: 320px;
         height: 64px;
       }
-      /* removed empty mobile-nav hover rules */
+      .d .sie-mobile-nav_0 .se-simple:hover {
+      }
+      .m .sie-mobile-nav_0 .se-simple:hover {
+      }
       .d .sie-mobile-nav_0 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 0px;
@@ -9163,279 +9207,6 @@
       svg textPath {
         fill: #000000 !important;
       }
-      /* Hide hero, about-me and our-services sections on kontakt page */
-      .sib-hero,
-      .sib-about-me,
-      .sib-our-services {
-        display: none !important;
-        height: 0 !important;
-        overflow: hidden;
-      }
-      /* Hide call-to-action on contact page */
-      .sib-call-to-action {
-        display: none !important;
-        height: 0 !important;
-        overflow: hidden;
-      }
-      /* Create contact section */
-      .sib-contact {
-        min-height: 500px;
-        padding: 80px 20px;
-        background-color: rgba(254, 247, 250, 1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .d .sib-contact {
-        min-height: 600px;
-        padding: 100px 20px;
-      }
-      .m .sib-contact {
-        min-height: auto;
-        padding: 60px 20px;
-      }
-      .sib-contact .sc {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .sib-contact > .ss-s > .sc > div {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
-      }
-      .sib-contact h1 {
-        font-family: 'Merchant Thin', serif !important;
-        font-size: 48px !important;
-        margin-bottom: 50px !important;
-        margin-top: 0 !important;
-        color: #000 !important;
-        text-align: center !important;
-        line-height: 1.2 !important;
-        font-weight: 400 !important;
-        text-transform: none !important;
-        letter-spacing: normal !important;
-        padding: 0 !important;
-      }
-      .m .sib-contact h1 {
-        font-size: 36px !important;
-        margin-bottom: 40px !important;
-      }
-      @media (max-width: 480px) {
-        .sib-contact h1 {
-          font-size: 32px !important;
-          margin-bottom: 30px !important;
-        }
-      }
-      .sib-contact h2 {
-        font-family: 'Syne', sans-serif !important;
-        font-size: 24px !important;
-        font-weight: 600 !important;
-        margin-bottom: 20px !important;
-        margin-top: 0 !important;
-        color: #000 !important;
-        text-align: center !important;
-        line-height: 1.4 !important;
-        text-transform: none !important;
-        letter-spacing: normal !important;
-        padding: 0 !important;
-      }
-      .m .sib-contact h2 {
-        font-size: 20px !important;
-        margin-bottom: 15px !important;
-      }
-      @media (max-width: 480px) {
-        .sib-contact h2 {
-          font-size: 18px !important;
-          margin-bottom: 12px !important;
-        }
-      }
-      .sib-contact p {
-        font-family: 'Assistant', sans-serif !important;
-        font-size: 18px !important;
-        line-height: 1.8 !important;
-        color: #000 !important;
-        text-align: center !important;
-        font-weight: 300 !important;
-        text-transform: none !important;
-        letter-spacing: normal !important;
-        margin: 0 0 10px 0 !important;
-        padding: 0 !important;
-      }
-      .m .sib-contact p {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-      }
-      @media (max-width: 480px) {
-        .sib-contact p {
-          font-size: 15px !important;
-          line-height: 1.5 !important;
-        }
-      }
-      .sib-contact a {
-        color: #000;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        pointer-events: auto !important;
-        z-index: 100 !important;
-        position: relative !important;
-        cursor: pointer !important;
-        display: inline-block !important;
-      }
-      .sib-contact a:hover {
-        opacity: 0.8;
-        transform: translateY(-2px);
-      }
-      /* Specific styles for Booksy button in contact section */
-      .sib-contact div[style*="margin-bottom: 40px"] a {
-        pointer-events: auto !important;
-        z-index: 100 !important;
-        position: relative !important;
-        cursor: pointer !important;
-        display: inline-block !important;
-        margin-top: 10px !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-      .sib-contact div[style*="margin-bottom: 40px"] a:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transform: translateY(-2px);
-      }
-      @media (max-width: 768px) {
-        .sib-contact div[style*="margin-bottom: 40px"] a {
-          padding: 12px 30px !important;
-          font-size: 14px !important;
-          width: 100%;
-          text-align: center;
-        }
-      }
-      @media (max-width: 480px) {
-        .sib-contact div[style*="margin-bottom: 40px"] a {
-          padding: 12px 25px !important;
-          font-size: 13px !important;
-        }
-      }
-      /* Override global text styles for contact section */
-      .sib-contact * {
-        text-transform: none !important;
-        letter-spacing: normal !important;
-      }
-      .sib-contact h1,
-      .sib-contact h2,
-      .sib-contact h3,
-      .sib-contact p,
-      .sib-contact a,
-      .sib-contact span,
-      .sib-contact div {
-        color: #000 !important;
-      }
-      /* Contact section container improvements */
-      .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
-        width: 100% !important;
-        max-width: 700px !important;
-        margin: 0 auto !important;
-        padding: 0 20px !important;
-      }
-      .sib-contact > .ss-s > .sc > div[style*="max-width: 700px"] {
-        width: 100% !important;
-        max-width: 700px !important;
-        margin: 0 auto !important;
-      }
-      .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
-        margin-bottom: 40px !important;
-        width: 100% !important;
-      }
-      @media (max-width: 768px) {
-        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
-          padding: 0 15px !important;
-        }
-        .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
-          margin-bottom: 35px !important;
-        }
-      }
-      @media (max-width: 480px) {
-        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
-          padding: 0 10px !important;
-        }
-        .sib-contact > .ss-s > .sc > div[style*="margin-bottom: 40px"] {
-          margin-bottom: 30px !important;
-        }
-      }
-      /* Additional responsive improvements */
-      @media (max-width: 768px) {
-        .sib-contact .sc {
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
-          padding: 60px 15px !important;
-        }
-        .sib-contact h1 {
-          font-size: 36px !important;
-          margin-bottom: 40px !important;
-        }
-        .sib-contact h2 {
-          font-size: 20px !important;
-        }
-        .sib-contact p {
-          font-size: 16px !important;
-        }
-        .sib-contact div[style*="max-width: 700px"] {
-          max-width: 100% !important;
-          padding: 0 10px !important;
-        }
-      }
-      @media (max-width: 480px) {
-        .sib-contact > .ss-s > .sc > div[style*="text-align: center"] {
-          padding: 40px 10px !important;
-        }
-        .sib-contact h1 {
-          font-size: 32px !important;
-          margin-bottom: 30px !important;
-        }
-        .sib-contact h2 {
-          font-size: 18px !important;
-          margin-bottom: 12px !important;
-        }
-        .sib-contact p {
-          font-size: 15px !important;
-        }
-        .sib-contact div[style*="margin-bottom: 40px"] {
-          margin-bottom: 30px !important;
-        }
-        .sib-contact div[style*="max-width: 700px"] {
-          padding: 0 5px !important;
-        }
-      }
-      /* Ensure proper text alignment and spacing */
-      .sib-contact div[style*="max-width: 700px"] {
-        text-align: center !important;
-      }
-      .sib-contact div[style*="max-width: 700px"] h2 {
-        text-align: center !important;
-      }
-      .sib-contact div[style*="max-width: 700px"] p {
-        text-align: center !important;
-      }
-      /* Button improvements */
-      .sib-contact a[href*="booksy"] {
-        border-radius: 50px !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-      }
-      @media (max-width: 768px) {
-        .sib-contact a[href*="booksy"] {
-          width: 100% !important;
-          text-align: center !important;
-          padding: 12px 30px !important;
-          font-size: 14px !important;
-        }
-      }
-      @media (max-width: 480px) {
-        .sib-contact a[href*="booksy"] {
-          padding: 12px 25px !important;
-          font-size: 13px !important;
-        }
-      }
     </style>
   </head>
   <body>
@@ -9474,659 +9245,7 @@
           </div>
         </div>
       </div>
-      <div id="hero" data-bid="hero" class="sb sib-hero">
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <div data-sid="hero_0" class="sie-hero_0 se">
-              <svg class="se-line">
-                <line
-                  data-d-strokelinecap="butt"
-                  data-d-linestyle="solid"
-                  data-d-thickness="1"
-                  data-d-rotatedwidth="1200"
-                  data-d-rotatedheight="0"
-                  data-d-widthoffset="0"
-                  data-d-heightoffset="0"
-                  data-d-isround="false"
-                  data-d-rotation="0"
-                  data-d-roundedsolid="false"
-                  data-d-dotted="false"
-                  data-d-length="1200"
-                  data-d-mirrorline="false"
-                  data-d-dashwidth="21"
-                  data-d-spacing="15"
-                  data-d-dasharrayvalue="none"
-                  data-m-strokelinecap="butt"
-                  data-m-linestyle="solid"
-                  data-m-thickness="0"
-                  data-m-rotatedwidth="320"
-                  data-m-rotatedheight="0"
-                  data-m-widthoffset="0"
-                  data-m-heightoffset="0"
-                  data-m-isround="false"
-                  data-m-rotation="0"
-                  data-m-roundedsolid="false"
-                  data-m-dotted="false"
-                  data-m-length="320"
-                  data-m-mirrorline="false"
-                  data-m-dashwidth="21"
-                  data-m-spacing="15"
-                  data-m-dasharrayvalue="none"
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="100%"
-                />
-              </svg>
-            </div>
-            <div data-sid="hero_1" class="sie-hero_1 se">
-              <div
-                style="width: 100%; height: 100%"
-                data-img="hero_1"
-                class="se-img se-gr slzy"
-              ></div>
-              <noscript
-                ><img
-                  src="/SnapInsta.to_500367050_18278187226249149_3709864977035751354_n.jpg"
-                  class="se-img"
-                  alt="Black Rose"
-                  title="Black Rose"
-              /></noscript>
-            </div>
-            <a
-              href="/services"
-              target="_self"
-              class="sie-hero_2 se-bd se-bm se"
-              data-sid="hero_2"
-              ><div class="se-simple"></div></a
-            ><a
-              href="/services"
-              target="_self"
-              class="sie-hero_4 se"
-              data-sid="hero_4"
-              ><p class="se-t sie-hero_4-text st-m-paragraph st-d-paragraph">
-                poznaj NASZE USŁUGI
-              </p></a
-            >
-            <div data-sid="hero_5" class="sie-hero_5 se">
-              <p
-                class="se-t sie-hero_5-text st-m-paragraph st-d-paragraph se-rc"
-              >
-                Write an introduction of your business here. Everyone needs a
-                friend. Friends are the most valuable things in the world. When
-                things happen - enjoy them. They're little gifts. This is
-                probably the greatest thing to happen in my life - to be able to
-                share this with you.&nbsp;<br />
-              </p>
-            </div>
-            <div class="str-id" data-tran="hero_6">
-              <div data-sid="hero_6" class="sie-hero_6 se">
-                <svg class="se-line">
-                  <line
-                    data-d-strokelinecap="butt"
-                    data-d-linestyle="solid"
-                    data-d-thickness="15"
-                    data-d-rotatedwidth="257"
-                    data-d-rotatedheight="0"
-                    data-d-widthoffset="0"
-                    data-d-heightoffset="0"
-                    data-d-isround="false"
-                    data-d-rotation="0"
-                    data-d-roundedsolid="false"
-                    data-d-dotted="false"
-                    data-d-length="257"
-                    data-d-mirrorline="false"
-                    data-d-dashwidth="21"
-                    data-d-spacing="15"
-                    data-d-dasharrayvalue="none"
-                    data-m-strokelinecap="butt"
-                    data-m-linestyle="solid"
-                    data-m-thickness="15"
-                    data-m-rotatedwidth="132"
-                    data-m-rotatedheight="0"
-                    data-m-widthoffset="0"
-                    data-m-heightoffset="0"
-                    data-m-isround="false"
-                    data-m-rotation="0"
-                    data-m-roundedsolid="false"
-                    data-m-dotted="false"
-                    data-m-length="132"
-                    data-m-mirrorline="false"
-                    data-m-dashwidth="21"
-                    data-m-spacing="15"
-                    data-m-dasharrayvalue="none"
-                    x1="0"
-                    y1="0"
-                    x2="100%"
-                    y2="100%"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="str-im str-id" data-tran="hero_7">
-              <div data-sid="hero_7" class="sie-hero_7 se">
-                <h1
-                  class="se-t sie-hero_7-text st-m-paragraph st-d-paragraph se-rc"
-                >
-                  Podkreśl Swoje Piękno,<i> Naturalnie</i><br />
-                </h1>
-              </div>
-            </div>
-            <div class="str-im str-id" data-tran="hero_8">
-              <div data-sid="hero_8" class="sie-hero_8 se">
-                <p class="se-t sie-hero_8-text st-m-title st-d-title se-rc">
-                  spersonalizowane zabiegi stworzone specjalnie dla Ciebie<br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        id="our-services"
-        data-bid="our-services"
-        class="sb sib-our-services"
-      >
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <div class="str-id" data-tran="our-services_0">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_0 se"
-                data-sid="our-services_0"
-                ><div class="se-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                      fill="none"
-                      stroke="#E7C9C9"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="32"
-                      d="M256 112v288m144-144H112"
-                    ></path>
-                  </svg></div
-              ></a>
-            </div>
-            <div class="str-id" data-tran="our-services_1">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_1 se"
-                data-sid="our-services_1"
-                ><h3 class="se-t sie-our-services_1-text st-m-title st-d-title">
-                  Manicure<br /></h3
-              ></a>
-            </div>
-            <div data-sid="our-services_2" class="sie-our-services_2 se">
-              <svg class="se-line">
-                <line
-                  data-d-strokelinecap="butt"
-                  data-d-linestyle="solid"
-                  data-d-thickness="1"
-                  data-d-rotatedwidth="436"
-                  data-d-rotatedheight="0"
-                  data-d-widthoffset="0"
-                  data-d-heightoffset="0"
-                  data-d-isround="false"
-                  data-d-rotation="0"
-                  data-d-roundedsolid="false"
-                  data-d-dotted="false"
-                  data-d-length="436"
-                  data-d-mirrorline="false"
-                  data-d-dashwidth="21"
-                  data-d-spacing="15"
-                  data-d-dasharrayvalue="none"
-                  data-m-strokelinecap="butt"
-                  data-m-linestyle="solid"
-                  data-m-thickness="1"
-                  data-m-rotatedwidth="266"
-                  data-m-rotatedheight="0"
-                  data-m-widthoffset="0"
-                  data-m-heightoffset="0"
-                  data-m-isround="false"
-                  data-m-rotation="0"
-                  data-m-roundedsolid="false"
-                  data-m-dotted="false"
-                  data-m-length="266"
-                  data-m-mirrorline="false"
-                  data-m-dashwidth="21"
-                  data-m-spacing="15"
-                  data-m-dasharrayvalue="none"
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="100%"
-                />
-              </svg>
-            </div>
-            <div class="str-id" data-tran="our-services_3">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_3 se"
-                data-sid="our-services_3"
-                ><div class="se-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                      fill="none"
-                      stroke="#E7C9C9"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="32"
-                      d="M256 112v288m144-144H112"
-                    ></path>
-                  </svg></div
-              ></a>
-            </div>
-            <div class="str-id" data-tran="our-services_4">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_4 se"
-                data-sid="our-services_4"
-                ><h3 class="se-t sie-our-services_4-text st-m-title st-d-title">
-                  Pedicure<br /></h3
-              ></a>
-            </div>
-            <div data-sid="our-services_5" class="sie-our-services_5 se">
-              <svg class="se-line">
-                <line
-                  data-d-strokelinecap="butt"
-                  data-d-linestyle="solid"
-                  data-d-thickness="1"
-                  data-d-rotatedwidth="436"
-                  data-d-rotatedheight="0"
-                  data-d-widthoffset="0"
-                  data-d-heightoffset="0"
-                  data-d-isround="false"
-                  data-d-rotation="0"
-                  data-d-roundedsolid="false"
-                  data-d-dotted="false"
-                  data-d-length="436"
-                  data-d-mirrorline="false"
-                  data-d-dashwidth="21"
-                  data-d-spacing="15"
-                  data-d-dasharrayvalue="none"
-                  data-m-strokelinecap="butt"
-                  data-m-linestyle="solid"
-                  data-m-thickness="1"
-                  data-m-rotatedwidth="266"
-                  data-m-rotatedheight="0"
-                  data-m-widthoffset="0"
-                  data-m-heightoffset="0"
-                  data-m-isround="false"
-                  data-m-rotation="0"
-                  data-m-roundedsolid="false"
-                  data-m-dotted="false"
-                  data-m-length="266"
-                  data-m-mirrorline="false"
-                  data-m-dashwidth="21"
-                  data-m-spacing="15"
-                  data-m-dasharrayvalue="none"
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="100%"
-                />
-              </svg>
-            </div>
-            <div class="str-id" data-tran="our-services_6">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_6 se"
-                data-sid="our-services_6"
-                ><div class="se-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                      fill="none"
-                      stroke="#E7C9C9"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="32"
-                      d="M256 112v288m144-144H112"
-                    ></path>
-                  </svg></div
-              ></a>
-            </div>
-            <div class="str-id" data-tran="our-services_7">
-              <a
-                href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-                target="_blank"
-                class="sie-our-services_7 se"
-                data-sid="our-services_7"
-                ><h3 class="se-t sie-our-services_7-text st-m-title st-d-title">
-                  Depilacja woskiem<br /></h3
-              ></a>
-            </div>
-            <div data-sid="our-services_8" class="sie-our-services_8 se">
-              <svg class="se-line">
-                <line
-                  data-d-strokelinecap="butt"
-                  data-d-linestyle="solid"
-                  data-d-thickness="1"
-                  data-d-rotatedwidth="436"
-                  data-d-rotatedheight="0"
-                  data-d-widthoffset="0"
-                  data-d-heightoffset="0"
-                  data-d-isround="false"
-                  data-d-rotation="0"
-                  data-d-roundedsolid="false"
-                  data-d-dotted="false"
-                  data-d-length="436"
-                  data-d-mirrorline="false"
-                  data-d-dashwidth="21"
-                  data-d-spacing="15"
-                  data-d-dasharrayvalue="none"
-                  data-m-strokelinecap="butt"
-                  data-m-linestyle="solid"
-                  data-m-thickness="1"
-                  data-m-rotatedwidth="266"
-                  data-m-rotatedheight="0"
-                  data-m-widthoffset="0"
-                  data-m-heightoffset="0"
-                  data-m-isround="false"
-                  data-m-rotation="0"
-                  data-m-roundedsolid="false"
-                  data-m-dotted="false"
-                  data-m-length="266"
-                  data-m-mirrorline="false"
-                  data-m-dashwidth="21"
-                  data-m-spacing="15"
-                  data-m-dasharrayvalue="none"
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="100%"
-                />
-              </svg>
-            </div>
-            <div class="str-im str-id" data-tran="our-services_9">
-              <div data-sid="our-services_9" class="sie-our-services_9 se">
-                <p
-                  class="se-t sie-our-services_9-text st-m-title st-d-title se-rc"
-                >
-                  PODKREŚLMY TWOJE NATURALNE PIĘKNO<br />
-                </p>
-              </div>
-            </div>
-            <div data-sid="our-services_10" class="sie-our-services_10 se">
-              <div class="si-embed">
-                <div class="si-embed">
-                  <style>
-                    .marquee {
-                      display: flex;
-                      overflow: hidden;
-                      gap: 1rem; /* whatever you want but match it */
-                      position: relative;
-                      user-select: none;
-                    }
-
-                    .marquee-content {
-                      flex-shrink: 0;
-                      display: flex;
-                      justify-content: space-around;
-                      color: #f3e8e8; /* change color */
-                      font-family: "Merchant Thin"; /* replace with your font */
-                      font-weight: 400;
-                      text-transform: uppercase;
-                      line-height: 1.2em !important;
-                      font-size: 150px;
-                      letter-spacing: 2px;
-                      min-width: 100%;
-                      gap: 1rem; /* match to gap above */
-                    }
-
-                  </style>
-
-                  <div class="marquee">
-                    <div class="marquee-content">
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                    </div>
-                    <div class="marquee-content">
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                      <div>UWOLNIJ SWOJE WEWNĘTRZNE ŚWIATŁO</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div data-sid="our-services_11" class="sie-our-services_11 se">
-              <div class="se-simple"></div>
-            </div>
-            <div data-sid="our-services_12" class="sie-our-services_12 se">
-              <h2
-                class="se-t sie-our-services_12-text st-m-subheading st-d-subheading se-rc"
-              >
-                NASZE USŁUGI
-              </h2>
-            </div>
-            <div class="str-im str-id" data-tran="our-services_13">
-              <div data-sid="our-services_13" class="sie-our-services_13 se">
-                <div
-                  style="width: 100%; height: 100%"
-                  data-img="our-services_13"
-                  class="se-img se-gr slzy"
-                ></div>
-                <noscript
-                  ><img
-                    src="/SnapInsta.to_500367050_18278187226249149_3709864977035751354_n.jpg"
-                    class="se-img"
-                    alt="Black Rose"
-                    title="Black Rose"
-                /></noscript>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="about-me" data-bid="about-me" class="sb sib-about-me">
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <div class="str-id" data-tran="about-me_0">
-              <div data-sid="about-me_0" class="sie-about-me_0 se">
-                <div
-                  style="width: 100%; height: 100%"
-                  data-img="about-me_0"
-                  class="se-img se-gr slzy"
-                ></div>
-                <noscript
-                  ><img
-                    src="/SnapInsta.to_500367050_18278187226249149_3709864977035751354_n.jpg"
-                    class="se-img"
-                    alt="Black Rose"
-                    title="Black Rose"
-                /></noscript>
-              </div>
-            </div>
-            <div class="str-id" data-tran="about-me_1">
-              <div data-sid="about-me_1" class="sie-about-me_1 se">
-                <div class="si-embed">
-                  <svg id="static-text" viewBox="0 0 500 500">
-                    <defs>
-                      <path
-                        d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                        id="circle"
-                      ></path>
-                    </defs>
-                    <text dy="30">
-                      <textPath xlink:href="#circle">
-                        #1 EKSPERTKA PIELĘGNACJI SKÓRY W CZECHOWICACH-DZIEDZICACH
-                      </textPath>
-                    </text>
-                  </svg>
-                  <style>
-                    @font-face {
-                      font-family: "Syne";
-                      src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-                    }
-                    #static-text {
-                      width: 100%;
-                      align-items: center;
-                    }
-                    svg textPath {
-                      font-size: 40px;
-                      font-family: "Syne";
-                      font-weight: 800;
-                      letter-spacing: 18px;
-                      text-transform: uppercase;
-                      fill: #eadbdb;
-                    }
-                  </style>
-                </div>
-              </div>
-            </div>
-            <div class="str-id" data-tran="about-me_2">
-              <div data-sid="about-me_2" class="sie-about-me_2 se">
-                <svg class="se-line">
-                  <line
-                    data-d-strokelinecap="butt"
-                    data-d-linestyle="solid"
-                    data-d-thickness="15"
-                    data-d-rotatedwidth="340"
-                    data-d-rotatedheight="0"
-                    data-d-widthoffset="0"
-                    data-d-heightoffset="0"
-                    data-d-isround="false"
-                    data-d-rotation="0"
-                    data-d-roundedsolid="false"
-                    data-d-dotted="false"
-                    data-d-length="340"
-                    data-d-mirrorline="false"
-                    data-d-dashwidth="21"
-                    data-d-spacing="15"
-                    data-d-dasharrayvalue="none"
-                    data-m-strokelinecap="butt"
-                    data-m-linestyle="solid"
-                    data-m-thickness="10"
-                    data-m-rotatedwidth="120"
-                    data-m-rotatedheight="0"
-                    data-m-widthoffset="0"
-                    data-m-heightoffset="0"
-                    data-m-isround="false"
-                    data-m-rotation="0"
-                    data-m-roundedsolid="false"
-                    data-m-dotted="false"
-                    data-m-length="120"
-                    data-m-mirrorline="false"
-                    data-m-dashwidth="21"
-                    data-m-spacing="15"
-                    data-m-dasharrayvalue="none"
-                    x1="0"
-                    y1="0"
-                    x2="100%"
-                    y2="100%"
-                  />
-                </svg>
-              </div>
-            </div>
-            <a
-              href="/about"
-              target="_self"
-              class="sie-about-me_3 se-bd se-bm se"
-              data-sid="about-me_3"
-              ><div class="se-simple"></div></a
-            ><a
-              href="/about"
-              target="_self"
-              class="sie-about-me_5 se"
-              data-sid="about-me_5"
-              ><p
-                class="se-t sie-about-me_5-text st-m-paragraph st-d-paragraph"
-              >
-                POZNAJ MNIE
-              </p></a
-            >
-            <div data-sid="about-me_6" class="sie-about-me_6 se">
-              <p
-                class="se-t sie-about-me_6-text st-m-paragraph st-d-paragraph se-rc"
-              >
-                Napisz tutaj krótkie wprowadzenie o sobie. Każdy potrzebuje
-                przyjaciela. Przyjaciele są najcenniejszymi rzeczami na świecie. Gdy
-                coś się dzieje - ciesz się tym. To małe prezenty. To jest
-                prawdopodobnie najwspanialsza rzecz, jaka przydarzyła mi się w życiu - możliwość
-                podzielenia się tym z Tobą. Każdy potrzebuje przyjaciela. Przyjaciele są
-                najcenniejszymi rzeczami na świecie.&nbsp;&nbsp;<br />
-              </p>
-            </div>
-            <div class="str-im str-id" data-tran="about-me_7">
-              <div data-sid="about-me_7" class="sie-about-me_7 se">
-                <h3
-                  class="se-t sie-about-me_7-text st-m-title st-d-title se-rc"
-                >
-                  portland skincare + FACIAL EXPERT<br />
-                </h3>
-              </div>
-            </div>
-            <div class="str-id" data-tran="about-me_8">
-              <div data-sid="about-me_8" class="sie-about-me_8 se">
-                <h2
-                  class="se-t sie-about-me_8-text st-m-title st-d-title se-rc"
-                >
-                  Hi There, I'm Jessie!<br />
-                </h2>
-              </div>
-            </div>
-            <div data-sid="about-me_9" class="sie-about-me_9 se">
-              <svg class="se-line">
-                <line
-                  data-d-strokelinecap="butt"
-                  data-d-linestyle="solid"
-                  data-d-thickness="1"
-                  data-d-rotatedwidth="1200"
-                  data-d-rotatedheight="0"
-                  data-d-widthoffset="0"
-                  data-d-heightoffset="0"
-                  data-d-isround="false"
-                  data-d-rotation="0"
-                  data-d-roundedsolid="false"
-                  data-d-dotted="false"
-                  data-d-length="1200"
-                  data-d-mirrorline="false"
-                  data-d-dashwidth="21"
-                  data-d-spacing="15"
-                  data-d-dasharrayvalue="none"
-                  data-m-strokelinecap="butt"
-                  data-m-linestyle="solid"
-                  data-m-thickness="0"
-                  data-m-rotatedwidth="320"
-                  data-m-rotatedheight="0"
-                  data-m-widthoffset="0"
-                  data-m-heightoffset="0"
-                  data-m-isround="false"
-                  data-m-rotation="0"
-                  data-m-roundedsolid="false"
-                  data-m-dotted="false"
-                  data-m-length="320"
-                  data-m-mirrorline="false"
-                  data-m-dashwidth="21"
-                  data-m-spacing="15"
-                  data-m-dasharrayvalue="none"
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="100%"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="contact" data-bid="contact" class="sb sib-contact">
+            <div id="contact" data-bid="contact" class="sb sib-contact">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px; max-width: 100%;">
             <div style="text-align: center; padding: 80px 20px; width: 100%; box-sizing: border-box;">
