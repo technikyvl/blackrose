@@ -2709,6 +2709,33 @@
         padding: 8px 16px;
         border-radius: 4px;
         display: inline-block;
+        isolation: isolate;
+      }
+      /* Logo wewnątrz nav, skala jak przyciski */
+      .sie-header-nav .nav-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+      }
+      .sie-header-nav .nav-logo::before {
+        content: none;
+      }
+      .sie-header-nav .nav-logo img {
+        height: 22px;
+        width: auto;
+        display: block;
+      }
+      .m .sie-header-nav .nav-logo {
+        border-bottom: none;
+        padding: 12px 18px;
+      }
+      @media (max-width: 768px) {
+        .sie-header-nav .nav-logo img {
+          height: 20px;
+        }
       }
       .d .sie-header-link {
         font-size: 15px;
@@ -9180,6 +9207,9 @@
               <span></span>
             </button>
             <nav class="sie-header-nav">
+              <a href="/" class="sie-header-link nav-logo">
+                <img src="/Bez%20nazwy%20(340%20x%20100%20px).png" alt="Black Rose" />
+              </a>
               <a href="/" class="sie-header-link">STRONA GŁÓWNA</a>
               <a href="/services" class="sie-header-link">USŁUGI</a>
               <a href="/about" class="sie-header-link">O NAS</a>
