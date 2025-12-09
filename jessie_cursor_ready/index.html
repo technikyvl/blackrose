@@ -2817,10 +2817,6 @@
         height: 0 !important;
         overflow: hidden !important;
       }
-      /* Schowaj logo wewnątrz nav i nie rezerwuj miejsca */
-      .sie-header-nav .nav-logo {
-        display: none !important;
-      }
       /* Upewnij się, że wszystkie linki nawigacyjne mają prawidłowe style hover */
       .sie-header-nav .sie-header-link {
         pointer-events: auto !important;
@@ -2884,42 +2880,6 @@
         border-radius: 4px;
         display: inline-block;
         isolation: isolate;
-      }
-      /* Logo wewnątrz nav, skala jak przyciski */
-      .sie-header-nav .nav-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px 12px;
-        border-radius: 4px;
-        border: none;
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .sie-header-nav .nav-logo::before {
-        content: none;
-      }
-      .sie-header-nav .nav-logo img {
-        height: 26px;
-        width: auto;
-        display: block;
-      }
-      .m .sie-header-nav .nav-logo {
-        border-bottom: none;
-        padding: 12px 18px;
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        width: 100%;
-        justify-content: center;
-      }
-      @media (max-width: 768px) {
-        .sie-header-nav .nav-logo img {
-          height: 22px;
-        }
       }
       .d .sie-header-link {
         font-size: 15px;
