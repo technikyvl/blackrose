@@ -2623,7 +2623,7 @@
         pointer-events: auto !important;
       }
       .m .sib-header {
-        height: 80px;
+        height: 120px;
       }
       .d .sib-header {
         height: 120px;
@@ -2667,7 +2667,7 @@
       .m .sie-header-nav {
         display: none !important;
         position: fixed;
-        top: 80px;
+        top: 120px;
         left: 0;
         right: 0;
         background-color: rgba(254, 247, 250, 1);
@@ -2907,13 +2907,27 @@
         .sie-header-logo {
           left: 15px !important;
           width: fit-content !important;
-          max-width: 1080px !important;
-          height: 285px !important;
+          max-width: 360px !important;
+          height: 95px !important;
         }
         .sie-header-logo .se-img {
-          height: 285px !important;
-          max-width: 1080px !important;
-          max-height: 285px !important;
+          height: 95px !important;
+          max-width: 360px !important;
+          max-height: 95px !important;
+        }
+      }
+      /* Responsywność logo - telefony */
+      @media (max-width: 480px) {
+        .sie-header-logo {
+          left: 12px !important;
+          width: fit-content !important;
+          max-width: 280px !important;
+          height: 80px !important;
+        }
+        .sie-header-logo .se-img {
+          height: 80px !important;
+          max-width: 280px !important;
+          max-height: 80px !important;
         }
       }
       .sie-header-logo .se-img {
