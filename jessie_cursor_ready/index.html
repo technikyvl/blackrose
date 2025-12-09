@@ -2816,9 +2816,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8px 16px;
+        padding: 8px 12px;
         border-radius: 4px;
         border: none;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
       }
       .sie-header-nav .nav-logo::before {
         content: none;
@@ -2831,6 +2835,12 @@
       .m .sie-header-nav .nav-logo {
         border-bottom: none;
         padding: 12px 18px;
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        justify-content: center;
       }
       @media (max-width: 768px) {
         .sie-header-nav .nav-logo img {
