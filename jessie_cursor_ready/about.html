@@ -22,7 +22,11 @@
       }
       /* Hard hide any injected Showit footer */
       #footer,
+      [data-bid="footer"],
+      [data-bid="copyright"],
       .sib-footer,
+      .sb.sib-footer,
+      .ss-s:has(> .sib-footer),
       .sie-footer_0,
       .sie-footer_1,
       .sie-footer_2,
@@ -47,9 +51,15 @@
       .sie-footer_23 {
         display: none !important;
         height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
         overflow: hidden !important;
         padding: 0 !important;
         margin: 0 !important;
+        border: 0 !important;
+      }
+      .sg-img-container {
+        display: none !important;
       }
       html.d {
         background-color: rgba(254, 247, 250, 1);
