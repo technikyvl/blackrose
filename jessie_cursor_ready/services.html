@@ -3139,6 +3139,107 @@
       .sie-header-menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
       }
+      /* --- Services list override --- */
+      .sib-our-services .ss-bg > * {
+        display: none !important;
+      }
+      .br-services-list-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 40px 16px;
+        box-sizing: border-box;
+      }
+      .br-services-list {
+        width: 100%;
+        max-width: 1200px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        padding: 32px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .br-services-list h2 {
+        grid-column: 1 / -1;
+        margin: 0 0 8px;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+      }
+      .br-services-list .br-subtitle {
+        grid-column: 1 / -1;
+        margin: 0 0 24px;
+        text-align: center;
+        font-family: "Assistant", sans-serif;
+        font-size: 16px;
+        color: #444;
+        letter-spacing: 0.01em;
+      }
+      .br-service-group h3 {
+        margin: 0 0 12px;
+        font-family: "Syne", sans-serif;
+        font-size: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .br-service-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .br-service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        background: #faf7f9;
+      }
+      .br-service-item .br-name {
+        font-family: "Assistant", sans-serif;
+        font-weight: 600;
+        color: #1a1a1a;
+        line-height: 1.35;
+      }
+      .br-service-item .br-meta {
+        font-family: "Assistant", sans-serif;
+        font-size: 13px;
+        color: #555;
+        line-height: 1.3;
+      }
+      .br-service-item .br-price {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        color: #000;
+        white-space: nowrap;
+        margin-left: auto;
+      }
+      @media (max-width: 768px) {
+        .br-services-list {
+          padding: 20px;
+          gap: 16px;
+        }
+        .br-services-list h2 {
+          font-size: 20px;
+        }
+        .br-service-group h3 {
+          font-size: 16px;
+        }
+        .br-service-item {
+          padding: 10px;
+        }
+      }
       @media (max-width: 768px) {
         .sie-header-logo {
           left: 20px !important;
@@ -9488,6 +9589,226 @@
       >
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px">
+            <div class="br-services-list-wrapper">
+              <div class="br-services-list">
+                <h2>Usługi</h2>
+                <p class="br-subtitle">
+                  Pełna lista usług i cen z Booksy – Salon Kosmetyczny Black Rose
+                </p>
+
+                <div class="br-service-group">
+                  <h3>Popularne usługi</h3>
+                  <ul>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Hybrydowy Kolor</div>
+                        <div class="br-meta">1g 30min</div>
+                      </div>
+                      <div class="br-price">130,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Żelowanie Naturalnej Płytki Paznokcia</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">170,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Uzupełnienie Żelowe do 3 tygodni - krótkie</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">160,00 zł</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="br-service-group">
+                  <h3>Paznokcie u rąk</h3>
+                  <ul>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Zdejmowanie stylizacji + pielęgnacja</div>
+                        <div class="br-meta">1g 15min</div>
+                      </div>
+                      <div class="br-price">85,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Usunięcie Hybrydy wykonanej w innym Salonie</div>
+                        <div class="br-meta">30min</div>
+                      </div>
+                      <div class="br-price">25,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Klasyczny</div>
+                        <div class="br-meta">1g</div>
+                      </div>
+                      <div class="br-price">65,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Zdobienie paznokci (wzory/naklejki/ozdoby)</div>
+                        <div class="br-meta">15min</div>
+                      </div>
+                      <div class="br-price">od 5,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Naprawa paznokcia</div>
+                        <div class="br-meta">15min</div>
+                      </div>
+                      <div class="br-price">25,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Zdejmowanie stylizacji przy założeniu nowej</div>
+                        <div class="br-meta">30min</div>
+                      </div>
+                      <div class="br-price">20,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Przedłużanie Żelowe - krótkie</div>
+                        <div class="br-meta">2g 30min</div>
+                      </div>
+                      <div class="br-price">185,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Przedłużenie Żelowe - długie</div>
+                        <div class="br-meta">2g 30min</div>
+                      </div>
+                      <div class="br-price">200,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Uzupełnienie Żelowe do 3 tygodni - długie</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">170,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Hybrydowy Natural</div>
+                        <div class="br-meta">1g</div>
+                      </div>
+                      <div class="br-price">120,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Hybrydowy Babyboomer / French / Ombre</div>
+                        <div class="br-meta">1g 30min</div>
+                      </div>
+                      <div class="br-price">140,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Hybrydowy Kolor</div>
+                        <div class="br-meta">1g 30min</div>
+                      </div>
+                      <div class="br-price">130,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Żelowanie Naturalnej Płytki Paznokcia</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">170,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Uzupełnienie Żelowe do 3 tygodni - krótkie</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">160,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Manicure Klasyczny (krótsza wizyta)</div>
+                        <div class="br-meta">40min</div>
+                      </div>
+                      <div class="br-price">85,00 zł</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="br-service-group">
+                  <h3>Pedicure</h3>
+                  <ul>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure stóp Frezarkowy + opracowanie paznokci</div>
+                        <div class="br-meta">30min</div>
+                      </div>
+                      <div class="br-price">90,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure stóp Frezarkowy + Hybryda</div>
+                        <div class="br-meta">1g 45min</div>
+                      </div>
+                      <div class="br-price">150,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure stóp Kosmetyczny</div>
+                        <div class="br-meta">1g 30min</div>
+                      </div>
+                      <div class="br-price">160,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure stóp Kosmetyczny + Hybryda</div>
+                        <div class="br-meta">2g</div>
+                      </div>
+                      <div class="br-price">190,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Usunięcie Hybrydy + Pedicure Kosmetyczny</div>
+                        <div class="br-meta">2g</div>
+                      </div>
+                      <div class="br-price">170,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Usunięcie Hybrydy + pielęgnacja paznokci</div>
+                        <div class="br-meta">1g 15min</div>
+                      </div>
+                      <div class="br-price">80,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure klasyczny</div>
+                        <div class="br-meta">45min</div>
+                      </div>
+                      <div class="br-price">85,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure Hybrydowy - Natural</div>
+                        <div class="br-meta">1g</div>
+                      </div>
+                      <div class="br-price">120,00 zł</div>
+                    </li>
+                    <li class="br-service-item">
+                      <div>
+                        <div class="br-name">Pedicure Hybrydowy - Kolor / French</div>
+                        <div class="br-meta">1g 30min</div>
+                      </div>
+                      <div class="br-price">140,00 zł</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <p class="br-subtitle" style="grid-column: 1 / -1;">
+                  Aktualne ceny i dostępne terminy sprawdzisz na Booksy:
+                  <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Booksy – Salon Kosmetyczny Black Rose</a>
+                </p>
+              </div>
+            </div>
             <div class="str-id" data-tran="our-services_0">
               <a
                 href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
