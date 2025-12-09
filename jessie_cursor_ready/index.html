@@ -2739,6 +2739,14 @@
         z-index: 100;
         isolation: isolate;
       }
+      /* Ukrycie logo z paska nawigacji (desktop i mobile) */
+      .sie-header-logo,
+      .sie-header-logo .se-img {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
       /* Upewnij się, że wszystkie linki nawigacyjne mają prawidłowe style hover */
       .sie-header-nav .sie-header-link {
         pointer-events: auto !important;
@@ -2856,31 +2864,10 @@
         transform: translateY(0);
       }
       .sie-header-logo {
-        position: absolute !important;
-        left: 20px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        transform-origin: 50% 50% !important;
-        width: fit-content !important;
-        max-width: 2160px !important;
-        height: 420px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        pointer-events: none !important;
-        z-index: 10000 !important;
-        transition: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: none !important;
-        outline: none !important;
-        text-decoration: none !important;
-        isolation: isolate !important;
-        overflow: visible !important;
-        box-sizing: border-box !important;
-        gap: 0 !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
       }
       /* Upewnij się, że link logo działa - ale tylko obraz jest klikalny */
       .sie-header-logo,
@@ -2928,27 +2915,10 @@
         pointer-events: none !important;
       }
       .m .sie-header-logo {
-        left: 15px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        transform-origin: 50% 50% !important;
-        width: fit-content !important;
-        max-width: 200px !important;
-        height: 60px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        z-index: 10000 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: none !important;
-        outline: none !important;
-        transition: none !important;
-        pointer-events: none !important;
-        isolation: isolate !important;
-        overflow: visible !important;
-        box-sizing: border-box !important;
-        gap: 0 !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
       }
       .m .sie-header-logo .se-img {
         width: auto !important;
