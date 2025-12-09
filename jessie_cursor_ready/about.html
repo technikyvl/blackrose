@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="d" lang="pl">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,12 +9,6 @@
       rel="stylesheet"
       type="text/css"
     />
-    <script
-      id="si-jquery"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script src="//lib.showit.co/engine/2.6.2/showit-lib.min.js"></script>
-    <script src="//lib.showit.co/engine/2.6.2/showit.min.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -199,87 +193,6 @@
           flex-direction: column;
         }
       }
-      /* Announcement bar (exactly jak w index) */
-      .m .sib-announcement-bar {
-        height: 60px;
-      }
-      .d .sib-announcement-bar {
-        height: 55px;
-      }
-      .sib-announcement-bar .ss-s,
-      .sib-announcement-bar .ss-bg {
-        height: 100%;
-        width: 100%;
-      }
-      .sib-announcement-bar .sc {
-        height: 100%;
-        margin: 0 auto;
-        position: relative;
-      }
-      .m .sib-announcement-bar .ss-bg {
-        background-color: rgba(254, 231, 239, 1);
-      }
-      .d .sib-announcement-bar .ss-bg {
-        background-color: rgba(254, 231, 239, 1);
-      }
-      .d .sie-announcement-bar_0:hover {
-        opacity: 0.5;
-        transition-duration: 0.5s;
-        transition-property: opacity;
-      }
-      .m .sie-announcement-bar_0:hover {
-        opacity: 0.5;
-        transition-duration: 0.5s;
-        transition-property: opacity;
-      }
-      .d .sie-announcement-bar_0 {
-        left: 369px;
-        top: 21px;
-        width: 463px;
-        height: 13px;
-        transition-duration: 0.5s;
-        transition-property: opacity;
-      }
-      .m .sie-announcement-bar_0 {
-        left: 43px;
-        top: 15px;
-        width: 234px;
-        height: 30px;
-        transition-duration: 0.5s;
-        transition-property: opacity;
-      }
-      .d .sie-announcement-bar_0-text:hover {
-        color: rgba(47, 47, 47, 1);
-      }
-      .m .sie-announcement-bar_0-text:hover {
-        color: rgba(47, 47, 47, 1);
-      }
-      .d .sie-announcement-bar_0-text {
-        color: rgba(47, 47, 47, 1);
-        text-transform: uppercase;
-        line-height: 1;
-        letter-spacing: 0.12em;
-        font-size: 13px;
-        text-align: center;
-        font-family: "Syne";
-        font-weight: 500;
-        font-style: normal;
-        transition-duration: 0.5s;
-        transition-property: color;
-      }
-      .m .sie-announcement-bar_0-text {
-        color: rgba(47, 47, 47, 1);
-        text-transform: uppercase;
-        line-height: 1.5;
-        letter-spacing: 0.12em;
-        font-size: 11px;
-        text-align: center;
-        font-family: "Syne";
-        font-weight: 500;
-        font-style: normal;
-        transition-duration: 0.5s;
-        transition-property: color;
-      }
       .hero {
         max-width: 1100px;
         margin: 0 auto;
@@ -332,7 +245,7 @@
           font-size: 32px;
         }
         .hero p.lead {
-          font-size: 16px;
+        font-size: 16px;
         }
         .card {
           padding: 16px;
@@ -407,28 +320,6 @@
   </head>
   <body>
     <div id="si-sp" class="sp">
-      <div
-        id="announcement-bar"
-        data-bid="announcement-bar"
-        class="sb sib-announcement-bar"
-      >
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <a
-              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="sie-announcement-bar_0 se"
-              data-sid="announcement-bar_0"
-              ><p
-                class="se-t sie-announcement-bar_0-text st-m-paragraph st-d-paragraph"
-              >
-                nowy zabieg hydrafacial! ZAREZERWUJ JUŻ DZIŚ
-              </p></a
-            >
-          </div>
-        </div>
-      </div>
       <div id="header" data-bid="header" class="sb sib-header sb-lm">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px">
@@ -476,19 +367,19 @@
         <div class="card">
           <h3>Doświadczenie</h3>
           <p>Wykwalifikowany zespół i nowoczesne techniki pielęgnacji.</p>
-        </div>
+                    </div>
         <div class="card">
           <h3>Jakość</h3>
           <p>Pracujemy na sprawdzonych produktach i dbamy o bezpieczeństwo.</p>
-        </div>
+                    </div>
         <div class="card">
           <h3>Indywidualnie</h3>
           <p>Dobieramy zabiegi do potrzeb Twojej skóry i stylu życia.</p>
-        </div>
+                  </div>
         <div class="card">
           <h3>Lokalizacja</h3>
           <p>ks. Barabasza 6, 43-502 Czechowice-Dziedzice.</p>
-        </div>
+                </div>
       </section>
 
       <footer class="br-mini-footer">
@@ -498,101 +389,60 @@
             >© 2025 Black Rose. Zaprojektowane przez BeautyRise | Wojciech
             Zaniewski & Jakub Eliasik</span
           >
-        </div>
+            </div>
         <div class="br-mini-col">
           <h4>Usługi</h4>
           <a href="/services">Depilacja Woskiem</a>
           <a href="/services">Pedicure</a>
           <a href="/services">Manicure</a>
           <a href="/services">Wszystkie Usługi</a>
-        </div>
+              </div>
         <div class="br-mini-col">
           <h4>Salon</h4>
           <a href="/about.html">O Nas</a>
           <a href="/services">Kontakt</a>
           <a href="/about.html">Godziny Otwarcia</a>
           <a href="/about.html">Lokalizacja</a>
-        </div>
+            </div>
         <div class="br-mini-col">
           <h4>Informacje</h4>
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Rezerwacja</a
           >
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Booksy</a
           >
           <a href="/services">FAQ</a>
           <a href="/services">Regulamin</a>
-        </div>
+            </div>
         <div class="br-mini-col">
           <h4>Śledź nas</h4>
-          <a
-            href="https://www.instagram.com/black.rose.czechowice/"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://www.instagram.com/black.rose.czechowice/"
+              target="_blank"
+              rel="noopener noreferrer"
             >Instagram</a
           >
           <a
             href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >Facebook</a
           >
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Booksy</a
           >
-        </div>
-      </footer>
+      </div>
+    </footer>
     </div>
-    <script>
-      (() => {
-        const root = document.documentElement;
-        const setMode = () => {
-          if (window.innerWidth <= 768) {
-            root.classList.add('m');
-            root.classList.remove('d');
-          } else {
-            root.classList.add('d');
-            root.classList.remove('m');
-          }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-          setMode();
-          window.addEventListener('resize', setMode);
-
-          const menuToggle = document.querySelector('.sie-header-menu-toggle');
-          const nav = document.querySelector('.sie-header-nav');
-          if (menuToggle && nav) {
-            menuToggle.addEventListener('click', (e) => {
-              e.stopPropagation();
-              nav.classList.toggle('active');
-              menuToggle.classList.toggle('active');
-            });
-            nav.querySelectorAll('.sie-header-link').forEach((link) => {
-              link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-              });
-            });
-            document.addEventListener('click', (e) => {
-              if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-              }
-            });
-          }
-        });
-      })();
-    </script>
   </body>
 </html>
