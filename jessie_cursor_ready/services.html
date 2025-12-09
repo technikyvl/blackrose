@@ -2761,6 +2761,29 @@
           gap: 35px;
         }
       }
+      /* Hard z-index/pointer-events guard so żadna nakładka nie zasłania nav */
+      .sib-header {
+        z-index: 12000 !important;
+      }
+      .sib-header .sie-header-nav,
+      .sib-header .sie-header-menu-toggle,
+      .sib-header .sie-header-logo,
+      .m .sie-header-nav,
+      .m .sie-header-nav.active {
+        position: relative;
+        z-index: 13000 !important;
+        pointer-events: auto !important;
+      }
+      .sib-header::before,
+      .sib-header::after,
+      .sib-header .ss-bg::before,
+      .sib-header .ss-bg::after {
+        display: none !important;
+        pointer-events: none !important;
+      }
+      .sib-header .ss-bg {
+        pointer-events: none !important;
+      }
       .sie-header-link {
         color: rgba(0, 0, 0, 1);
         text-decoration: none;
