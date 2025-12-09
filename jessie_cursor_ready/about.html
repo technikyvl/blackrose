@@ -20,35 +20,6 @@
       html.m {
         background-color: rgba(254, 247, 250, 1);
       }
-      /* Hard hide any injected Showit footer */
-      #footer,
-      [data-bid="footer"],
-      [data-bid="copyright"],
-      .sib-footer,
-      .sb.sib-footer,
-      .ss-s:has(> .sib-footer),
-      .sie-footer_0,
-      .sie-footer_1,
-      .sie-footer_2,
-      .sie-footer_3,
-      .sie-footer_4,
-      .sie-footer_5,
-      .sie-footer_6,
-      .sie-footer_7,
-      .sie-footer_8,
-      .sie-footer_9,
-      .sie-footer_10,
-      .sie-footer_11,
-      .sie-footer_12,
-      .sie-footer_13,
-      .sie-footer_14,
-      .sie-footer_16,
-      .sie-footer_18,
-      .sie-footer_19,
-      .sie-footer_20,
-      .sie-footer_21,
-      .sie-footer_22,
-      .sie-footer_23 {
         display: none !important;
         height: 0 !important;
         min-height: 0 !important;
@@ -5208,8 +5179,6 @@
         font-weight: 600;
         font-style: normal;
       }
-      /* Custom Footer Styles */
-      .custom-footer {
         position: relative;
         width: 100%;
         max-width: 1200px;
@@ -5223,7 +5192,6 @@
         padding: 32px 24px;
         margin-top: 40px;
       }
-      .custom-footer::before {
         content: '';
         position: absolute;
         top: 0;
@@ -5235,23 +5203,19 @@
         border-radius: 9999px;
         filter: blur(1px);
       }
-      .custom-footer-content {
         display: grid;
         width: 100%;
         gap: 24px;
       }
       @media (min-width: 1280px) {
-        .custom-footer-content {
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
         }
       }
-      .custom-footer-brand {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
-      .custom-footer-logo {
         width: 32px;
         height: 32px;
         background: rgba(254, 231, 239, 1);
@@ -5263,43 +5227,35 @@
         font-size: 18px;
         color: #000;
       }
-      .custom-footer-copyright {
         font-family: 'Assistant', sans-serif;
         font-size: 14px;
         color: rgba(0, 0, 0, 0.6);
         margin-top: 24px;
       }
       @media (min-width: 768px) {
-        .custom-footer-copyright {
           margin-top: 0;
         }
       }
-      .custom-footer-links {
         margin-top: 24px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
       }
       @media (min-width: 768px) {
-        .custom-footer-links {
           grid-template-columns: repeat(4, 1fr);
         }
       }
       @media (min-width: 1280px) {
-        .custom-footer-links {
           grid-column: span 2;
           margin-top: 0;
         }
       }
-      .custom-footer-section {
         margin-bottom: 24px;
       }
       @media (min-width: 768px) {
-        .custom-footer-section {
           margin-bottom: 0;
         }
       }
-      .custom-footer-section h3 {
         font-family: 'Syne', sans-serif;
         font-size: 12px;
         font-weight: 600;
@@ -5308,15 +5264,12 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
-      .custom-footer-section ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      .custom-footer-section li {
         margin-bottom: 6px;
       }
-      .custom-footer-section a {
         font-family: 'Assistant', sans-serif;
         font-size: 14px;
         color: rgba(0, 0, 0, 0.6);
@@ -5325,16 +5278,12 @@
         align-items: center;
         transition: all 0.3s ease;
       }
-      .custom-footer-section a:hover {
         color: #000;
       }
-      .custom-footer-icon {
         width: 16px;
         height: 16px;
         margin-right: 4px;
       }
-      /* Footer Copyright Section */
-      .custom-footer-copyright-section {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -5343,7 +5292,6 @@
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         background: transparent;
       }
-      .custom-footer-copyright-section p {
         font-family: 'Assistant', sans-serif;
         font-size: 12px;
         color: rgba(0, 0, 0, 0.6);
@@ -5351,79 +5299,61 @@
         line-height: 1.6;
       }
       @media (max-width: 768px) {
-        .custom-footer-copyright-section {
           padding: 20px 16px;
         }
-        .custom-footer-copyright-section p {
           font-size: 11px;
         }
       }
-      .m .sib-footer {
         height: 1145px;
       }
-      .d .sib-footer {
         height: 713px;
       }
-      .m .sib-footer .ss-bg {
         background-color: rgba(254, 247, 250, 1);
       }
-      .d .sib-footer .ss-bg {
         background-color: rgba(254, 247, 250, 1);
       }
-      .d .sie-footer_0 {
         left: -50px;
         top: 457px;
         width: 1300px;
         height: 256px;
       }
-      .m .sie-footer_0 {
         left: 0px;
         top: 828px;
         width: 320px;
         height: 312px;
       }
-      .d .sie-footer_0 .sg-img-container {
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(auto-fit, 256px);
         gap: 5px;
       }
-      .d .sie-footer_0 .si-social-image {
         height: 256px;
         width: 256px;
       }
-      .m .sie-footer_0 .sg-img-container {
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(auto-fit, 153.5px);
         gap: 5px;
       }
-      .m .sie-footer_0 .si-social-image {
         height: 153.5px;
         width: 153.5px;
       }
-      .sie-footer_0 {
         overflow: hidden;
       }
-      .sie-footer_0 .si-social-grid {
         overflow: hidden;
       }
-      .sie-footer_0 img {
         border: none;
         object-fit: cover;
         max-height: 100%;
       }
-      .d .sie-footer_1:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_1:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_1 {
         left: 980px;
         top: 313px;
         width: 176px;
@@ -5432,7 +5362,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_1 {
         left: 45px;
         top: 712px;
         width: 227px;
@@ -5441,15 +5370,12 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_1 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_1 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_1 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 0px;
         background-color: rgba(254, 231, 239, 1);
@@ -5458,7 +5384,6 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .m .sie-footer_1 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 0px;
         background-color: rgba(254, 231, 239, 1);
@@ -5467,17 +5392,14 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .d .sie-footer_2:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_2:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_2 {
         left: 1008px;
         top: 332px;
         width: 120px;
@@ -5485,7 +5407,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_2 {
         left: 101px;
         top: 731px;
         width: 115px;
@@ -5493,13 +5414,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_2-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_2-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_2-text {
         color: rgba(252, 251, 250, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -5512,7 +5430,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_2-text {
         color: rgba(252, 251, 250, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -5525,17 +5442,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_3:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_3:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_3 {
         left: 728px;
         top: 312px;
         width: 226px;
@@ -5544,7 +5458,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_3 {
         left: 46px;
         top: 646px;
         width: 226px;
@@ -5553,15 +5466,12 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_3 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_3 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_3 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 1px;
         background-color: rgba(254, 247, 250, 1);
@@ -5570,7 +5480,6 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .m .sie-footer_3 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 1px;
         background-color: rgba(254, 247, 250, 1);
@@ -5579,17 +5488,14 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .d .sie-footer_4:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_4:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_4 {
         left: 766px;
         top: 332px;
         width: 150px;
@@ -5597,7 +5503,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_4 {
         left: 84px;
         top: 665px;
         width: 150px;
@@ -5605,13 +5510,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_4-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_4-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_4-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -5624,7 +5526,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_4-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -5637,19 +5538,16 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_5 {
         left: 733px;
         top: 249px;
         width: 412px;
         height: 26px;
       }
-      .m .sie-footer_5 {
         left: 33px;
         top: 573px;
         width: 254px;
         height: 49px;
       }
-      .d .sie-footer_5-text {
         color: rgba(47, 47, 47, 1);
         text-transform: none;
         line-height: 1.9;
@@ -5660,7 +5558,6 @@
         font-weight: 300;
         font-style: normal;
       }
-      .m .sie-footer_5-text {
         color: rgba(47, 47, 47, 1);
         text-transform: none;
         line-height: 1.9;
@@ -5671,17 +5568,14 @@
         font-weight: 300;
         font-style: normal;
       }
-      .d .sie-footer_6:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_6:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_6 {
         left: 760px;
         top: 95px;
         width: 360px;
@@ -5689,7 +5583,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_6 {
         left: 22px;
         top: 515px;
         width: 279px;
@@ -5697,13 +5590,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_6-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_6-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_6-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1.15;
@@ -5715,7 +5605,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_6-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1.15;
@@ -5727,17 +5616,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_7:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_7:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_7 {
         left: 404px;
         top: 326px;
         width: 22px;
@@ -5745,7 +5631,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_7 {
         left: 176px;
         top: 420px;
         width: 25px;
@@ -5753,27 +5638,20 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_7 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_7 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_7 svg:hover {
       }
-      .m .sie-footer_7 svg:hover {
       }
-      .d .sie-footer_8:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_8:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_8 {
         left: 370px;
         top: 326px;
         width: 24px;
@@ -5781,7 +5659,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_8 {
         left: 150px;
         top: 420px;
         width: 25px;
@@ -5789,27 +5666,20 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_8 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_8 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_8 svg:hover {
       }
-      .m .sie-footer_8 svg:hover {
       }
-      .d .sie-footer_9:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_9:hover {
         opacity: 0.5;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_9 {
         left: 333px;
         top: 328px;
         width: 24px;
@@ -5817,7 +5687,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_9 {
         left: 120px;
         top: 420px;
         width: 25px;
@@ -5825,29 +5694,22 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_9 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_9 svg {
         fill: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_9 svg:hover {
       }
-      .m .sie-footer_9 svg:hover {
       }
-      .d .sie-footer_10 {
         left: 333px;
         top: 164px;
         width: 306px;
         height: 133px;
       }
-      .m .sie-footer_10 {
         left: 40px;
         top: 128px;
         width: 240px;
         height: 161px;
       }
-      .d .sie-footer_10-text {
         color: rgba(47, 47, 47, 1);
         text-transform: none;
         line-height: 1.9;
@@ -5858,7 +5720,6 @@
         font-weight: 300;
         font-style: normal;
       }
-      .m .sie-footer_10-text {
         color: rgba(47, 47, 47, 1);
         text-transform: none;
         line-height: 1.9;
@@ -5869,61 +5730,51 @@
         font-weight: 300;
         font-style: normal;
       }
-      .d .sie-footer_11 {
         left: 333px;
         top: 141px;
         width: 167px;
         height: 1px;
       }
-      .m .sie-footer_11 {
         left: 40px;
         top: 103px;
         width: 240px;
         height: 1px;
       }
-      .sie-footer_11 svg {
         vertical-align: top;
         overflow: visible;
         pointer-events: none;
         box-sizing: content-box;
       }
-      .m .sie-footer_11 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 240px;
       }
-      .d .sie-footer_11 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 167px;
       }
-      .m .sie-footer_11 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .d .sie-footer_11 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .d .sie-footer_12:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_12:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_12 {
         left: 333px;
         top: 81px;
         width: 174px;
@@ -5931,7 +5782,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_12 {
         left: 72px;
         top: 47px;
         width: 174px;
@@ -5939,13 +5789,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_12-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_12-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_12-text {
         color: rgba(47, 47, 47, 1);
         text-transform: capitalize;
         line-height: 1.2;
@@ -5958,7 +5805,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_12-text {
         color: rgba(47, 47, 47, 1);
         text-transform: capitalize;
         line-height: 1.2;
@@ -5971,17 +5817,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_13:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_13:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_13 {
         left: 35px;
         top: 313px;
         width: 226px;
@@ -5994,7 +5837,6 @@
         position: relative;
         cursor: pointer;
       }
-      .m .sie-footer_13 {
         left: 47px;
         top: 316px;
         width: 226px;
@@ -6007,15 +5849,12 @@
         position: relative;
         cursor: pointer;
       }
-      .d .sie-footer_13 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_13 .se-simple:hover {
         background-color: rgba(254, 231, 239, 1);
         border-color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_13 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 0px;
         background-color: rgba(254, 231, 239, 1);
@@ -6024,7 +5863,6 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .m .sie-footer_13 .se-simple {
         border-color: rgba(254, 231, 239, 1);
         border-width: 0px;
         background-color: rgba(254, 231, 239, 1);
@@ -6033,17 +5871,14 @@
         border-style: solid;
         border-radius: inherit;
       }
-      .d .sie-footer_14:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_14:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_14 {
         left: 87px;
         top: 333px;
         width: 123px;
@@ -6058,7 +5893,6 @@
         position: relative;
         cursor: pointer;
       }
-      .m .sie-footer_14 {
         left: 89px;
         top: 340px;
         width: 140px;
@@ -6073,13 +5907,10 @@
         position: relative;
         cursor: pointer;
       }
-      .d .sie-footer_14-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_14-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_14-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1.2;
@@ -6092,7 +5923,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_14-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1.2;
@@ -6105,17 +5935,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_15:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_15:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_15 {
         left: 148px;
         top: 252px;
         width: 84px;
@@ -6123,7 +5950,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_15 {
         left: 218px;
         top: 199px;
         width: 62px;
@@ -6132,13 +5958,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_15-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_15-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_15-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6151,7 +5974,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_15-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6164,17 +5986,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_16:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_16:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_16 {
         left: 148px;
         top: 211px;
         width: 77px;
@@ -6182,7 +6001,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_16 {
         left: 201px;
         top: 161px;
         width: 79px;
@@ -6191,13 +6009,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_16-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_16-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_16-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6210,7 +6025,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_16-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6223,17 +6037,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_17:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_17:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_17 {
         left: 148px;
         top: 173px;
         width: 84px;
@@ -6241,7 +6052,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_17 {
         left: 196px;
         top: 122px;
         width: 84px;
@@ -6250,13 +6060,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_17-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_17-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_17-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6269,7 +6076,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_17-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6282,17 +6088,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_18:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_18:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_18 {
         left: 41px;
         top: 252px;
         width: 84px;
@@ -6300,7 +6103,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_18 {
         left: 40px;
         top: 199px;
         width: 87px;
@@ -6309,13 +6111,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_18-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_18-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_18-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6328,7 +6127,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_18-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6341,17 +6139,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_19:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_19:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_19 {
         left: 41px;
         top: 211px;
         width: 77px;
@@ -6359,7 +6154,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_19 {
         left: 40px;
         top: 161px;
         width: 74px;
@@ -6368,13 +6162,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_19-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_19-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_19-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6387,7 +6178,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_19-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6400,17 +6190,14 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_20:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_20:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_20 {
         left: 41px;
         top: 173px;
         width: 58px;
@@ -6418,7 +6205,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_20 {
         left: 40px;
         top: 122px;
         width: 84px;
@@ -6427,13 +6213,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_20-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_20-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_20-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6446,7 +6229,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_20-text {
         color: rgba(47, 47, 47, 1);
         text-transform: uppercase;
         line-height: 1;
@@ -6459,62 +6241,52 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_21 {
         left: 41px;
         top: 141px;
         width: 167px;
         height: 1px;
       }
-      .m .sie-footer_21 {
         left: 40px;
         top: 93px;
         width: 240px;
         height: 1px;
         display: none;
       }
-      .sie-footer_21 svg {
         vertical-align: top;
         overflow: visible;
         pointer-events: none;
         box-sizing: content-box;
       }
-      .m .sie-footer_21 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 240px;
       }
-      .d .sie-footer_21 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 167px;
       }
-      .m .sie-footer_21 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .d .sie-footer_21 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .d .sie-footer_22:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_22:hover {
         opacity: 1;
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_22 {
         left: 41px;
         top: 81px;
         width: 174px;
@@ -6522,7 +6294,6 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .m .sie-footer_22 {
         left: 73px;
         top: 36px;
         width: 174px;
@@ -6531,13 +6302,10 @@
         transition-duration: 0.5s;
         transition-property: opacity;
       }
-      .d .sie-footer_22-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .m .sie-footer_22-text:hover {
         color: rgba(254, 231, 239, 1);
       }
-      .d .sie-footer_22-text {
         color: rgba(47, 47, 47, 1);
         text-transform: capitalize;
         line-height: 1.2;
@@ -6550,7 +6318,6 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .m .sie-footer_22-text {
         color: rgba(47, 47, 47, 1);
         text-transform: capitalize;
         line-height: 1.2;
@@ -6563,92 +6330,75 @@
         transition-duration: 0.5s;
         transition-property: color;
       }
-      .d .sie-footer_23 {
         left: 0px;
         top: 0px;
         width: 1200px;
         height: 1px;
       }
-      .m .sie-footer_23 {
         left: 0px;
         top: 0px;
         width: 320px;
         height: 1px;
       }
-      .sie-footer_23 svg {
         vertical-align: top;
         overflow: visible;
         pointer-events: none;
         box-sizing: content-box;
       }
-      .m .sie-footer_23 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 320px;
       }
-      .d .sie-footer_23 svg {
         stroke: rgba(254, 231, 239, 1);
         transform: scaleX(1);
         padding: 0.5px;
         height: 1px;
         width: 1200px;
       }
-      .m .sie-footer_23 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .d .sie-footer_23 line {
         stroke-linecap: butt;
         stroke-width: 1;
         stroke-dasharray: none;
         pointer-events: all;
       }
-      .m .sib-copyright {
         display: none !important;
         height: 0 !important;
         overflow: hidden;
       }
-      .d .sib-copyright {
         display: none !important;
         height: 0 !important;
         overflow: hidden;
       }
-      .m .sib-copyright .ss-bg {
         background-color: rgba(254, 231, 239, 1);
       }
-      .d .sib-copyright .ss-bg {
         background-color: rgba(254, 231, 239, 1);
       }
-      .d .sie-copyright_0 {
         left: 1151px;
         top: 16px;
         width: 22px;
         height: 26px;
       }
-      .m .sie-copyright_0 {
         left: 279px;
         top: 18px;
         width: 25px;
         height: 25px;
       }
-      .d .sie-copyright_0 svg {
         fill: rgba(252, 251, 250, 1);
       }
-      .m .sie-copyright_0 svg {
         fill: rgba(252, 251, 250, 1);
       }
-      .d .sie-copyright_1 {
         left: 43px;
         top: 22px;
         width: 1100px;
         height: 15px;
         display: none !important;
       }
-      .m .sie-copyright_1 {
         left: 22px;
         top: 15px;
         width: 330px;
@@ -6656,7 +6406,6 @@
         min-height: 15px;
         display: none !important;
       }
-      .d .sie-copyright_1-text {
         color: rgba(252, 251, 250, 1);
         letter-spacing: 0.1em;
         font-size: 12px;
@@ -6666,7 +6415,6 @@
         font-style: normal;
         white-space: nowrap;
       }
-      .m .sie-copyright_1-text {
         color: rgba(252, 251, 250, 1);
         text-transform: none;
         line-height: 1.4;
@@ -6679,19 +6427,15 @@
         white-space: normal;
         word-wrap: break-word;
       }
-      .d .sie-copyright_1-text.se-rc a {
         color: rgba(252, 251, 250, 1);
         text-decoration: none;
       }
-      .d .sie-copyright_1-text.se-rc a:hover {
         color: rgba(252, 251, 250, 1);
         opacity: 0.8;
       }
-      .m .sie-copyright_1-text.se-rc a {
         color: rgba(252, 251, 250, 1);
         text-decoration: none;
       }
-      .m .sie-copyright_1-text.se-rc a:hover {
         color: rgba(252, 251, 250, 1);
         opacity: 0.8;
       }
