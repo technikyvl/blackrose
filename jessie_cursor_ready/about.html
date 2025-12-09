@@ -22,6 +22,9 @@
         font-family: "Assistant", sans-serif;
         background: var(--bg);
         color: var(--text);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
       a {
         color: inherit;
@@ -155,6 +158,72 @@
           padding: 16px;
         }
       }
+      /* Compact footer */
+      .br-mini-footer {
+        margin-top: auto;
+        padding: 12px 16px 14px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        background: var(--bg);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px 20px;
+        max-width: 1100px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .br-mini-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #2f2f2f;
+      }
+      .br-mini-logo {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background: rgba(254, 231, 239, 1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        color: #2f2f2f;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      }
+      .br-mini-col h4 {
+        margin: 0 0 6px;
+        font-family: "Syne", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #000;
+      }
+      .br-mini-col a {
+        display: block;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #2f2f2f;
+        text-decoration: none;
+      }
+      .br-mini-col a:hover {
+        color: #000;
+      }
+      @media (max-width: 600px) {
+        .br-mini-footer {
+          padding: 10px 12px 12px;
+          gap: 10px 14px;
+        }
+        .br-mini-col h4 {
+          font-size: 11px;
+        }
+        .br-mini-col a {
+          font-size: 12.5px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -198,6 +267,40 @@
         <p>ks. Barabasza 6, 43-502 Czechowice-Dziedzice.</p>
       </div>
     </section>
+
+    <footer class="br-mini-footer">
+      <div class="br-mini-brand">
+        <span class="br-mini-logo">BR</span>
+        <span>© 2025 Black Rose. Zaprojektowane przez BeautyRise | Wojciech Zaniewski & Jakub Eliasik</span>
+      </div>
+      <div class="br-mini-col">
+        <h4>Usługi</h4>
+        <a href="/services">Depilacja Woskiem</a>
+        <a href="/services">Pedicure</a>
+        <a href="/services">Manicure</a>
+        <a href="/services">Wszystkie Usługi</a>
+      </div>
+      <div class="br-mini-col">
+        <h4>Salon</h4>
+        <a href="/about.html">O Nas</a>
+        <a href="/services">Kontakt</a>
+        <a href="/about.html">Godziny Otwarcia</a>
+        <a href="/about.html">Lokalizacja</a>
+      </div>
+      <div class="br-mini-col">
+        <h4>Informacje</h4>
+        <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Rezerwacja</a>
+        <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Booksy</a>
+        <a href="/services">FAQ</a>
+        <a href="/services">Regulamin</a>
+      </div>
+      <div class="br-mini-col">
+        <h4>Śledź nas</h4>
+        <a href="https://www.instagram.com/black.rose.czechowice/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Booksy</a>
+      </div>
+    </footer>
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
