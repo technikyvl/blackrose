@@ -3333,6 +3333,37 @@
       .sib-our-services .ss-bg .sc > .str-id {
         display: none !important;
       }
+      /* Schowaj stary wrapper Booksy */
+      .br-services-list-wrapper {
+        display: none !important;
+      }
+      /* Nowy prosty wrapper usług */
+      .br-services-simple {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        padding: 32px 24px;
+        box-sizing: border-box;
+        display: grid;
+        gap: 18px;
+      }
+      .br-services-simple__eyebrow {
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .br-services-simple__title {
+        margin: 0;
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: clamp(24px, 3vw, 30px);
+        letter-spacing: 0.02em;
+        text-align: center;
+      }
       .br-services-list-wrapper {
         width: 100%;
         display: flex;
@@ -9597,6 +9628,35 @@
       >
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px">
+            <section
+              class="br-services-simple"
+              role="region"
+              aria-labelledby="br-services-title"
+            >
+              <span class="br-services-simple__eyebrow">Usługi</span>
+              <h2 class="br-services-simple__title" id="br-services-title">
+                Zabiegi
+              </h2>
+              <ul class="br-services-grid">
+                <li>Kosmetologia Estetyczna</li>
+                <li>Stymulatory Tkankowe</li>
+                <li>Kwas Polimlekowy PLLA</li>
+                <li>Mezoterapia Igłowa / Zabiegi Pielęgnacyjne</li>
+                <li>Mezoterapia mikroigłowa</li>
+                <li>Laserowe usuwanie przebarwień Alma Harmony</li>
+                <li>Laserowe zamknięcie naczynek / rumień Alma Harmony</li>
+                <li>Termolifting Alma Harmony</li>
+                <li>Laser ME frakcyjny</li>
+                <li>Depilacja Laserowa Primelase Excellence</li>
+                <li>Modelowanie Pośladków</li>
+                <li>STORZ fala uderzeniowa</li>
+                <li>Kriolipoliza Cooltech</li>
+                <li>Makijaż</li>
+                <li>Makijaż Brwi i Rzęs</li>
+                <li>Inne Zabiegi – Brwi</li>
+                <li>Zabiegi Autologiczne</li>
+              </ul>
+            </section>
             <div class="br-services-list-wrapper">
               <div class="br-services-list">
                 <h2>Usługi</h2>
