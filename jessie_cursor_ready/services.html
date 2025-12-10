@@ -3342,7 +3342,7 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        background: #fff;
+        background: #ffffff;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         padding: 32px 24px;
@@ -3353,6 +3353,11 @@
         overflow-y: auto;
         padding-right: 28px;
         scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        overscroll-behavior: contain;
+        border: 1px solid rgba(200, 169, 106, 0.3); /* złoty akcent */
+        background-image: linear-gradient(180deg, #fef7fa 0%, #ffffff 40%);
       }
       .br-services-simple::-webkit-scrollbar {
         width: 8px;
@@ -3370,6 +3375,7 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         text-align: center;
+        color: #c8a96a;
       }
       .br-services-simple__title {
         margin: 0;
@@ -3377,6 +3383,7 @@
         font-size: clamp(24px, 3vw, 30px);
         letter-spacing: 0.02em;
         text-align: center;
+        color: #000;
       }
       @media (max-width: 768px) {
         .br-services-simple {
@@ -3484,13 +3491,23 @@
         display: flex;
         justify-content: space-between;
         gap: 12px;
-        padding: 12px 14px;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 12px;
+        padding: 14px 16px;
+        border: 1px solid rgba(200, 169, 106, 0.65);
+        border-radius: 14px;
         background: #fff;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
         font-family: "Assistant", "Lato", sans-serif;
         font-size: 14px;
         line-height: 1.5;
+        transition: transform 0.15s ease, box-shadow 0.15s ease,
+          border-color 0.15s ease, background-color 0.15s ease;
+      }
+      .br-service-row:hover,
+      .br-service-row:focus-within {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+        border-color: #c8a96a;
+        background: #fff9fb;
       }
       .br-service-name {
         color: #1a1a1a;
@@ -3498,10 +3515,11 @@
         letter-spacing: 0.01em;
       }
       .br-service-price {
-        color: #000;
+        color: #111;
         font-family: "Syne", "Lato", sans-serif;
         font-weight: 700;
         white-space: nowrap;
+        letter-spacing: 0.01em;
       }
       @media (max-width: 768px) {
         .br-services-list {
