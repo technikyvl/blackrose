@@ -2301,6 +2301,30 @@
       .sib-our-services .sie-our-services_7 {
         z-index: 5 !important;
       }
+      /* Umożliwienie przewijania listy usług w bloku */
+      .sib-our-services .sc {
+        position: relative;
+        max-height: 780px;
+        overflow-y: auto;
+        padding-bottom: 32px;
+        scroll-behavior: smooth;
+      }
+      .sib-our-services .sc::-webkit-scrollbar {
+        width: 8px;
+      }
+      .sib-our-services .sc::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+      }
+      .sib-our-services .sc::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      @media (max-width: 768px) {
+        .sib-our-services .sc {
+          max-height: 620px;
+          padding: 0 12px 28px;
+        }
+      }
       .sib-our-services .sie-our-services_2,
       .sib-our-services .sie-our-services_5,
       .sib-our-services .sie-our-services_8 {
