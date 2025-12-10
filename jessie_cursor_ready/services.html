@@ -3447,23 +3447,40 @@
         margin-left: auto;
       }
       /* Prosta lista usług (siatka) */
-      .br-services-grid {
+      .br-service-group {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px 18px;
+        gap: 10px;
+        padding: 10px 0;
+      }
+      .br-service-list {
         list-style: none;
         margin: 0;
         padding: 0;
+        display: grid;
+        gap: 8px;
       }
-      .br-services-grid li {
+      .br-service-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
         padding: 12px 14px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.06);
         border-radius: 12px;
         background: #fff;
-        font-family: "Syne", "Lato", sans-serif;
+        font-family: "Assistant", "Lato", sans-serif;
         font-size: 14px;
-        letter-spacing: 0.02em;
-        line-height: 1.4;
+        line-height: 1.5;
+      }
+      .br-service-name {
+        color: #1a1a1a;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      .br-service-price {
+        color: #000;
+        font-family: "Syne", "Lato", sans-serif;
+        font-weight: 700;
+        white-space: nowrap;
       }
       @media (max-width: 768px) {
         .br-services-list {
@@ -9637,25 +9654,155 @@
               <h2 class="br-services-simple__title" id="br-services-title">
                 Zabiegi
               </h2>
-              <ul class="br-services-grid">
-                <li>Kosmetologia Estetyczna</li>
-                <li>Stymulatory Tkankowe</li>
-                <li>Kwas Polimlekowy PLLA</li>
-                <li>Mezoterapia Igłowa / Zabiegi Pielęgnacyjne</li>
-                <li>Mezoterapia mikroigłowa</li>
-                <li>Laserowe usuwanie przebarwień Alma Harmony</li>
-                <li>Laserowe zamknięcie naczynek / rumień Alma Harmony</li>
-                <li>Termolifting Alma Harmony</li>
-                <li>Laser ME frakcyjny</li>
-                <li>Depilacja Laserowa Primelase Excellence</li>
-                <li>Modelowanie Pośladków</li>
-                <li>STORZ fala uderzeniowa</li>
-                <li>Kriolipoliza Cooltech</li>
-                <li>Makijaż</li>
-                <li>Makijaż Brwi i Rzęs</li>
-                <li>Inne Zabiegi – Brwi</li>
-                <li>Zabiegi Autologiczne</li>
-              </ul>
+              <div class="br-service-group">
+                <h3>Manicure / dłonie</h3>
+                <ul class="br-service-list">
+                  <li class="br-service-row">
+                    <span class="br-service-name">Zdejmowanie stylizacji + pielęgnacja</span>
+                    <span class="br-service-price">85,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Usunięcie hybrydy wykonanej w innym salonie</span>
+                    <span class="br-service-price">25,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Manicure klasyczny (standardowy)</span>
+                    <span class="br-service-price">65,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Zdobienie paznokci (wzory, naklejki etc.)</span>
+                    <span class="br-service-price">od 5,00 zł / paznokieć</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Naprawa paznokcia (dosztukowanie)</span>
+                    <span class="br-service-price">25,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Zdejmowanie stylizacji + nowa stylizacja</span>
+                    <span class="br-service-price">20,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Przedłużenie żelowe – długie</span>
+                    <span class="br-service-price">200,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Manicure klasyczny (szybsza wersja)</span>
+                    <span class="br-service-price">85,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Manicure hybrydowy – naturalny</span>
+                    <span class="br-service-price">120,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Manicure hybrydowy – kolor</span>
+                    <span class="br-service-price">130,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Manicure hybrydowy – Baby boomer / French / Ombre</span>
+                    <span class="br-service-price">140,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Żelowanie naturalnej płytki paznokcia</span>
+                    <span class="br-service-price">170,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Uzupełnienie żelowe do 3 tygodni – krótkie</span>
+                    <span class="br-service-price">160,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Uzupełnienie żelowe do 3 tygodni – długie</span>
+                    <span class="br-service-price">170,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Przedłużanie żelowe – krótkie</span>
+                    <span class="br-service-price">185,00 zł</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="br-service-group">
+                <h3>Pedicure</h3>
+                <ul class="br-service-list">
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure stóp frezarkowy + opracowanie paznokci + krem</span>
+                    <span class="br-service-price">90,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure stóp frezarkowy + hybryda</span>
+                    <span class="br-service-price">150,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure stóp kosmetyczny (kąpiel + peeling + krem + opracowanie stóp)</span>
+                    <span class="br-service-price">160,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure kosmetyczny + hybryda</span>
+                    <span class="br-service-price">190,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Usunięcie hybrydy + pedicure kosmetyczny stóp</span>
+                    <span class="br-service-price">170,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Usunięcie hybrydy + pielęgnacja paznokci stóp</span>
+                    <span class="br-service-price">80,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure klasyczny</span>
+                    <span class="br-service-price">85,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure hybrydowy – naturalny</span>
+                    <span class="br-service-price">120,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pedicure hybrydowy – kolor / French</span>
+                    <span class="br-service-price">140,00 zł</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="br-service-group">
+                <h3>Depilacja woskiem</h3>
+                <ul class="br-service-list">
+                  <li class="br-service-row">
+                    <span class="br-service-name">Nos</span>
+                    <span class="br-service-price">15,00 zł</span>
+                  </li>
+                    <li class="br-service-row">
+                    <span class="br-service-name">Baczki</span>
+                    <span class="br-service-price">20,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Wąsik</span>
+                    <span class="br-service-price">20,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Wąsik + broda</span>
+                    <span class="br-service-price">25,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Uda</span>
+                    <span class="br-service-price">60,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Łydki</span>
+                    <span class="br-service-price">60,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Pachy</span>
+                    <span class="br-service-price">40,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Broda</span>
+                    <span class="br-service-price">20,00 zł</span>
+                  </li>
+                  <li class="br-service-row">
+                    <span class="br-service-name">Całe nogi</span>
+                    <span class="br-service-price">105,00 zł</span>
+                  </li>
+                </ul>
+              </div>
             </section>
             <div class="br-services-list-wrapper">
               <div class="br-services-list">
