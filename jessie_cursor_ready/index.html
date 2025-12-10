@@ -55,7 +55,7 @@
         height: 40px;
         border-radius: 10px;
         background: transparent;
-        box-shadow: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         overflow: hidden;
       }
       .br-nav-logo img {
@@ -76,6 +76,9 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         padding: 9px 10px;
+        line-height: 1.4;
+        color: #000;
+        text-decoration: none;
         position: relative;
         transition: color 0.25s ease, transform 0.25s ease;
       }
@@ -130,10 +133,8 @@
           transform: translateY(-110%);
           transition: transform 0.25s ease;
           box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-          display: none;
         }
         .br-nav-links.is-open {
-          display: flex;
           transform: translateY(0);
         }
         .br-nav-link {
