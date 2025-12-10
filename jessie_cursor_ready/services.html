@@ -82,6 +82,8 @@
     </style>
     <style>
       /* Zamiana starej siatki usług na prostą listę */
+      /* Sekcja usług – wymuś auto wysokość i brak przycinania */
+      #our-services,
       .sib-our-services {
         display: block !important;
         height: auto !important;
@@ -89,13 +91,18 @@
         overflow: visible !important;
         padding-bottom: 140px !important;
       }
+      #our-services .ss-s,
+      #our-services .ss-bg,
+      #our-services .sc,
       .sib-our-services .ss-s,
       .sib-our-services .ss-bg,
       .sib-our-services .sc {
         height: auto !important;
         min-height: auto !important;
+        max-height: none !important;
         overflow: visible !important;
         padding-bottom: 120px !important;
+        display: block !important;
       }
       .sib-our-services .str-id,
       .sib-our-services .se-img,
