@@ -27,7 +27,7 @@
         color: var(--text);
         font-family: "Assistant", "Lato", sans-serif;
       }
-      body {
+        body {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -145,7 +145,7 @@
           inset: 64px 0 0 0;
           background: #fff7fb;
           flex-direction: column;
-          align-items: center;
+        align-items: center;
           gap: 0;
           padding: 12px 0 24px;
           transform: translateY(-110%);
@@ -157,7 +157,7 @@
         }
         .br-nav-link {
           width: 100%;
-          text-align: center;
+        text-align: center;
           padding: 14px 0;
           border-bottom: 1px solid var(--border);
         }
@@ -165,7 +165,7 @@
           border-bottom: none;
         }
         .br-nav-toggle {
-          display: flex;
+        display: flex;
         }
       }
       /* Spacer so footer sits at bottom */
@@ -239,31 +239,6 @@
     </style>
   </head>
   <body>
-    <header class="br-nav">
-      <div class="page-shell br-nav-inner">
-        <a href="/" class="br-nav-logo" aria-label="Strona główna">
-          <img
-            src="Bez%20nazwy%20(340%20x%20100%20px).png"
-            alt="Black Rose"
-            width="40"
-            height="40"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-        <button class="br-nav-toggle" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="br-nav-links">
-          <a href="/" class="br-nav-link">Strona główna</a>
-          <a href="/services" class="br-nav-link">Usługi</a>
-          <a href="/about.html" class="br-nav-link is-active">O nas</a>
-        </nav>
-      </div>
-    </header>
-
     <main aria-label="Pusta sekcja O nas"></main>
 
     <footer class="br-mini-footer">
@@ -274,90 +249,62 @@
             © 2025 Black Rose. Zaprojektowane przez BeautyRise | Wojciech
             Zaniewski & Jakub Eliasik
           </span>
-        </div>
+                    </div>
         <div class="br-mini-col">
           <h4>Usługi</h4>
           <a href="/services">Depilacja Woskiem</a>
           <a href="/services">Pedicure</a>
           <a href="/services">Manicure</a>
           <a href="/services">Wszystkie Usługi</a>
-        </div>
+                    </div>
         <div class="br-mini-col">
           <h4>Salon</h4>
           <a href="/about.html">O Nas</a>
           <a href="/contact">Kontakt</a>
           <a href="/contact">Godziny Otwarcia</a>
           <a href="/contact">Lokalizacja</a>
-        </div>
+                  </div>
         <div class="br-mini-col">
           <h4>Informacje</h4>
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Rezerwacja</a
           >
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Booksy</a
           >
           <a href="/contact">FAQ</a>
           <a href="/contact">Regulamin</a>
-        </div>
+            </div>
         <div class="br-mini-col">
           <h4>Śledź nas</h4>
-          <a
-            href="https://www.instagram.com/black.rose.czechowice/"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://www.instagram.com/black.rose.czechowice/"
+              target="_blank"
+              rel="noopener noreferrer"
             >Instagram</a
           >
           <a
             href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >Facebook</a
           >
-          <a
-            href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
+              target="_blank"
+              rel="noopener noreferrer"
             >Booksy</a
           >
         </div>
       </div>
     </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggle = document.querySelector(".br-nav-toggle");
-        const links = document.querySelector(".br-nav-links");
-        if (!toggle || !links) return;
-
-        const closeMenu = () => {
-          links.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-        };
-
-        toggle.addEventListener("click", (e) => {
-          e.stopPropagation();
-          const isOpen = links.classList.toggle("is-open");
-          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-
-        links.querySelectorAll("a").forEach((anchor) => {
-          anchor.addEventListener("click", () => closeMenu());
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!links.contains(e.target) && !toggle.contains(e.target)) {
-            closeMenu();
-          }
-        });
-      });
-    </script>
+    
   </body>
 </html>
 
