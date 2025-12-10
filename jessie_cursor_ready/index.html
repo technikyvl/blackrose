@@ -6995,58 +6995,6 @@
         overflow: visible;
         z-index: 1;
       }
-      /* Pasek zadań – półprzezroczysty, globalny */
-      .task-progress {
-        position: fixed;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(1120px, calc(100% - 24px));
-        z-index: 9999;
-        display: grid;
-        gap: 6px;
-        pointer-events: none;
-        mix-blend-mode: normal;
-      }
-      @media (max-width: 480px) {
-        .task-progress {
-          top: 10px;
-          width: calc(100% - 20px);
-        }
-      }
-      .task-progress__track {
-        width: 100%;
-        height: clamp(6px, 1.8vw, 10px);
-        background: rgba(0, 0, 0, 0.08);
-        border-radius: 9999px;
-        overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-        backdrop-filter: saturate(130%) blur(2px);
-        -webkit-backdrop-filter: saturate(130%) blur(2px);
-      }
-      .task-progress__fill {
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(
-          90deg,
-          rgba(254, 231, 239, 0.85),
-          rgba(0, 0, 0, 0.4)
-        );
-        transform-origin: left center;
-        transform: scaleX(0);
-        transition: transform 0.12s ease-out;
-      }
-      .task-progress__label {
-        text-align: center;
-        font-family: "Syne", sans-serif;
-        font-weight: 600;
-        font-size: clamp(10px, 2.8vw, 12px);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(0, 0, 0, 0.65);
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-      }
       /* Custom Footer Styles */
       .custom-footer {
         position: relative;
@@ -9175,17 +9123,91 @@
       svg textPath {
         fill: #000000 !important;
       }
+      /* Pływający, półszeroki pasek nawigacji */
+      .floating-half-nav {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(280px, 50vw, 700px);
+        z-index: 9999;
+        background: rgba(254, 247, 250, 0.92);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border-radius: 999px;
+        padding: 10px 12px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      .floating-half-nav__list {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .floating-half-nav__list::-webkit-scrollbar {
+        display: none;
+      }
+      .floating-half-nav__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 14px;
+        text-decoration: none;
+        color: rgba(25, 25, 26, 1);
+        font-family: "Syne", "Lato", sans-serif;
+        letter-spacing: 0.08em;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: rgba(255, 255, 255, 0.6);
+        transition: background 0.25s ease, color 0.25s ease,
+          border-color 0.25s ease, transform 0.25s ease;
+        white-space: nowrap;
+      }
+      .floating-half-nav__link:hover,
+      .floating-half-nav__link:focus-visible {
+        color: rgba(47, 47, 47, 1);
+        background: rgba(254, 231, 239, 0.9);
+        border-color: rgba(254, 231, 239, 1);
+        outline: none;
+        transform: translateY(-1px);
+      }
+      .floating-half-nav__link:active {
+        transform: translateY(0);
+      }
+      @media (max-width: 768px) {
+        .floating-half-nav {
+          width: calc(100vw - 32px);
+          padding: 8px 10px;
+        }
+        .floating-half-nav__link {
+          padding: 10px 12px;
+          font-size: 12px;
+        }
+      }
+      body.has-floating-nav {
+        padding-top: 90px;
+      }
     </style>
   </head>
-  <body>
-    <div class="task-progress" aria-hidden="true">
-      <div class="task-progress__track">
-        <div class="task-progress__fill"></div>
+  <body class="has-floating-nav">
+    <nav class="floating-half-nav" aria-label="Nawigacja sekcji">
+      <div class="floating-half-nav__list">
+        <a href="#si-sp" class="floating-half-nav__link">Strona główna</a>
+        <a href="#our-services" class="floating-half-nav__link">Usługi</a>
+        <a href="#call-to-action" class="floating-half-nav__link">Kontakt</a>
+        <a href="#about" class="floating-half-nav__link">O nas</a>
       </div>
-      <div class="task-progress__label">
-        <span class="task-progress__label-text">0% wykonane</span>
-      </div>
-    </div>
+    </nav>
     <div id="si-sp" class="sp">
       <div id="about" class="sb sib-about-anchor">
         <div class="ss-s ss-bg">
@@ -10367,30 +10389,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const bar = document.querySelector('.task-progress');
-        const fill = document.querySelector('.task-progress__fill');
-        const label = document.querySelector('.task-progress__label-text');
-        if (!bar || !fill || !label) return;
-
-        const updateProgress = () => {
-          const scrollable =
-            document.documentElement.scrollHeight - window.innerHeight;
-          const scrolled = window.scrollY || document.documentElement.scrollTop;
-          const raw = scrollable > 0 ? (scrolled / scrollable) * 100 : 0;
-          const clamped = Math.max(0, Math.min(raw, 100));
-          fill.style.transform = `scaleX(${clamped / 100})`;
-          label.textContent = `${Math.round(clamped)}% wykonane`;
-          bar.style.opacity = scrollable > 0 ? 1 : 0;
-        };
-
-        updateProgress();
-        window.addEventListener('scroll', updateProgress, { passive: true });
-        window.addEventListener('resize', updateProgress);
-      });
-    </script>
 
     <!-- vlmbteebqxucsyhlldee3q/20251125211238Swy8j8z/lAmRq-UY3 -->
     <script>
