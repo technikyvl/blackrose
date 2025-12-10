@@ -3329,8 +3329,8 @@
         transform: rotate(-45deg) translate(8px, -8px);
       }
       /* --- Services list override --- */
-      /* Ukryj stare elementy sekcji wewnątrz kontenera .sc, zostaw nowy wrapper widoczny */
-      .sib-our-services .ss-bg .sc > *:not(.br-services-list-wrapper) {
+      /* Ukryj stare elementy sekcji (tylko str-id), zostaw nowy wrapper widoczny */
+      .sib-our-services .ss-bg .sc > .str-id {
         display: none !important;
       }
       .br-services-list-wrapper {
