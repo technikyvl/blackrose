@@ -239,6 +239,31 @@
     </style>
   </head>
   <body>
+    <header class="br-nav">
+      <div class="page-shell br-nav-inner">
+        <a href="/" class="br-nav-logo" aria-label="Strona główna">
+          <img
+            src="Bez%20nazwy%20(340%20x%20100%20px).png"
+            alt="Black Rose"
+            width="40"
+            height="40"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <button class="br-nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="br-nav-links">
+          <a href="/" class="br-nav-link">Strona główna</a>
+          <a href="/services" class="br-nav-link">Usługi</a>
+          <a href="/about.html" class="br-nav-link">O nas</a>
+        </nav>
+      </div>
+    </header>
+
     <main aria-label="Pusta sekcja O nas"></main>
 
     <footer class="br-mini-footer">
@@ -304,7 +329,36 @@
         </div>
       </div>
     </footer>
-    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.querySelector(".br-nav-toggle");
+        const links = document.querySelector(".br-nav-links");
+        if (!toggle || !links) return;
+
+        const closeMenu = () => {
+          links.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        };
+
+        toggle.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = links.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        links.querySelectorAll("a").forEach((anchor) => {
+          anchor.addEventListener("click", () => closeMenu());
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!links.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>
 
