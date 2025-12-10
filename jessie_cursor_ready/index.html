@@ -9197,119 +9197,6 @@
       body.has-floating-nav {
         padding-top: 90px;
       }
-      /* Sekcja kontaktu – spójna kolorystyka i typografia */
-      .br-contact {
-        background: #fef7fa;
-        padding: 80px 16px;
-      }
-      .br-contact__shell {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        gap: 28px;
-      }
-      .br-contact__header {
-        display: grid;
-        gap: 10px;
-      }
-      .br-contact__eyebrow {
-        font-family: "Syne", "Lato", sans-serif;
-        font-size: 13px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-      .br-contact__title {
-        font-family: "Syne", "Lato", sans-serif;
-        font-size: clamp(26px, 3vw, 34px);
-        letter-spacing: 0.02em;
-        margin: 0;
-      }
-      .br-contact__grid {
-        display: grid;
-        gap: 18px;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-      .br-contact__card {
-        padding: 18px 18px 16px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.65);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-      }
-      .br-contact__label {
-        font-family: "Syne", "Lato", sans-serif;
-        font-size: 12px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-        color: #19191a;
-      }
-      .br-contact__value {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.7;
-        font-family: "Lato", sans-serif;
-      }
-      .br-contact__value a {
-        color: #19191a;
-        text-decoration: none;
-      }
-      .br-contact__value a:hover {
-        color: rgba(47, 47, 47, 1);
-      }
-      .br-contact__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
-      }
-      .br-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(254, 231, 239, 1);
-        background: rgba(254, 231, 239, 0.9);
-        color: #2f2f2f;
-        font-family: "Syne", "Lato", sans-serif;
-        letter-spacing: 0.08em;
-        font-size: 13px;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .br-btn:hover,
-      .br-btn:focus-visible {
-        transform: translateY(-1px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        outline: none;
-      }
-      .br-btn--ghost {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-      }
-      .br-anchor {
-        scroll-margin-top: 120px;
-      }
-      @media (max-width: 768px) {
-        .br-contact {
-          padding: 64px 14px 72px;
-        }
-        .br-contact__grid {
-          grid-template-columns: 1fr;
-        }
-        .br-contact__actions {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .br-btn {
-          width: 100%;
-          justify-content: center;
-        }
-      }
     </style>
   </head>
   <body class="has-floating-nav">
@@ -9317,7 +9204,7 @@
       <div class="floating-half-nav__list">
         <a href="#si-sp" class="floating-half-nav__link">Strona główna</a>
         <a href="/services.html" class="floating-half-nav__link">Usługi</a>
-        <a href="#contact" class="floating-half-nav__link">Kontakt</a>
+        <a href="/contact.html" class="floating-half-nav__link">Kontakt</a>
         <a href="/about.html" class="floating-half-nav__link">O nas</a>
       </div>
     </nav>
@@ -10025,57 +9912,6 @@
           </div>
         </div>
       </div>
-      <section id="contact" class="br-contact br-anchor">
-        <div class="br-contact__shell">
-          <div class="br-contact__header">
-            <span class="br-contact__eyebrow">Kontakt</span>
-            <h2 class="br-contact__title">
-              Zarezerwuj wizytę lub zapytaj o termin
-            </h2>
-          </div>
-          <div class="br-contact__grid">
-            <div class="br-contact__card">
-              <div class="br-contact__label">Telefon</div>
-              <p class="br-contact__value">
-                <a href="tel:+48574037259">+48 574 037 259</a>
-              </p>
-            </div>
-            <div class="br-contact__card">
-              <div class="br-contact__label">Email</div>
-              <p class="br-contact__value">
-                <a href="mailto:kontakt@blackrose.pl">kontakt@blackrose.pl</a>
-              </p>
-            </div>
-            <div class="br-contact__card">
-              <div class="br-contact__label">Adres</div>
-              <p class="br-contact__value">
-                ks. Barabasza 6<br />
-                43-502, Czechowice-Dziedzice
-              </p>
-            </div>
-            <div class="br-contact__card">
-              <div class="br-contact__label">Godziny otwarcia</div>
-              <p class="br-contact__value">
-                Wtorek – Piątek: 10:00 – 20:00<br />
-                Sobota: 10:00 – 17:00<br />
-                Niedziela &amp; Poniedziałek: nieczynne
-              </p>
-            </div>
-          </div>
-          <div class="br-contact__actions">
-            <a
-              class="br-btn"
-              href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Rezerwuj przez Booksy</a
-            >
-            <a class="br-btn br-btn--ghost" href="tel:+48574037259"
-              >Zadzwoń teraz</a
-            >
-          </div>
-        </div>
-      </section>
     <div id="footer" data-bid="footer" class="sb sib-footer">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px">
