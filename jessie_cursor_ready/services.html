@@ -81,39 +81,77 @@
       }
     </style>
     <style>
-      /* Sekcja usług – czysta, bez treści i bez nadpisów layoutu */
-      #our-services,
+      /* Zamiana starej siatki usług na prostą listę */
       .sib-our-services {
         display: block !important;
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
       }
-      #our-services .ss-s,
-      #our-services .ss-bg,
-      #our-services .sc,
-      .sib-our-services .ss-s,
-      .sib-our-services .ss-bg,
-      .sib-our-services .sc {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        display: block !important;
-      }
-      /* Ukryj wszystkie custom elementy sekcji usług */
-      .br-services-simple,
-      .br-services-list,
-      .br-services-list-wrapper,
-      .br-service-group,
-      .br-service-row,
-      .br-service-list {
+      .sib-our-services .str-id,
+      .sib-our-services .se-img,
+      .sib-our-services .se-line,
+      .sib-our-services .se-icon,
+      .sib-our-services .se-simple {
         display: none !important;
+      }
+      .sib-our-services .sc {
+        position: relative;
+        max-height: none;
+        overflow: visible;
+        padding: 56px 0 48px;
+      }
+      .br-services-list {
+        background: #fef7fa;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        border-radius: 18px;
+        padding: 32px 28px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        display: grid;
+        gap: 22px;
+      }
+      .br-services-list__header {
+        display: grid;
+        gap: 8px;
+        text-align: center;
+      }
+      .br-services-list__eyebrow {
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .br-services-list__title {
+        margin: 0;
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: clamp(24px, 2.8vw, 30px);
+        letter-spacing: 0.01em;
+      }
+      .br-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px 18px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .br-services-grid li {
+        padding: 12px 14px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        background: #fff;
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
+      }
+      @media (max-width: 768px) {
+        .sib-our-services .sc {
+          padding: 44px 0 40px;
+        }
+        .br-services-list {
+          padding: 24px 18px;
+        }
+        .br-services-grid {
+          grid-template-columns: 1fr;
+        }
       }
       /* Pływający pasek nawigacji spójny z główną stroną */
       .floating-half-nav {
@@ -175,19 +213,6 @@
       }
       .floating-half-nav__link:active {
         transform: translateY(0);
-      }
-      /* Tymczasowo pusta sekcja usług */
-      .br-services-simple,
-      .br-services-list-wrapper {
-        display: none !important;
-      }
-      .sib-our-services .ss-bg,
-      .sib-our-services .sc {
-        min-height: 400px !important;
-        height: auto !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
       }
       @media (max-width: 768px) {
         .floating-half-nav {
@@ -3317,27 +3342,13 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        background: #ffffff;
+        background: #fff;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         padding: 32px 24px;
         box-sizing: border-box;
         display: grid;
         gap: 18px;
-        padding-right: 28px;
-        border: 1px solid rgba(200, 169, 106, 0.3); /* złoty akcent */
-        background-image: linear-gradient(180deg, #fef7fa 0%, #ffffff 40%);
-        margin-bottom: 80px;
-      }
-      .br-services-simple::-webkit-scrollbar {
-        width: 8px;
-      }
-      .br-services-simple::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.18);
-        border-radius: 8px;
-      }
-      .br-services-simple::-webkit-scrollbar-track {
-        background: transparent;
       }
       .br-services-simple__eyebrow {
         font-family: "Syne", "Lato", sans-serif;
@@ -3345,7 +3356,6 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         text-align: center;
-        color: #c8a96a;
       }
       .br-services-simple__title {
         margin: 0;
@@ -3353,14 +3363,6 @@
         font-size: clamp(24px, 3vw, 30px);
         letter-spacing: 0.02em;
         text-align: center;
-        color: #000;
-      }
-      @media (max-width: 768px) {
-        .br-services-simple {
-          padding: 24px 16px;
-          padding-right: 18px;
-          margin-bottom: 60px;
-        }
       }
       .br-services-list-wrapper {
         width: 100%;
@@ -3445,51 +3447,23 @@
         margin-left: auto;
       }
       /* Prosta lista usług (siatka) */
-      .br-service-group {
+      .br-services-grid {
         display: grid;
-        gap: 10px;
-        padding: 10px 0;
-      }
-      .br-service-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px 18px;
         list-style: none;
         margin: 0;
         padding: 0;
-        display: grid;
-        gap: 8px;
       }
-      .br-service-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 14px 16px;
-        border: 1px solid rgba(200, 169, 106, 0.65);
-        border-radius: 14px;
+      .br-services-grid li {
+        padding: 12px 14px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
         background: #fff;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-        font-family: "Assistant", "Lato", sans-serif;
-        font-size: 14px;
-        line-height: 1.5;
-        transition: transform 0.15s ease, box-shadow 0.15s ease,
-          border-color 0.15s ease, background-color 0.15s ease;
-      }
-      .br-service-row:hover,
-      .br-service-row:focus-within {
-        transform: translateY(-1px);
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-        border-color: #c8a96a;
-        background: #fff9fb;
-      }
-      .br-service-name {
-        color: #1a1a1a;
-        font-weight: 600;
-        letter-spacing: 0.01em;
-      }
-      .br-service-price {
-        color: #111;
         font-family: "Syne", "Lato", sans-serif;
-        font-weight: 700;
-        white-space: nowrap;
-        letter-spacing: 0.01em;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
       }
       @media (max-width: 768px) {
         .br-services-list {
@@ -9663,155 +9637,25 @@
               <h2 class="br-services-simple__title" id="br-services-title">
                 Zabiegi
               </h2>
-              <div class="br-service-group">
-                <h3>Manicure / dłonie</h3>
-                <ul class="br-service-list">
-                  <li class="br-service-row">
-                    <span class="br-service-name">Zdejmowanie stylizacji + pielęgnacja</span>
-                    <span class="br-service-price">85,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Usunięcie hybrydy wykonanej w innym salonie</span>
-                    <span class="br-service-price">25,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Manicure klasyczny (standardowy)</span>
-                    <span class="br-service-price">65,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Zdobienie paznokci (wzory, naklejki etc.)</span>
-                    <span class="br-service-price">od 5,00 zł / paznokieć</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Naprawa paznokcia (dosztukowanie)</span>
-                    <span class="br-service-price">25,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Zdejmowanie stylizacji + nowa stylizacja</span>
-                    <span class="br-service-price">20,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Przedłużenie żelowe – długie</span>
-                    <span class="br-service-price">200,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Manicure klasyczny (szybsza wersja)</span>
-                    <span class="br-service-price">85,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Manicure hybrydowy – naturalny</span>
-                    <span class="br-service-price">120,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Manicure hybrydowy – kolor</span>
-                    <span class="br-service-price">130,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Manicure hybrydowy – Baby boomer / French / Ombre</span>
-                    <span class="br-service-price">140,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Żelowanie naturalnej płytki paznokcia</span>
-                    <span class="br-service-price">170,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Uzupełnienie żelowe do 3 tygodni – krótkie</span>
-                    <span class="br-service-price">160,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Uzupełnienie żelowe do 3 tygodni – długie</span>
-                    <span class="br-service-price">170,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Przedłużanie żelowe – krótkie</span>
-                    <span class="br-service-price">185,00 zł</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="br-service-group">
-                <h3>Pedicure</h3>
-                <ul class="br-service-list">
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure stóp frezarkowy + opracowanie paznokci + krem</span>
-                    <span class="br-service-price">90,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure stóp frezarkowy + hybryda</span>
-                    <span class="br-service-price">150,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure stóp kosmetyczny (kąpiel + peeling + krem + opracowanie stóp)</span>
-                    <span class="br-service-price">160,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure kosmetyczny + hybryda</span>
-                    <span class="br-service-price">190,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Usunięcie hybrydy + pedicure kosmetyczny stóp</span>
-                    <span class="br-service-price">170,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Usunięcie hybrydy + pielęgnacja paznokci stóp</span>
-                    <span class="br-service-price">80,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure klasyczny</span>
-                    <span class="br-service-price">85,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure hybrydowy – naturalny</span>
-                    <span class="br-service-price">120,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pedicure hybrydowy – kolor / French</span>
-                    <span class="br-service-price">140,00 zł</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="br-service-group">
-                <h3>Depilacja woskiem</h3>
-                <ul class="br-service-list">
-                  <li class="br-service-row">
-                    <span class="br-service-name">Nos</span>
-                    <span class="br-service-price">15,00 zł</span>
-                  </li>
-                    <li class="br-service-row">
-                    <span class="br-service-name">Baczki</span>
-                    <span class="br-service-price">20,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Wąsik</span>
-                    <span class="br-service-price">20,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Wąsik + broda</span>
-                    <span class="br-service-price">25,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Uda</span>
-                    <span class="br-service-price">60,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Łydki</span>
-                    <span class="br-service-price">60,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Pachy</span>
-                    <span class="br-service-price">40,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Broda</span>
-                    <span class="br-service-price">20,00 zł</span>
-                  </li>
-                  <li class="br-service-row">
-                    <span class="br-service-name">Całe nogi</span>
-                    <span class="br-service-price">105,00 zł</span>
-                  </li>
-                </ul>
-              </div>
+              <ul class="br-services-grid">
+                <li>Kosmetologia Estetyczna</li>
+                <li>Stymulatory Tkankowe</li>
+                <li>Kwas Polimlekowy PLLA</li>
+                <li>Mezoterapia Igłowa / Zabiegi Pielęgnacyjne</li>
+                <li>Mezoterapia mikroigłowa</li>
+                <li>Laserowe usuwanie przebarwień Alma Harmony</li>
+                <li>Laserowe zamknięcie naczynek / rumień Alma Harmony</li>
+                <li>Termolifting Alma Harmony</li>
+                <li>Laser ME frakcyjny</li>
+                <li>Depilacja Laserowa Primelase Excellence</li>
+                <li>Modelowanie Pośladków</li>
+                <li>STORZ fala uderzeniowa</li>
+                <li>Kriolipoliza Cooltech</li>
+                <li>Makijaż</li>
+                <li>Makijaż Brwi i Rzęs</li>
+                <li>Inne Zabiegi – Brwi</li>
+                <li>Zabiegi Autologiczne</li>
+              </ul>
             </section>
             <div class="br-services-list-wrapper">
               <div class="br-services-list">
