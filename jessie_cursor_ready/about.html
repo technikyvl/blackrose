@@ -103,6 +103,80 @@
       .br-mini-col a:hover {
         color: #000;
       }
+      /* Pływający pasek nawigacji spójny z główną stroną */
+      .floating-half-nav {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(280px, 50vw, 700px);
+        z-index: 9999;
+        background: rgba(254, 247, 250, 0.92);
+        border: 1px solid var(--border);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border-radius: 999px;
+        padding: 10px 12px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      .floating-half-nav__list {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .floating-half-nav__list::-webkit-scrollbar {
+        display: none;
+      }
+      .floating-half-nav__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 14px;
+        text-decoration: none;
+        color: #19191a;
+        font-family: "Syne", "Lato", sans-serif;
+        letter-spacing: 0.08em;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: rgba(255, 255, 255, 0.6);
+        transition: background 0.25s ease, color 0.25s ease,
+          border-color 0.25s ease, transform 0.25s ease;
+        white-space: nowrap;
+      }
+      .floating-half-nav__link:hover,
+      .floating-half-nav__link:focus-visible {
+        color: #2f2f2f;
+        background: rgba(254, 231, 239, 0.9);
+        border-color: rgba(254, 231, 239, 1);
+        outline: none;
+        transform: translateY(-1px);
+      }
+      .floating-half-nav__link:active {
+        transform: translateY(0);
+      }
+      @media (max-width: 768px) {
+        .floating-half-nav {
+          width: calc(100vw - 32px);
+          padding: 8px 10px;
+        }
+        .floating-half-nav__link {
+          padding: 10px 12px;
+          font-size: 12px;
+        }
+      }
+      body.has-floating-nav {
+        padding-top: 90px;
+      }
       @media (max-width: 600px) {
         .br-mini-footer {
           padding: 14px 12px 16px;
@@ -116,7 +190,17 @@
       }
     </style>
   </head>
-  <body>
+  <body class="has-floating-nav">
+    <nav class="floating-half-nav" aria-label="Nawigacja sekcji">
+      <div class="floating-half-nav__list">
+        <a href="/index.html" class="floating-half-nav__link">Strona główna</a>
+        <a href="/services.html" class="floating-half-nav__link">Usługi</a>
+        <a href="/index.html#call-to-action" class="floating-half-nav__link"
+          >Kontakt</a
+        >
+        <a href="/about.html" class="floating-half-nav__link">O nas</a>
+      </div>
+    </nav>
     <main aria-label="Pusta sekcja O nas"></main>
 
     <footer class="br-mini-footer">
