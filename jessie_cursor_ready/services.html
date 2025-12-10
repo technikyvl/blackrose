@@ -24,119 +24,129 @@
         src: url("//static.showit.co/file/Y0Z4RoPeRCaexmANHI-a0Q/92644/merchant-thin.woff");
       }
     </style>
-    <style id="nav-align">
-      :root {
-        --nav-bg: #fff7fb;
-        --nav-border: rgba(0, 0, 0, 0.06);
+    <style id="br-nav-clone">
+      .page-shell {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 18px;
       }
-      .sib-header {
-        position: sticky !important;
-        top: 0 !important;
-        background: var(--nav-bg) !important;
-        border-bottom: 1px solid var(--nav-border) !important;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
-        height: 68px !important;
-        z-index: 12000 !important;
+      .br-nav {
+        position: sticky;
+        top: 0;
+        z-index: 12000;
+        width: 100%;
+        background: #fff7fb;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
       }
-      @media (max-width: 820px) {
-        .sib-header {
-          height: 64px !important;
-        }
+      .br-nav-inner {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
       }
-      .sib-header .ss-bg,
-      .sib-header .ss-s,
-      .sib-header .sc {
-        height: 100% !important;
+      .br-nav-logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: transparent;
+        box-shadow: none;
+        overflow: hidden;
       }
-      .sib-header .sc {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 18px !important;
-        width: 100% !important;
+      .br-nav-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
       }
-      .sie-header-logo {
-        position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
-        transform: none !important;
-        width: 40px !important;
-        height: 40px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        pointer-events: auto !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
+      .br-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
       }
-      .sie-header-logo .se-img {
-        width: 100% !important;
-        height: 100% !important;
-        background-image: url("Bez%20nazwy%20(340%20x%20100%20px).png") !important;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
+      .br-nav-link {
+        font-family: "Syne", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 9px 10px;
+        position: relative;
+        transition: color 0.25s ease, transform 0.25s ease;
       }
-      .sie-header-nav {
-        align-items: center !important;
-        gap: 22px !important;
-        height: 100% !important;
-        justify-content: center !important;
-        display: flex !important;
+      .br-nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 6px;
+        width: 0;
+        height: 2px;
+        background: #fee7ef;
+        transform: translateX(-50%);
+        transition: width 0.25s ease;
       }
-      .sie-header-link {
-        padding: 9px 10px !important;
-        font-size: 14px !important;
-        letter-spacing: 0.1em !important;
-        text-transform: uppercase !important;
+      .br-nav-link:hover {
+        color: #000;
+        transform: translateY(-1px);
       }
-      /* mobile menu mimic about */
-      .sie-header-menu-toggle {
+      .br-nav-link:hover::after,
+      .br-nav-link.is-active::after {
+        width: 70%;
+      }
+      .br-nav-toggle {
         display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .br-nav-toggle span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        border-radius: 2px;
+        background: #000;
+        transition: transform 0.25s ease, opacity 0.25s ease;
       }
       @media (max-width: 820px) {
-        .sie-header-menu-toggle {
-          display: flex !important;
+        .br-nav-inner {
+          height: 64px;
+        }
+        .br-nav-links {
+          position: fixed;
+          inset: 64px 0 0 0;
+          background: #fff7fb;
           flex-direction: column;
-          gap: 5px;
-          background: none;
-          border: none;
-          padding: 10px;
-          cursor: pointer;
+          align-items: center;
+          gap: 0;
+          padding: 12px 0 24px;
+          transform: translateY(-110%);
+          transition: transform 0.25s ease;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+          display: none;
         }
-        .sie-header-nav {
-          position: fixed !important;
-          inset: 64px 0 0 0 !important;
-          background: var(--nav-bg) !important;
-          flex-direction: column !important;
-          align-items: center !important;
-          gap: 0 !important;
-          padding: 12px 0 24px !important;
-          transform: translateY(-110%) !important;
-          transition: transform 0.25s ease !important;
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
-          display: none !important;
+        .br-nav-links.is-open {
+          display: flex;
+          transform: translateY(0);
         }
-        .sie-header-nav.active {
-          display: flex !important;
-          transform: translateY(0) !important;
+        .br-nav-link {
+          width: 100%;
+          text-align: center;
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
-        .sie-header-link {
-          width: 100% !important;
-          text-align: center !important;
-          padding: 14px 0 !important;
-          border-bottom: 1px solid var(--nav-border) !important;
+        .br-nav-link:last-child {
+          border-bottom: none;
         }
-        .sie-header-link:last-child {
-          border-bottom: none !important;
-        }
-        .sie-header-logo {
-          width: 40px !important;
-          height: 40px !important;
+        .br-nav-toggle {
+          display: flex;
         }
       }
     </style>
@@ -9526,40 +9536,32 @@
     </style>
   </head>
   <body>
-    <div id="si-sp" class="sp">
-      <div id="header" data-bid="header" class="sb sib-header sb-lm">
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <a
-              href="/"
-              target="_self"
-              class="sie-header-logo se"
-              data-sid="header-logo"
-              ><div
-                style="width: 100%; height: 100%"
-                data-img="header-logo"
-                class="se-img se-gr slzy"
-              ></div>
-              <noscript
-                ><img
-                  src="/Bez%20nazwy%20(340%20x%20100%20px).png"
-                  class="se-img"
-                  alt="Black Rose"
-                  title="Black Rose" /></noscript
-            ></a>
-            <button class="sie-header-menu-toggle" aria-label="Menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav class="sie-header-nav">
-              <a href="/" class="sie-header-link">STRONA GŁÓWNA</a>
-              <a href="/services" class="sie-header-link">USŁUGI</a>
-              <a href="/about.html" class="sie-header-link">O NAS</a>
-            </nav>
-          </div>
-        </div>
+    <header class="br-nav">
+      <div class="page-shell br-nav-inner">
+        <a href="/" class="br-nav-logo" aria-label="Strona główna">
+          <img
+            src="Bez%20nazwy%20(340%20x%20100%20px).png"
+            alt="Black Rose"
+            width="40"
+            height="40"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <button class="br-nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="br-nav-links">
+          <a href="/" class="br-nav-link">Strona główna</a>
+          <a href="/services" class="br-nav-link">Usługi</a>
+          <a href="/about.html" class="br-nav-link">O nas</a>
+        </nav>
       </div>
+    </header>
+
+    <div id="si-sp" class="sp">
       <div
         id="our-services"
         data-bid="our-services"

@@ -9252,40 +9252,32 @@
     </style>
   </head>
   <body>
-    <div id="si-sp" class="sp">
-      <div id="header" data-bid="header" class="sb sib-header sb-lm">
-        <div class="ss-s ss-bg">
-          <div class="sc" style="width: 1200px">
-            <a
-              href="/"
-              target="_self"
-              class="sie-header-logo se"
-              data-sid="header-logo"
-              ><div
-                style="width: 100%; height: 100%"
-                data-img="header-logo"
-                class="se-img se-gr slzy"
-              ></div>
-              <noscript
-                ><img
-                  src="/Bez%20nazwy%20(340%20x%20100%20px).png"
-                  class="se-img"
-                  alt="Black Rose"
-                  title="Black Rose" /></noscript
-            ></a>
-            <button class="sie-header-menu-toggle" aria-label="Menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav class="sie-header-nav">
-              <a href="/" class="sie-header-link">STRONA GŁÓWNA</a>
-              <a href="/services" class="sie-header-link">USŁUGI</a>
-              <a href="/about.html" class="sie-header-link">O NAS</a>
-            </nav>
-          </div>
-        </div>
+    <header class="br-nav">
+      <div class="page-shell br-nav-inner">
+        <a href="/" class="br-nav-logo" aria-label="Strona główna">
+          <img
+            src="Bez%20nazwy%20(340%20x%20100%20px).png"
+            alt="Black Rose"
+            width="40"
+            height="40"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <button class="br-nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="br-nav-links">
+          <a href="/" class="br-nav-link">Strona główna</a>
+          <a href="/services" class="br-nav-link">Usługi</a>
+          <a href="/about.html" class="br-nav-link">O nas</a>
+        </nav>
       </div>
+    </header>
+
+    <div id="si-sp" class="sp">
       <div id="about" class="sb sib-about-anchor">
         <div class="ss-s ss-bg">
           <div class="sc" style="width: 1200px; min-height: 120px"></div>
@@ -10595,44 +10587,32 @@
         }
       });
       
-      // Blokowanie reakcji logo na hover linków - bardziej agresywne podejście
-      document.addEventListener('DOMContentLoaded', function() {
-        const headerLinks = document.querySelectorAll('.sie-header-link');
-        const body = document.body;
-        const logo = document.querySelector('.sie-header-logo');
-        
-        headerLinks.forEach(link => {
-          link.addEventListener('mouseenter', function(e) {
-            body.classList.add('header-link-hover');
-            // Dodatkowe zabezpieczenie - bezpośrednie wyłączenie animacji logo
-            if (logo) {
-              logo.style.pointerEvents = 'none';
-              logo.style.transition = 'none';
-            }
-          });
-          
-          link.addEventListener('mouseleave', function(e) {
-            body.classList.remove('header-link-hover');
-            // Przywrócenie logo
-            if (logo) {
-              logo.style.pointerEvents = '';
-              logo.style.transition = '';
-            }
-          });
+      // Nawigacja (jak na about)
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.querySelector('.br-nav-toggle');
+        const links = document.querySelector('.br-nav-links');
+        if (!toggle || !links) return;
+
+        const closeMenu = () => {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = links.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
-        
-        // Dodatkowe zabezpieczenie - sprawdzanie czy logo jest w hover gdy link jest w hover
-        if (logo) {
-          logo.addEventListener('mouseenter', function() {
-            const hasLinkHover = Array.from(headerLinks).some(link => link.matches(':hover'));
-            if (hasLinkHover) {
-              this.style.transform = 'translateY(-50%)';
-              this.style.opacity = '1';
-              this.style.filter = 'none';
-              this.style.scale = '1';
-            }
-          });
-        }
+
+        links.querySelectorAll('a').forEach((anchor) => {
+          anchor.addEventListener('click', () => closeMenu());
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!links.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
+          }
+        });
       });
     </script>
     
