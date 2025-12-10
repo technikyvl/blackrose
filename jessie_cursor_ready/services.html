@@ -3343,9 +3343,9 @@
         max-width: 1200px;
         margin: 0 auto;
         background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        padding: 32px 24px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 36px 28px;
         box-sizing: border-box;
         display: grid;
         gap: 18px;
@@ -3363,6 +3363,71 @@
         font-size: clamp(24px, 3vw, 30px);
         letter-spacing: 0.02em;
         text-align: center;
+      }
+      .br-services-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .br-services-card {
+        background: #fff8fb;
+        border: 1px solid rgba(201, 163, 74, 0.25);
+        border-radius: 14px;
+        padding: 16px 16px 14px;
+        display: grid;
+        gap: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+      .br-services-card h3 {
+        margin: 0;
+        font-family: "Syne", "Lato", sans-serif;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0f0f0f;
+      }
+      .br-services-card small {
+        font-family: "Assistant", sans-serif;
+        color: #5a5a5a;
+        letter-spacing: 0.04em;
+      }
+      .br-services-listing {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .br-services-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        background: #fff;
+      }
+      .br-services-item .name {
+        font-family: "Assistant", sans-serif;
+        font-size: 14px;
+        color: #101010;
+        line-height: 1.35;
+      }
+      .br-services-item .price {
+        font-family: "Syne", "Lato", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #c9a34a;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
+        .br-services-simple {
+          padding: 28px 18px;
+        }
+        .br-services-groups {
+          grid-template-columns: 1fr;
+        }
       }
       .br-services-list-wrapper {
         width: 100%;
@@ -9637,25 +9702,158 @@
               <h2 class="br-services-simple__title" id="br-services-title">
                 Zabiegi
               </h2>
-              <ul class="br-services-grid">
-                <li>Kosmetologia Estetyczna</li>
-                <li>Stymulatory Tkankowe</li>
-                <li>Kwas Polimlekowy PLLA</li>
-                <li>Mezoterapia Igłowa / Zabiegi Pielęgnacyjne</li>
-                <li>Mezoterapia mikroigłowa</li>
-                <li>Laserowe usuwanie przebarwień Alma Harmony</li>
-                <li>Laserowe zamknięcie naczynek / rumień Alma Harmony</li>
-                <li>Termolifting Alma Harmony</li>
-                <li>Laser ME frakcyjny</li>
-                <li>Depilacja Laserowa Primelase Excellence</li>
-                <li>Modelowanie Pośladków</li>
-                <li>STORZ fala uderzeniowa</li>
-                <li>Kriolipoliza Cooltech</li>
-                <li>Makijaż</li>
-                <li>Makijaż Brwi i Rzęs</li>
-                <li>Inne Zabiegi – Brwi</li>
-                <li>Zabiegi Autologiczne</li>
-              </ul>
+              <div class="br-services-groups">
+                <div class="br-services-card">
+                  <h3>PAZNOKCIE</h3>
+                  <small>15 usług</small>
+                  <ul class="br-services-listing">
+                    <li class="br-services-item">
+                      <span class="name">Zdejmowanie stylizacji + pielęgnacja</span>
+                      <span class="price">85 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Usunięcie hybrydy wykonanej w innym salonie</span>
+                      <span class="price">25 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Manicure klasyczny (standardowy)</span>
+                      <span class="price">65 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Zdobienie paznokci (wzory, naklejki itd.)</span>
+                      <span class="price">od 5 zł / paznokieć</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Naprawa paznokcia</span>
+                      <span class="price">25 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Zdejmowanie stylizacji + nowa stylizacja (z innego salonu)</span>
+                      <span class="price">20 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Przedłużenie żelowe – długie</span>
+                      <span class="price">200 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Manicure klasyczny</span>
+                      <span class="price">85 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Manicure hybrydowy – naturalny</span>
+                      <span class="price">120 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Manicure hybrydowy – kolor</span>
+                      <span class="price">130 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Manicure hybrydowy – Babyboomer / French / Ombre</span>
+                      <span class="price">140 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Żelowanie naturalnej płytki</span>
+                      <span class="price">170 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Uzupełnienie żelowe do 3 tygodni – krótkie</span>
+                      <span class="price">160 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Uzupełnienie żelowe do 3 tygodni – długie</span>
+                      <span class="price">170 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Przedłużanie żelowe – krótkie</span>
+                      <span class="price">185 zł</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="br-services-card">
+                  <h3>PEDICURE</h3>
+                  <small>9 usług</small>
+                  <ul class="br-services-listing">
+                    <li class="br-services-item">
+                      <span class="name">Pedicure frezarkowy + opracowanie paznokci + krem</span>
+                      <span class="price">90 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure frezarkowy + hybryda</span>
+                      <span class="price">150 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure kosmetyczny (kąpiel + peeling + krem + opracowanie stóp)</span>
+                      <span class="price">160 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure kosmetyczny + hybryda</span>
+                      <span class="price">190 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Usunięcie hybrydy + pedicure kosmetyczny</span>
+                      <span class="price">170 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Usunięcie hybrydy + pielęgnacja paznokci stóp</span>
+                      <span class="price">80 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure klasyczny</span>
+                      <span class="price">85 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure hybrydowy – naturalny</span>
+                      <span class="price">120 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Pedicure hybrydowy – kolor / French</span>
+                      <span class="price">140 zł</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="br-services-card">
+                  <h3>DEPILACJA WOSKIEM</h3>
+                  <small>9 usług</small>
+                  <ul class="br-services-listing">
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – nos</span>
+                      <span class="price">15 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – baczki</span>
+                      <span class="price">20 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – wąsik</span>
+                      <span class="price">20 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – wąsik + broda</span>
+                      <span class="price">25 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – uda</span>
+                      <span class="price">60 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – łydki</span>
+                      <span class="price">60 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – pachy</span>
+                      <span class="price">40 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – broda</span>
+                      <span class="price">20 zł</span>
+                    </li>
+                    <li class="br-services-item">
+                      <span class="name">Depilacja woskiem – całe nogi</span>
+                      <span class="price">105 zł</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </section>
             <div class="br-services-list-wrapper">
               <div class="br-services-list">
