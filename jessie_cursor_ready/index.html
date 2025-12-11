@@ -40,30 +40,92 @@
         overflow-x: hidden;
       }
 
-      /* Proste umieszczenie zdjęcia po prawej, lewa krawędź w połowie ekranu */
+      /* Hero */
       .hero-img-wrap {
         width: 100vw;
         margin: 0;
         padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+      .hero-copy {
+        max-width: 520px;
+        padding: 0 6vw 0 8vw;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-kicker {
+        font-family: 'Syne', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c75b8a;
+      }
+      .hero-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 600;
+        margin: 0;
+      }
+      .hero-text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(25, 25, 26, 0.8);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: #fff;
+        color: #19191a;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn-primary {
+        background: linear-gradient(120deg, #fee7ef, #ffd6aa);
+        border-color: transparent;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
       }
       .hero-img {
         display: block;
-        width: 50vw;
-        max-width: 50vw;
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        max-height: calc(100vh - 140px);
+        max-height: calc(100vh - 160px);
         object-fit: contain;
         margin-left: auto;
         border-radius: 24px;
       }
       @media (max-width: 768px) {
         .hero-img {
-          width: 100vw;
-          max-width: 100vw;
+          width: 100%;
+          max-width: 100%;
           max-height: calc(100vh - 140px);
           border-radius: 16px;
+        }
+        .hero-img-wrap {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 0 16px;
+        }
+        .hero-copy {
+          padding: 0 4vw;
         }
       }
 
@@ -179,6 +241,156 @@
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
         }
+      }
+
+      /* Sections */
+      .section {
+        width: 100%;
+        padding: 48px 24px 32px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .section-head {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .section-kicker {
+        font-family: 'Syne', sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #c75b8a;
+      }
+      .section-title {
+        margin: 0;
+        font-size: clamp(24px, 3vw, 32px);
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+      }
+      .section-text {
+        margin: 0;
+        color: rgba(25, 25, 26, 0.8);
+        line-height: 1.7;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        padding: 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .card h3 {
+        margin: 0;
+        font-family: 'Syne', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .card p {
+        margin: 0;
+        line-height: 1.6;
+        color: rgba(25, 25, 26, 0.78);
+      }
+      .card small {
+        color: rgba(25, 25, 26, 0.6);
+        letter-spacing: 0.05em;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        align-items: start;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 14px;
+        padding: 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .contact-form label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #19191a;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-family: 'Assistant', sans-serif;
+        font-size: 15px;
+        background: #fff;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #c75b8a;
+        box-shadow: 0 0 0 3px rgba(199, 91, 138, 0.15);
+      }
+      .contact-form button {
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .contact-details {
+        padding: 20px;
+        border-radius: 16px;
+        background: #fff7fb;
+        border: 1px solid rgba(199, 91, 138, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        display: grid;
+        gap: 10px;
+      }
+      .contact-details h3 {
+        margin: 0;
+        font-family: 'Syne', sans-serif;
+        font-size: 18px;
+      }
+      .contact-details ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+        color: rgba(25, 25, 26, 0.8);
+      }
+      .contact-details a {
+        color: #c75b8a;
+        text-decoration: none;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+      .gallery img,
+      .gallery video {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+        height: 100%;
+        max-height: 260px;
       }
       .custom-footer-brand {
         display: flex;
@@ -307,7 +519,129 @@
     </nav>
 
     <section id="top" class="hero-img-wrap">
+      <div class="hero-copy">
+        <div class="hero-kicker">Black Rose • Czechowice-Dziedzice</div>
+        <h1 class="hero-title">Manicure, pedicure i pielęgnacja dłoni w butikowym salonie</h1>
+        <p class="hero-text">
+          Precyzja, sterylność i projekty dopasowane do Twojego stylu. Dbamy o detale, używamy sprawdzonych produktów
+          i rezerwujemy czas tylko dla Ciebie.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Umów wizytę</a>
+          <a class="btn" href="#kontakt">Zadzwoń lub napisz</a>
+        </div>
+      </div>
       <img class="hero-img" src="stronaglowjna.jpg" alt="Black Rose" />
+    </section>
+
+    <section class="section" id="oferta">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Oferta</div>
+          <h2 class="section-title">Najczęściej wybierane usługi</h2>
+          <p class="section-text">
+            Kompleksowa pielęgnacja dłoni i stóp, od klasycznego manicure po rozbudowane stylizacje artystyczne.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <small>Manicure</small>
+            <h3>Hybrydowy & klasyczny</h3>
+            <p>Precyzyjne opracowanie skórek, wyrównanie płytki, długotrwały połysk lub naturalny efekt nude.</p>
+          </div>
+          <div class="card">
+            <small>Pedicure</small>
+            <h3>SPA & leczniczy</h3>
+            <p>Zabiegi wygładzające, opracowanie pięt, komfortowa pielęgnacja stóp plus wykończenie lakierem.</p>
+          </div>
+          <div class="card">
+            <small>Stylizacja</small>
+            <h3>French, baby boomer</h3>
+            <p>Delikatne przejścia, klasyczny french, zdobienia ręczne i dodatki dobrane do Twojego stylu.</p>
+          </div>
+          <div class="card">
+            <small>Bezpieczeństwo</small>
+            <h3>Higiena & sterylność</h3>
+            <p>Narzędzia pakowane po sterylizacji, jednorazowe pilniki, stanowiska dezynfekowane po każdej wizycie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="o-nas">
+      <div class="container two-col">
+        <div>
+          <div class="section-head">
+            <div class="section-kicker">O nas</div>
+            <h2 class="section-title">Salon stworzony z myślą o komforcie</h2>
+            <p class="section-text">
+              Black Rose to kameralne miejsce, w którym łączymy estetykę, technikę i dbałość o zdrowie naturalnej płytki.
+              Każdą stylizację planujemy indywidualnie, a produkty dobieramy do potrzeb Twoich dłoni i stóp.
+            </p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <h3>Doświadczenie</h3>
+              <p>Setki realizacji rocznie, stałe szkolenia i aktualne trendy w stylizacji paznokci.</p>
+            </div>
+            <div class="card">
+              <h3>Indywidualne podejście</h3>
+              <p>Diagnoza płytki, rekomendacje pielęgnacyjne i kolory dobrane do Twojej codzienności.</p>
+            </div>
+            <div class="card">
+              <h3>Strefa relaksu</h3>
+              <p>Wygodne stanowiska, spokojna muzyka, aromatyczna kawa lub herbata w trakcie wizyty.</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery">
+          <img src="PAZNOKCIE.jpg" alt="Stylizacja paznokci Black Rose" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container two-col">
+        <div>
+          <div class="section-head">
+            <div class="section-kicker">Kontakt</div>
+            <h2 class="section-title">Zarezerwuj wizytę lub zapytaj o termin</h2>
+            <p class="section-text">
+              Napisz, zadzwoń lub zostaw wiadomość przez formularz. Odpowiemy najszybciej, jak to możliwe.
+            </p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div>
+              <label for="name">Imię i nazwisko</label>
+              <input type="text" id="name" name="name" placeholder="Twoje imię" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="np. kontakt@twojmail.pl" required />
+            </div>
+            <div>
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="Opcjonalnie" />
+            </div>
+            <div>
+              <label for="message">Wiadomość</label>
+              <textarea id="message" name="message" rows="4" placeholder="Na kiedy potrzebujesz wizyty?" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Wyślij wiadomość</button>
+            <div id="formStatus" aria-live="polite" style="font-weight:600; color:#c75b8a;"></div>
+          </form>
+        </div>
+        <div class="contact-details">
+          <h3>Dane kontaktowe</h3>
+          <ul>
+            <li>Telefon: <a href="tel:+48730619399">+48 730 619 399</a></li>
+            <li>Email: <a href="mailto:kontakt@blackrose.pl">kontakt@blackrose.pl</a></li>
+            <li>Booksy: <a href="https://booksy.com/pl-pl/21497_salon-kosmetyczny-black-rose_salon-kosmetyczny_12773_czechowice-dziedzice#ba_s=seo" target="_blank" rel="noopener noreferrer">Umów online</a></li>
+            <li>Adres: Czechowice-Dziedzice, ul. Paderewskiego 8</li>
+            <li>Godziny: Pon-Pt 9:00-18:00, Sob 9:00-14:00</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <footer class="custom-footer">
@@ -390,6 +724,16 @@
       document.addEventListener('DOMContentLoaded', function() {
         const footer = document.querySelector('.custom-footer');
         if (!footer) return;
+
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+        if (form && status) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            status.textContent = 'Dziękujemy! Wrócimy z terminem najszybciej jak się da.';
+            form.reset();
+          });
+        }
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
