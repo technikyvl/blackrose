@@ -514,6 +514,105 @@
         margin: 0;
         line-height: 1.6;
       }
+      /* Home services teaser */
+      .home-services {
+        padding: 72px 18px 32px;
+        background: #fff9fc;
+      }
+      .home-services__shell {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 28px;
+      }
+      .home-services__head {
+        display: grid;
+        gap: 8px;
+      }
+      .home-services__eyebrow {
+        font-family: 'Syne', 'Lato', sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .home-services__title {
+        margin: 0;
+        font-family: 'Syne', 'Lato', sans-serif;
+        font-size: clamp(24px, 3vw, 32px);
+      }
+      .home-services__grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .home-service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        min-height: 220px;
+        background: #f6c7dd;
+        color: #0f0f0f;
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+        isolation: isolate;
+      }
+      .home-service-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.02);
+        transition: transform 0.4s ease;
+        opacity: 0.9;
+        z-index: 0;
+      }
+      .home-service-card[data-img='manicure']::before {
+        background-image: url('static.showit.co/800/ROxfVAyQSvaSNEaXFxWGig/92644/kaboompics_applying-facial-serum-for-enhanced-skin-care-32025.jpg');
+      }
+      .home-service-card[data-img='pedicure']::before {
+        background-image: url('static.showit.co/800/rMN4hzqdRWGrINQiJdEZAg/92644/natali-hordiiuk-kutnwny9vic-unsplash.jpg');
+      }
+      .home-service-card[data-img='depilacja']::before {
+        background-image: url('static.showit.co/1600/4XFOvBb1QgicsBIfqMYmlA/92644/kaboompics_hydrating-the-face-with-moisturizing-cream-32029.jpg');
+      }
+      .home-service-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.55) 90%);
+        z-index: 1;
+      }
+      .home-service-card:hover::before,
+      .home-service-card:focus-visible::before {
+        transform: scale(1.06);
+      }
+      .home-service-card__body {
+        position: relative;
+        z-index: 2;
+        padding: 18px 16px;
+        width: 100%;
+      }
+      .home-service-card__eyebrow {
+        font-family: 'Syne', 'Lato', sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #f6c7dd;
+      }
+      .home-service-card__title {
+        margin: 6px 0 0;
+        font-family: 'Syne', 'Lato', sans-serif;
+        font-size: 20px;
+        color: #fff;
+      }
+      @media (max-width: 720px) {
+        .home-services {
+          padding: 64px 14px 28px;
+        }
+      }
       @media (max-width: 768px) {
         .custom-footer-copyright-section {
           padding: 20px 16px;
@@ -548,6 +647,35 @@
         </div>
       </div>
       <img class="hero-img" src="stronaglowjna.jpg" alt="Black Rose" />
+    </section>
+
+    <section class="home-services" id="uslugi">
+      <div class="home-services__shell">
+        <div class="home-services__head">
+          <span class="home-services__eyebrow">Usługi</span>
+          <h2 class="home-services__title">Poznaj nasze specjalizacje</h2>
+        </div>
+        <div class="home-services__grid">
+          <a class="home-service-card" href="/services.html#services" data-img="manicure">
+            <div class="home-service-card__body">
+              <div class="home-service-card__eyebrow">Styl</div>
+              <div class="home-service-card__title">Manicure</div>
+            </div>
+          </a>
+          <a class="home-service-card" href="/services.html#services" data-img="pedicure">
+            <div class="home-service-card__body">
+              <div class="home-service-card__eyebrow">Komfort</div>
+              <div class="home-service-card__title">Pedicure</div>
+            </div>
+          </a>
+          <a class="home-service-card" href="/services.html#services" data-img="depilacja">
+            <div class="home-service-card__body">
+              <div class="home-service-card__eyebrow">Gładkość</div>
+              <div class="home-service-card__title">Depilacja</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="kontakt">
