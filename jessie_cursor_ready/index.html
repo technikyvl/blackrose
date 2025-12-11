@@ -322,6 +322,11 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         align-items: start;
+        justify-items: stretch;
+      }
+      .contact-grid {
+        grid-template-columns: minmax(360px, 1.05fr) minmax(320px, 0.95fr);
+        gap: 28px;
       }
 
       .contact-form {
@@ -609,7 +614,7 @@
     </section>
 
     <section class="section" id="kontakt">
-      <div class="container two-col">
+      <div class="container two-col contact-grid">
         <div>
           <div class="section-head">
             <div class="section-kicker">Kontakt</div>
