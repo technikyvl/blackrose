@@ -119,22 +119,25 @@
         width: 100vw;
         margin: 12px 0 24px;
         padding: 0;
-        display: flex;
-        justify-content: flex-end;
+        display: block;
+        text-align: right;
       }
       .hero-right__img {
         display: block;
-        width: 100vw;
+        width: auto;
+        max-width: 100vw;
         height: auto;
         max-height: calc(100vh - 140px);
         object-fit: contain;
+        margin: 0;
+        display: inline-block;
       }
       @media (max-width: 768px) {
         .hero-right {
           margin: 8px 0 20px;
         }
         .hero-right__img {
-          width: 100vw;
+          max-width: 100vw;
           max-height: calc(100vh - 140px);
         }
       }
