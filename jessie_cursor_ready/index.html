@@ -117,11 +117,10 @@
       /* Hero image pinned to the right half */
       .hero-right {
         width: 100vw;
-        margin: 12px 0 24px;
+        margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 0;
+        display: block;
+        text-align: right;
       }
       .hero-right__img {
         display: block;
@@ -131,7 +130,8 @@
         max-height: calc(100vh - 140px);
         object-fit: contain;
         margin: 0;
-        display: inline-block;
+        margin-left: auto;
+        vertical-align: top;
         border-radius: 16px;
         box-shadow:
           0 16px 40px rgba(255, 192, 203, 0.28),
@@ -139,7 +139,7 @@
       }
       @media (max-width: 768px) {
         .hero-right {
-          margin: 8px 0 20px;
+          margin: 0;
         }
         .hero-right__img {
           width: 100vw;
