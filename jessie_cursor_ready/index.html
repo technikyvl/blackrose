@@ -121,11 +121,11 @@
         padding: 0;
         display: flex;
         justify-content: flex-end;
-        padding-right: clamp(12px, 4vw, 64px);
+        padding-right: 0;
       }
       .hero-right__img {
         display: block;
-        width: auto;
+        width: min(50vw, 1200px);
         max-width: 100vw;
         height: auto;
         max-height: calc(100vh - 140px);
@@ -142,6 +142,7 @@
           margin: 8px 0 20px;
         }
         .hero-right__img {
+          width: 100vw;
           max-width: 100vw;
           max-height: calc(100vh - 140px);
           border-radius: 12px;
