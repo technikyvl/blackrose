@@ -37,6 +37,7 @@
         background: var(--bg);
         color: var(--text);
         font-family: 'Assistant', sans-serif;
+        overflow-x: hidden;
       }
 
       /* Proste umieszczenie zdjęcia po prawej, lewa krawędź w połowie ekranu */
@@ -44,8 +45,8 @@
         width: 100vw;
         margin: 0;
         padding: 0;
-        display: block;
-        text-align: right;
+        display: flex;
+        justify-content: flex-end;
       }
       .hero-img {
         display: block;
