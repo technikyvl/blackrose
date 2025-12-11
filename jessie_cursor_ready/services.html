@@ -11,10 +11,11 @@
     />
     <style>
       :root {
-        --bg: #fef7fa;
-        --text: #2f2f2f;
-        --accent: #fee7ef;
-        --border: rgba(0, 0, 0, 0.06);
+        --bg: #fff9fc;
+        --text: #0f0f0f;
+        --accent: #f6c7dd;
+        --gold: #c9a23a;
+        --border: rgba(201, 162, 58, 0.16);
       }
       * {
         box-sizing: border-box;
@@ -44,8 +45,8 @@
         transform: translateX(-50%);
         width: clamp(300px, 52vw, 780px);
         z-index: 9999;
-        background: rgba(254, 247, 250, 0.92);
-        border: 1px solid var(--border);
+        background: rgba(246, 199, 221, 0.92);
+        border: 1px solid rgba(201, 162, 58, 0.14);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         border-radius: 999px;
         padding: 10px 12px;
@@ -73,7 +74,7 @@
         align-items: center;
         padding: 10px 14px;
         text-decoration: none;
-        color: #19191a;
+        color: var(--text);
         font-family: "Syne", "Lato", sans-serif;
         letter-spacing: 0.08em;
         font-size: 13px;
@@ -81,16 +82,16 @@
         text-transform: uppercase;
         border-radius: 999px;
         border: 1px solid transparent;
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.78);
         transition: background 0.25s ease, color 0.25s ease,
           border-color 0.25s ease, transform 0.25s ease;
         white-space: nowrap;
       }
       .floating-half-nav__link:hover,
       .floating-half-nav__link:focus-visible {
-        color: #2f2f2f;
-        background: rgba(254, 231, 239, 0.9);
-        border-color: rgba(254, 231, 239, 1);
+        color: var(--text);
+        background: rgba(246, 199, 221, 0.9);
+        border-color: rgba(201, 162, 58, 0.35);
         outline: none;
         transform: translateY(-1px);
       }
@@ -161,10 +162,10 @@
       }
       .br-services__group {
         padding: 16px;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(201, 162, 58, 0.18);
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.75);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.06);
         display: grid;
         gap: 12px;
       }
@@ -179,16 +180,18 @@
         font-size: 15px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+        color: var(--text);
       }
       .br-chip {
         padding: 6px 10px;
         border-radius: 999px;
-        background: rgba(254, 231, 239, 0.75);
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        background: rgba(201, 162, 58, 0.14);
+        border: 1px solid rgba(201, 162, 58, 0.28);
         font-size: 12px;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 700;
+        color: var(--text);
       }
       .br-services__list {
         list-style: none;
@@ -204,21 +207,24 @@
         gap: 12px;
         padding: 12px 14px;
         border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(201, 162, 58, 0.22);
         background: #fff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
       }
       .br-services__name {
+        font-family: "Assistant", "Lato", sans-serif;
         font-size: 15px;
         line-height: 1.5;
         font-weight: 500;
+        color: var(--text);
       }
       .br-services__price {
         font-family: "Syne", "Lato", sans-serif;
         font-weight: 700;
         font-size: 14px;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.04em;
         white-space: nowrap;
+        color: var(--gold);
       }
       .br-services__cta {
         display: flex;
@@ -227,8 +233,8 @@
         align-items: center;
         padding: 14px 16px;
         border-radius: 14px;
-        border: 1px dashed rgba(0, 0, 0, 0.05);
-        background: rgba(254, 231, 239, 0.35);
+        border: 1px dashed rgba(201, 162, 58, 0.24);
+        background: rgba(246, 199, 221, 0.35);
       }
       .br-btn {
         display: inline-flex;
@@ -237,9 +243,13 @@
         gap: 8px;
         padding: 12px 16px;
         border-radius: 999px;
-        border: 1px solid rgba(254, 231, 239, 1);
-        background: rgba(254, 231, 239, 0.9);
-        color: #2f2f2f;
+        border: 1px solid rgba(201, 162, 58, 0.7);
+        background: linear-gradient(
+          120deg,
+          rgba(246, 199, 221, 0.95),
+          rgba(201, 162, 58, 0.28)
+        );
+        color: var(--text);
         font-family: "Syne", "Lato", sans-serif;
         letter-spacing: 0.08em;
         font-size: 13px;
@@ -256,7 +266,7 @@
       }
       .br-btn--ghost {
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(201, 162, 58, 0.5);
       }
       @media (max-width: 720px) {
         .br-services {
@@ -301,7 +311,7 @@
         font-family: "Syne", sans-serif;
         font-weight: 600;
         font-size: 13px;
-        color: #2f2f2f;
+        color: var(--text);
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
       }
       .br-mini-col h4 {
