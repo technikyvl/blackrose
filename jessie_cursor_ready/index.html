@@ -114,6 +114,51 @@
         }
       }
 
+      /* Hero image pinned to the right half */
+      .hero-split {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 360px;
+        margin: 24px auto 32px;
+        background: linear-gradient(
+          90deg,
+          rgba(254, 247, 250, 0.9) 0%,
+          rgba(254, 247, 250, 0.9) 50%,
+          transparent 50%
+        );
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .hero-split__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-image: url('stronaglowjna.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 1024px) {
+        .hero-split {
+          height: 300px;
+          margin: 20px auto 28px;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-split {
+          height: 240px;
+          margin: 16px auto 24px;
+          background: transparent;
+        }
+        .hero-split__image {
+          width: 100%;
+        }
+      }
+
       /* Custom Footer Styles */
       .custom-footer {
         position: relative;
@@ -278,7 +323,11 @@
       </div>
     </nav>
 
-    <footer class="custom-footer" id="top">
+    <section id="top" class="hero-split" aria-hidden="true">
+      <div class="hero-split__image"></div>
+    </section>
+
+    <footer class="custom-footer">
       <div class="custom-footer-content">
         <div class="custom-footer-brand">
           <div class="custom-footer-logo">BR</div>
