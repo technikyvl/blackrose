@@ -149,16 +149,20 @@
         border-radius: 24px;
       }
       @media (max-width: 768px) {
+        body {
+          padding: 0 0 20px;
+        }
         .hero-img {
           width: 100%;
           max-width: 100%;
-          max-height: calc(100vh - 140px);
+          max-height: calc(100vh - 120px);
           border-radius: 16px;
         }
         .hero-img-wrap {
           grid-template-columns: 1fr;
           gap: 18px;
-          padding: 0 16px;
+          padding: 96px 16px 32px;
+          min-height: auto;
         }
         .hero-copy {
           padding: 0 4vw;
