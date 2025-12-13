@@ -45,12 +45,13 @@
         width: 100vw;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding: 120px 24px 80px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-items: center;
         gap: 24px;
+        min-height: 100vh;
       }
       .hero-copy {
         max-width: 520px;
@@ -252,7 +253,10 @@
       /* Sections */
       .section {
         width: 100%;
-        padding: 48px 24px 32px;
+        padding: 72px 24px 32px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
       }
       .container {
         max-width: 1200px;
@@ -518,6 +522,9 @@
       .home-services {
         padding: 72px 18px 32px;
         background: #fff9fc;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
       }
       .home-services__shell {
         max-width: 1200px;
