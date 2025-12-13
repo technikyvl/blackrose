@@ -69,6 +69,32 @@
         }
       }
 
+      /* Logo w sekcjach */
+      .section-logo {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        width: 110px;
+        height: auto;
+        z-index: 5;
+        filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.12));
+        pointer-events: none;
+      }
+      @media (max-width: 900px) {
+        .section-logo {
+          width: 90px;
+          left: 10px;
+          top: 10px;
+        }
+      }
+      @media (max-width: 720px) {
+        .section-logo {
+          width: 76px;
+          left: 8px;
+          top: 8px;
+        }
+      }
+
       /* Hero */
       .hero-img-wrap {
         width: 100vw;
@@ -696,7 +722,13 @@
       aria-hidden="true"
     />
 
-    <section id="top" class="hero-img-wrap">
+    <section id="top" class="hero-img-wrap" style="position: relative">
+      <img
+        class="section-logo"
+        src="Bez nazwy (340 x 100 px).png"
+        alt="Black Rose logo"
+        aria-hidden="true"
+      />
       <div class="hero-copy">
         <div class="hero-kicker">Black Rose • Czechowice-Dziedzice</div>
         <h1 class="hero-title">Manicure, pedicure i pielęgnacja dłoni w butikowym salonie</h1>
@@ -712,7 +744,13 @@
       <img class="hero-img" src="stronaglowjna.jpg" alt="Black Rose" />
     </section>
 
-    <section class="home-services" id="uslugi">
+    <section class="home-services" id="uslugi" style="position: relative">
+      <img
+        class="section-logo"
+        src="Bez nazwy (340 x 100 px).png"
+        alt="Black Rose logo"
+        aria-hidden="true"
+      />
       <div class="home-services__shell">
         <div class="home-services__head">
           <span class="home-services__eyebrow">Usługi</span>
@@ -741,7 +779,13 @@
       </div>
     </section>
 
-    <section class="section" id="kontakt">
+    <section class="section" id="kontakt" style="position: relative">
+      <img
+        class="section-logo"
+        src="Bez nazwy (340 x 100 px).png"
+        alt="Black Rose logo"
+        aria-hidden="true"
+      />
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Kontakt</div>
