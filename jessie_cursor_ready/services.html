@@ -53,6 +53,29 @@
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
       }
+      .floating-logo {
+        position: fixed;
+        left: 30px;
+        top: 28px;
+        width: 120px;
+        max-width: 22vw;
+        height: auto;
+        z-index: 930;
+        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.12));
+        pointer-events: none;
+      }
+      @media (max-width: 900px) {
+        .floating-logo {
+          width: 90px;
+          top: 30px;
+          left: 24px;
+        }
+      }
+      @media (max-width: 720px) {
+        .floating-logo {
+          display: none;
+        }
+      }
       .floating-half-nav__list {
         display: grid;
         grid-auto-flow: column;
@@ -368,6 +391,12 @@
         <a href="/about.html" class="floating-half-nav__link">O nas</a>
       </div>
     </nav>
+    <img
+      class="floating-logo"
+      src="Bez nazwy (340 x 100 px).png"
+      alt="Black Rose logo"
+      aria-hidden="true"
+    />
 
     <main class="br-services" id="services">
       <div class="br-services__shell">
