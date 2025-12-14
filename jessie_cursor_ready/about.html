@@ -103,25 +103,7 @@
       .br-mini-col a:hover {
         color: #000;
       }
-      /* Nav reset – ujednolicenie z index */
-      .floating-half-nav,
-      .floating-half-nav__list,
-      .floating-half-nav__link {
-        all: unset;
-      }
-      .floating-half-nav {
-        position: fixed;
-        top: 16px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-      }
-      .floating-half-nav__list {
-        display: inline-flex;
-        gap: 12px;
-        align-items: center;
-      }
-      /* Pływający pasek nawigacji spójny z główną stroną */
+      /* Pasek nawigacji – spójny styl */
       .floating-half-nav {
         position: fixed;
         top: 16px;
@@ -182,10 +164,9 @@
         padding: 10px 14px;
         text-decoration: none;
         color: rgba(25, 25, 26, 1);
-        font-family: "Questrial", sans-serif;
+        font-family: 'Questrial', sans-serif;
         letter-spacing: 0.08em;
         font-size: 13px;
-        line-height: 1.2;
         font-weight: 600;
         text-transform: uppercase;
         border-radius: 999px;
@@ -199,12 +180,15 @@
         color: rgba(25, 25, 26, 1);
       }
       .floating-half-nav__link:hover,
-      .floating-half-nav__link:focus-visible,
-      .floating-half-nav__link:active {
+      .floating-half-nav__link:focus-visible {
         color: rgba(47, 47, 47, 1);
         background: rgba(254, 231, 239, 0.9);
         border-color: rgba(254, 231, 239, 1);
+        outline: none;
         transform: translateY(-1px);
+      }
+      .floating-half-nav__link:active {
+        transform: translateY(0);
       }
       @media (max-width: 768px) {
         .floating-half-nav {
